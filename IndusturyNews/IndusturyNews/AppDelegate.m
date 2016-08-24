@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 /**
- *  dxc
+ *  dxc再试试
  */
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
