@@ -19,7 +19,7 @@
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
-            
+            //slog
         // Update the view.
         [self configureView];
     }
