@@ -421,7 +421,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = IndusturyNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = liufeng.IndusturyNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,7 +434,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = IndusturyNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = liufeng.IndusturyNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,6 +508,7 @@
 				0362AE031D6D7367002D1622 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0362AE041D6D7367002D1622 /* Build configuration list for PBXNativeTarget "IndusturyNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +517,7 @@
 				0362AE061D6D7367002D1622 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0362AE071D6D7367002D1622 /* Build configuration list for PBXNativeTarget "IndusturyNewsUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +526,7 @@
 				0362AE091D6D7367002D1622 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
