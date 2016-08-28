@@ -10,12 +10,19 @@
 		073572181251DF34E9F6C09F /* libPods-BusinessNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B517B69D02ABE2E1A9CFA3C0 /* libPods-BusinessNews.a */; };
 		48F62F041D71EACB000F97B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F031D71EACB000F97B2 /* main.m */; };
 		48F62F071D71EACB000F97B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F061D71EACB000F97B2 /* AppDelegate.m */; };
-		48F62F0A1D71EACB000F97B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F091D71EACB000F97B2 /* ViewController.m */; };
 		48F62F0D1D71EACB000F97B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F62F0B1D71EACB000F97B2 /* Main.storyboard */; };
 		48F62F0F1D71EACB000F97B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F62F0E1D71EACB000F97B2 /* Assets.xcassets */; };
 		48F62F121D71EACB000F97B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F62F101D71EACB000F97B2 /* LaunchScreen.storyboard */; };
 		48F62F1D1D71EACC000F97B2 /* BusinessNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F1C1D71EACC000F97B2 /* BusinessNewsTests.m */; };
 		48F62F281D71EACC000F97B2 /* BusinessNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F271D71EACC000F97B2 /* BusinessNewsUITests.m */; };
+		88DEFEDE1D7295F00058DDEE /* CTViewControllerIntercepter.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEB21D7295F00058DDEE /* CTViewControllerIntercepter.m */; };
+		88DEFEDF1D7295F00058DDEE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEB61D7295F00058DDEE /* HomeViewController.m */; };
+		88DEFEE01D7295F00058DDEE /* HRDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEBC1D7295F00058DDEE /* HRDMainViewController.m */; };
+		88DEFEE11D7295F00058DDEE /* HRDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEBE1D7295F00058DDEE /* HRDNavigationController.m */; };
+		88DEFEE21D7295F00058DDEE /* HRDWKwebViewController+WBJS_Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEC01D7295F00058DDEE /* HRDWKwebViewController+WBJS_Bridge.m */; };
+		88DEFEE31D7295F00058DDEE /* HRDWKwebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEC21D7295F00058DDEE /* HRDWKwebViewController.m */; };
+		88DEFEE41D7295F00058DDEE /* IndustrySitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEC61D7295F00058DDEE /* IndustrySitesViewController.m */; };
+		88DEFEE51D7295F00058DDEE /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFED51D7295F00058DDEE /* MyCollectionViewController.m */; };
 		BA3B49E48CB09058B06C9640 /* libPods-BusinessNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C624109DCC1727EEDF264CD /* libPods-BusinessNewsTests.a */; };
 		FE14D9C7CF569432DC7EFCED /* libPods-BusinessNewsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0368CA8C592AAFB9E4C55C99 /* libPods-BusinessNewsUITests.a */; };
 /* End PBXBuildFile section */
@@ -45,8 +52,6 @@
 		48F62F031D71EACB000F97B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48F62F051D71EACB000F97B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48F62F061D71EACB000F97B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		48F62F081D71EACB000F97B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		48F62F091D71EACB000F97B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		48F62F0C1D71EACB000F97B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48F62F0E1D71EACB000F97B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F62F111D71EACB000F97B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +65,40 @@
 		5C483B8D8EB11D7391CDC37C /* Pods-BusinessNewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsUITests/Pods-BusinessNewsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C624109DCC1727EEDF264CD /* libPods-BusinessNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8440D5E377C9E96DE2DBEFE6 /* Pods-BusinessNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNews/Pods-BusinessNews.release.xcconfig"; sourceTree = "<group>"; };
+		88DEFEA31D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEA51D7295F00058DDEE /* dxcRecord .h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "dxcRecord .h"; sourceTree = "<group>"; };
+		88DEFEA71D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEA91D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEAB1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEAD1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEAF1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEB11D7295F00058DDEE /* CTViewControllerIntercepter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTViewControllerIntercepter.h; sourceTree = "<group>"; };
+		88DEFEB21D7295F00058DDEE /* CTViewControllerIntercepter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTViewControllerIntercepter.m; sourceTree = "<group>"; };
+		88DEFEB51D7295F00058DDEE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		88DEFEB61D7295F00058DDEE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		88DEFEB81D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEBA1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEBB1D7295F00058DDEE /* HRDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDMainViewController.h; sourceTree = "<group>"; };
+		88DEFEBC1D7295F00058DDEE /* HRDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDMainViewController.m; sourceTree = "<group>"; };
+		88DEFEBD1D7295F00058DDEE /* HRDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDNavigationController.h; sourceTree = "<group>"; };
+		88DEFEBE1D7295F00058DDEE /* HRDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDNavigationController.m; sourceTree = "<group>"; };
+		88DEFEBF1D7295F00058DDEE /* HRDWKwebViewController+WBJS_Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HRDWKwebViewController+WBJS_Bridge.h"; sourceTree = "<group>"; };
+		88DEFEC01D7295F00058DDEE /* HRDWKwebViewController+WBJS_Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HRDWKwebViewController+WBJS_Bridge.m"; sourceTree = "<group>"; };
+		88DEFEC11D7295F00058DDEE /* HRDWKwebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDWKwebViewController.h; sourceTree = "<group>"; };
+		88DEFEC21D7295F00058DDEE /* HRDWKwebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDWKwebViewController.m; sourceTree = "<group>"; };
+		88DEFEC51D7295F00058DDEE /* IndustrySitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustrySitesViewController.h; sourceTree = "<group>"; };
+		88DEFEC61D7295F00058DDEE /* IndustrySitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustrySitesViewController.m; sourceTree = "<group>"; };
+		88DEFEC81D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFECA1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFECD1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFECF1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFED11D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFED41D7295F00058DDEE /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
+		88DEFED51D7295F00058DDEE /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
+		88DEFED71D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFED91D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEDB1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		88DEFEDD1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		9331DB5961BEA724A498D2A9 /* Pods-BusinessNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNews/Pods-BusinessNews.debug.xcconfig"; sourceTree = "<group>"; };
 		B517B69D02ABE2E1A9CFA3C0 /* libPods-BusinessNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2B7BFABCCB6776D36D39A4 /* Pods-BusinessNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsTests/Pods-BusinessNewsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,8 +159,16 @@
 			children = (
 				48F62F051D71EACB000F97B2 /* AppDelegate.h */,
 				48F62F061D71EACB000F97B2 /* AppDelegate.m */,
-				48F62F081D71EACB000F97B2 /* ViewController.h */,
-				48F62F091D71EACB000F97B2 /* ViewController.m */,
+				88DEFEA21D7295F00058DDEE /* Config */,
+				88DEFEA41D7295F00058DDEE /* Doc */,
+				88DEFEA61D7295F00058DDEE /* Function */,
+				88DEFEA81D7295F00058DDEE /* H5Resources */,
+				88DEFEAA1D7295F00058DDEE /* HRDdb */,
+				88DEFEAC1D7295F00058DDEE /* HRDPay */,
+				88DEFEAE1D7295F00058DDEE /* Library */,
+				88DEFEDA1D7295F00058DDEE /* Resources */,
+				88DEFEDC1D7295F00058DDEE /* Tools */,
+				88DEFEB01D7295F00058DDEE /* MainViewController */,
 				48F62F0B1D71EACB000F97B2 /* Main.storyboard */,
 				48F62F0E1D71EACB000F97B2 /* Assets.xcassets */,
 				48F62F101D71EACB000F97B2 /* LaunchScreen.storyboard */,
@@ -165,6 +212,238 @@
 				0368CA8C592AAFB9E4C55C99 /* libPods-BusinessNewsUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88DEFEA21D7295F00058DDEE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEA31D7295F00058DDEE /* replace.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		88DEFEA41D7295F00058DDEE /* Doc */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEA51D7295F00058DDEE /* dxcRecord .h */,
+			);
+			path = Doc;
+			sourceTree = "<group>";
+		};
+		88DEFEA61D7295F00058DDEE /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEA71D7295F00058DDEE /* replace.h */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		88DEFEA81D7295F00058DDEE /* H5Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEA91D7295F00058DDEE /* replace.h */,
+			);
+			path = H5Resources;
+			sourceTree = "<group>";
+		};
+		88DEFEAA1D7295F00058DDEE /* HRDdb */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEAB1D7295F00058DDEE /* replace.h */,
+			);
+			path = HRDdb;
+			sourceTree = "<group>";
+		};
+		88DEFEAC1D7295F00058DDEE /* HRDPay */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEAD1D7295F00058DDEE /* replace.h */,
+			);
+			path = HRDPay;
+			sourceTree = "<group>";
+		};
+		88DEFEAE1D7295F00058DDEE /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEAF1D7295F00058DDEE /* replace.h */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		88DEFEB01D7295F00058DDEE /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEB11D7295F00058DDEE /* CTViewControllerIntercepter.h */,
+				88DEFEB21D7295F00058DDEE /* CTViewControllerIntercepter.m */,
+				88DEFEB31D7295F00058DDEE /* Home */,
+				88DEFEBB1D7295F00058DDEE /* HRDMainViewController.h */,
+				88DEFEBC1D7295F00058DDEE /* HRDMainViewController.m */,
+				88DEFEBD1D7295F00058DDEE /* HRDNavigationController.h */,
+				88DEFEBE1D7295F00058DDEE /* HRDNavigationController.m */,
+				88DEFEBF1D7295F00058DDEE /* HRDWKwebViewController+WBJS_Bridge.h */,
+				88DEFEC01D7295F00058DDEE /* HRDWKwebViewController+WBJS_Bridge.m */,
+				88DEFEC11D7295F00058DDEE /* HRDWKwebViewController.h */,
+				88DEFEC21D7295F00058DDEE /* HRDWKwebViewController.m */,
+				88DEFEC31D7295F00058DDEE /* IndustrySites */,
+				88DEFECB1D7295F00058DDEE /* LoginAndRegiste */,
+				88DEFED21D7295F00058DDEE /* MyCollection */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		88DEFEB31D7295F00058DDEE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEB41D7295F00058DDEE /* Controllers */,
+				88DEFEB71D7295F00058DDEE /* Models */,
+				88DEFEB91D7295F00058DDEE /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		88DEFEB41D7295F00058DDEE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEB51D7295F00058DDEE /* HomeViewController.h */,
+				88DEFEB61D7295F00058DDEE /* HomeViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		88DEFEB71D7295F00058DDEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEB81D7295F00058DDEE /* replace.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88DEFEB91D7295F00058DDEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEBA1D7295F00058DDEE /* replace.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88DEFEC31D7295F00058DDEE /* IndustrySites */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEC41D7295F00058DDEE /* Controllers */,
+				88DEFEC71D7295F00058DDEE /* Models */,
+				88DEFEC91D7295F00058DDEE /* Views */,
+			);
+			path = IndustrySites;
+			sourceTree = "<group>";
+		};
+		88DEFEC41D7295F00058DDEE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEC51D7295F00058DDEE /* IndustrySitesViewController.h */,
+				88DEFEC61D7295F00058DDEE /* IndustrySitesViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		88DEFEC71D7295F00058DDEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEC81D7295F00058DDEE /* replace.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88DEFEC91D7295F00058DDEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFECA1D7295F00058DDEE /* replace.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88DEFECB1D7295F00058DDEE /* LoginAndRegiste */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFECC1D7295F00058DDEE /* Controllers */,
+				88DEFECE1D7295F00058DDEE /* Models */,
+				88DEFED01D7295F00058DDEE /* Views */,
+			);
+			path = LoginAndRegiste;
+			sourceTree = "<group>";
+		};
+		88DEFECC1D7295F00058DDEE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFECD1D7295F00058DDEE /* replace.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		88DEFECE1D7295F00058DDEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFECF1D7295F00058DDEE /* replace.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88DEFED01D7295F00058DDEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFED11D7295F00058DDEE /* replace.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88DEFED21D7295F00058DDEE /* MyCollection */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFED31D7295F00058DDEE /* Controllers */,
+				88DEFED61D7295F00058DDEE /* Models */,
+				88DEFED81D7295F00058DDEE /* Views */,
+			);
+			path = MyCollection;
+			sourceTree = "<group>";
+		};
+		88DEFED31D7295F00058DDEE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFED41D7295F00058DDEE /* MyCollectionViewController.h */,
+				88DEFED51D7295F00058DDEE /* MyCollectionViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		88DEFED61D7295F00058DDEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFED71D7295F00058DDEE /* replace.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88DEFED81D7295F00058DDEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFED91D7295F00058DDEE /* replace.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88DEFEDA1D7295F00058DDEE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEDB1D7295F00058DDEE /* replace.h */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		88DEFEDC1D7295F00058DDEE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				88DEFEDD1D7295F00058DDEE /* replace.h */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		BEFDDEF6BE2D203E2B680DCA /* Pods */ = {
@@ -460,9 +739,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F62F0A1D71EACB000F97B2 /* ViewController.m in Sources */,
+				88DEFEE31D7295F00058DDEE /* HRDWKwebViewController.m in Sources */,
+				88DEFEDE1D7295F00058DDEE /* CTViewControllerIntercepter.m in Sources */,
 				48F62F071D71EACB000F97B2 /* AppDelegate.m in Sources */,
+				88DEFEE11D7295F00058DDEE /* HRDNavigationController.m in Sources */,
+				88DEFEE51D7295F00058DDEE /* MyCollectionViewController.m in Sources */,
 				48F62F041D71EACB000F97B2 /* main.m in Sources */,
+				88DEFEE01D7295F00058DDEE /* HRDMainViewController.m in Sources */,
+				88DEFEE41D7295F00058DDEE /* IndustrySitesViewController.m in Sources */,
+				88DEFEE21D7295F00058DDEE /* HRDWKwebViewController+WBJS_Bridge.m in Sources */,
+				88DEFEDF1D7295F00058DDEE /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,11 @@ target 'BusinessNews' do
   # use_frameworks!
 
   # Pods for BusinessNews
-
+  pod 'Aspects', '~> 1.4.1'
+  pod 'AFNetworking'
+  pod 'MJRefresh'
+  
+  
   target 'BusinessNewsTests' do
     inherit! :search_paths
     # Pods for testing
@@ -16,6 +20,5 @@ target 'BusinessNews' do
     inherit! :search_paths
     # Pods for testing
   end
-pod 'AFNetworking'
-pod 'MJRefresh'
+
 end
