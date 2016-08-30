@@ -5,19 +5,19 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="0nV-gS-ZxK">
             <objects>
-                <tabBarController id="dQI-1h-wqS" sceneMemberID="viewController">
+                <tabBarController id="dQI-1h-wqS" customClass="MainViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ss6-iT-TJS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Mto-bG-vrw" kind="relationship" relationship="viewControllers" id="O0g-Tw-04w"/>
-                        <segue destination="mMX-pv-ryw" kind="relationship" relationship="viewControllers" id="8eu-uu-nNG"/>
-                        <segue destination="q1e-vM-5hZ" kind="relationship" relationship="viewControllers" id="4D3-7b-xMv"/>
+                        <segue destination="q1e-vM-5hZ" kind="relationship" relationship="viewControllers" id="ThE-3i-N3V"/>
+                        <segue destination="mMX-pv-ryw" kind="relationship" relationship="viewControllers" id="ghI-l1-JLI"/>
+                        <segue destination="Mto-bG-vrw" kind="relationship" relationship="viewControllers" id="pcJ-ET-zw1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9K-SY-BE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -27,7 +27,7 @@
         <!--Item-->
         <scene sceneID="Jvo-XK-gfE">
             <objects>
-                <navigationController id="Mto-bG-vrw" sceneMemberID="viewController">
+                <navigationController id="Mto-bG-vrw" customClass="MainNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="oeD-U9-Yka"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gZQ-c2-Nma">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="1157" y="790"/>
         </scene>
-        <!--View Controller-->
+        <!--我的收藏-->
         <scene sceneID="9W9-8J-HhS">
             <objects>
-                <viewController id="RQg-tc-947" sceneMemberID="viewController">
+                <viewController id="RQg-tc-947" customClass="MyCollectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wjd-bv-6cQ"/>
                         <viewControllerLayoutGuide type="bottom" id="JEI-Zt-J0Q"/>
@@ -52,9 +52,9 @@
                     <view key="view" contentMode="scaleToFill" id="tQJ-S4-FQG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2035290948" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HqW-Vn-rLu"/>
+                    <navigationItem key="navigationItem" title="我的收藏" id="HqW-Vn-rLu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpb-Nh-hDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,7 +63,7 @@
         <!--Item-->
         <scene sceneID="l5S-Sg-V24">
             <objects>
-                <navigationController id="mMX-pv-ryw" sceneMemberID="viewController">
+                <navigationController id="mMX-pv-ryw" customClass="MainNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="WX5-Jw-ZwD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gbo-ud-uWI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="333" y="790"/>
         </scene>
-        <!--View Controller-->
+        <!--行业站点-->
         <scene sceneID="gRo-sd-932">
             <objects>
-                <viewController id="smm-dr-C6b" sceneMemberID="viewController">
+                <viewController id="smm-dr-C6b" customClass="IndustrySitesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Co-kD-Y97"/>
                         <viewControllerLayoutGuide type="bottom" id="XYI-bW-7NB"/>
@@ -88,9 +88,9 @@
                     <view key="view" contentMode="scaleToFill" id="3LA-sy-5v3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="az4-fI-QnM"/>
+                    <navigationItem key="navigationItem" title="行业站点" id="az4-fI-QnM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gx-O0-d2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,7 +99,7 @@
         <!--Item-->
         <scene sceneID="zsm-cl-Vgw">
             <objects>
-                <navigationController id="q1e-vM-5hZ" sceneMemberID="viewController">
+                <navigationController id="q1e-vM-5hZ" customClass="MainNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="6uG-St-Ez7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hAQ-UR-Yqf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="-515" y="790"/>
         </scene>
-        <!--View Controller-->
+        <!--首页-->
         <scene sceneID="E6v-4K-09k">
             <objects>
-                <viewController id="QSo-8Y-sUo" sceneMemberID="viewController">
+                <viewController id="QSo-8Y-sUo" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bex-52-gGi"/>
                         <viewControllerLayoutGuide type="bottom" id="b5E-sa-LUE"/>
@@ -124,9 +124,9 @@
                     <view key="view" contentMode="scaleToFill" id="APa-bV-hcv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.63448275860000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NMn-ch-7rV"/>
+                    <navigationItem key="navigationItem" title="首页" id="NMn-ch-7rV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3b-Gq-aWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

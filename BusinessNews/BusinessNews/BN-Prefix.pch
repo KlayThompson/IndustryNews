@@ -1,0 +1,20 @@
+//
+//  BN-Prefix.pch
+//  BusinessNews
+//
+//  Created by KlayThompson on 16/8/28.
+//  Copyright © 2016年 KlayThompson. All rights reserved.
+//
+
+#ifndef BN_Prefix_pch
+#define BN_Prefix_pch
+
+
+#import "DataCheck.h"
+
+#import "Definition.h"
+#import <UIKit/UIKit.h>
+
+
+
+#endif /* BN_Prefix_pch */

@@ -13,7 +13,6 @@
 #import "HomeViewController.h"
 #import "IndustrySitesViewController.h"
 #import "MyCollectionViewController.h"
-#import "PreferablyViewController.h"
 
 @implementation CTViewControllerIntercepter
 
@@ -75,7 +74,7 @@
 - (void)loadView:(UIViewController *)viewController
 {
     /* 你可以使用这个方法进行打日志，初始化基础业务相关的内容 */
-    NSLog(@"[%@ loadView]", [viewController class]);
+//    NSLog(@"[%@ loadView]", [viewController class]);
     
 }
 - (void)viewDidLoad:(UIViewController *)viewController{
@@ -84,7 +83,7 @@
 - (void)viewWillAppear:(BOOL)animated viewController:(UIViewController *)viewController
 {
     /* 你可以使用这个方法进行打日志，初始化基础业务相关的内容 */
-//    NSLog(@"[%@ viewWillAppear:%@]", [viewController class], animated ? @"YES" : @"NO");
+    NSLog(@"[%@ viewWillAppear:%@]", [viewController class], animated ? @"YES" : @"NO");
     
 }
 
