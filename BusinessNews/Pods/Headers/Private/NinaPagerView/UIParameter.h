@@ -1,0 +1,1 @@
+../../../NinaPagerView/NinaPagerView/UIParameter.h

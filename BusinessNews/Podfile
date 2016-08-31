@@ -13,6 +13,7 @@ target 'BusinessNews' do
   pod 'SDWebImage'
   pod 'Masonry'
   pod 'MBProgressHUD'
+  pod 'NinaPagerView'
   
   target 'BusinessNewsTests' do
     inherit! :search_paths
