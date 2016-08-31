@@ -24,7 +24,7 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 //[UIColor colorWithRed:227./255. green:227./255. blue:227./255. alpha:1.0]
 
 //主题的颜色，例如navigationbar、按钮等；
-#define COLOR_THEME                 [UIColor colorWithRed:38.0/255.0 green:105./255.0 blue:215./255.0 alpha:0.96]
+#define COLOR_THEME                 [UIColor colorWithRed:233.0/255.0 green:69./255.0 blue:59./255.0 alpha:0.96]
 
 #define COLOR_GRAY_BG               [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0]
 

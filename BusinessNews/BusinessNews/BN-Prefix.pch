@@ -14,7 +14,10 @@
 
 #import "Definition.h"
 #import <UIKit/UIKit.h>
-
+#import "SizeDefinition.h"
+#import "FontDefinition.h"
+#import "ColorDefinition.h"
+#import "DataCheck.h"
 
 
 #endif /* BN_Prefix_pch */

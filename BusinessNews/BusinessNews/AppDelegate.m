@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "CRNavigationController.h"
+#import "HomeViewController.h"
+#import "MyCollectionViewController.h"
+#import "IndustrySitesViewController.h"
+#import "ColorDefinition.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UINavigationControllerDelegate,UITabBarControllerDelegate>
 
 @end
 
@@ -16,6 +21,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    [self InitializationTabbar];
+    self.window.rootViewController = self.sysTabBarController;
+    
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; 
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -40,6 +56,74 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark -
+
+- (void)InitializationTabbar {
+    
+    
+    
+
+    
+    // 头条
+    HomeViewController *home = [[HomeViewController alloc] init];
+    
+    CRNavigationController *homeViewController = [[CRNavigationController alloc] initWithRootViewController:home];
+    [homeViewController setDelegate:self];
+    
+    UITabBarItem *homeTabbar = [[UITabBarItem alloc] initWithTitle:@"头条"
+                                                             image:nil
+                                                     selectedImage:nil];
+    [homeTabbar setImage:[[UIImage imageNamed:@"icon_home_b"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [homeTabbar setSelectedImage:[[UIImage imageNamed:@"icon_home_a"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    homeViewController.tabBarItem = homeTabbar;
+    
+    // 行业站点
+    IndustrySitesViewController *industry = [[IndustrySitesViewController alloc] init];
+    
+    CRNavigationController *industryViewController = [[CRNavigationController alloc] initWithRootViewController:industry];
+    [industryViewController setDelegate:self];
+    
+    UITabBarItem *industryTabbar = [[UITabBarItem alloc] initWithTitle:@"行业站点"
+                                                                 image:nil
+                                                         selectedImage:nil];
+    [industryTabbar setImage:[[UIImage imageNamed:@"icon_site_b"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [industryTabbar setSelectedImage:[[UIImage imageNamed:@"icon_Site_a"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    industryViewController.tabBarItem = industryTabbar;
+    
+    
+    // 我的收藏
+    MyCollectionViewController *collection = [[MyCollectionViewController alloc] init];
+    
+    CRNavigationController *collectionViewController = [[CRNavigationController alloc] initWithRootViewController:collection];
+    [collectionViewController setDelegate:self];
+    
+    UITabBarItem *collectionTabbar = [[UITabBarItem alloc] initWithTitle:@"我的收藏"
+                                                             image:nil
+                                                     selectedImage:nil];
+    [collectionTabbar setImage:[[UIImage imageNamed:@"icon_collection_b"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [collectionTabbar setSelectedImage:[[UIImage imageNamed:@"icon_Collection _a"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    collectionViewController.tabBarItem = collectionTabbar;
+    
+    
+    
+    UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    
+    tabbarController.viewControllers = @[homeViewController,
+                                         industryViewController,
+                                         collectionViewController];
+    
+    tabbarController.tabBar.translucent = NO;
+    //设置tint颜色
+    tabbarController.tabBar.tintColor = COLOR_THEME;
+    
+    self.sysTabBarController = tabbarController;
+    self.sysTabBarController.delegate = self;
+    
 }
 
 @end

@@ -24,11 +24,11 @@
             </objects>
             <point key="canvasLocation" x="327" y="-31"/>
         </scene>
-        <!--Item-->
+        <!--我的收藏-->
         <scene sceneID="Jvo-XK-gfE">
             <objects>
                 <navigationController id="Mto-bG-vrw" customClass="MainNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="oeD-U9-Yka"/>
+                    <tabBarItem key="tabBarItem" title="我的收藏" image="icon_Collection _a" selectedImage="icon_collection_b" id="oeD-U9-Yka"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gZQ-c2-Nma">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -60,11 +60,11 @@
             </objects>
             <point key="canvasLocation" x="1157" y="1770"/>
         </scene>
-        <!--Item-->
+        <!--行业站点-->
         <scene sceneID="l5S-Sg-V24">
             <objects>
                 <navigationController id="mMX-pv-ryw" customClass="MainNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WX5-Jw-ZwD"/>
+                    <tabBarItem key="tabBarItem" title="行业站点" image="icon_Site_a" selectedImage="icon_site_b" id="WX5-Jw-ZwD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gbo-ud-uWI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -96,11 +96,11 @@
             </objects>
             <point key="canvasLocation" x="333" y="1746"/>
         </scene>
-        <!--Item-->
+        <!--头条-->
         <scene sceneID="zsm-cl-Vgw">
             <objects>
                 <navigationController id="q1e-vM-5hZ" customClass="MainNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6uG-St-Ez7"/>
+                    <tabBarItem key="tabBarItem" title="头条" image="icon_home_a" selectedImage="icon_home_b" id="6uG-St-Ez7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hAQ-UR-Yqf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -133,4 +133,12 @@
             <point key="canvasLocation" x="-515" y="1726"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_Collection _a" width="22" height="22"/>
+        <image name="icon_Site_a" width="22" height="22"/>
+        <image name="icon_collection_b" width="22" height="22"/>
+        <image name="icon_home_a" width="22" height="22"/>
+        <image name="icon_home_b" width="22" height="22"/>
+        <image name="icon_site_b" width="22" height="22"/>
+    </resources>
 </document>

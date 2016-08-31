@@ -50,6 +50,9 @@
 		4886EE601D72FA3300BD35B7 /* SysInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886EE5F1D72FA3300BD35B7 /* SysInfo.m */; };
 		4886EE641D72FAC700BD35B7 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886EE631D72FAC700BD35B7 /* NSObject+JSON.m */; };
 		489942A81D75D26D00E68FF2 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 489942A71D75D26D00E68FF2 /* File */; };
+		48EDF4A61D76734D001430F3 /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4A11D76734D001430F3 /* CRNavigationBar.m */; };
+		48EDF4A71D76734D001430F3 /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4A31D76734D001430F3 /* CRNavigationController.m */; };
+		48EDF4A81D76734D001430F3 /* CRUIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4A51D76734D001430F3 /* CRUIToolbar.m */; };
 		48F62F041D71EACB000F97B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F031D71EACB000F97B2 /* main.m */; };
 		48F62F071D71EACB000F97B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F061D71EACB000F97B2 /* AppDelegate.m */; };
 		48F62F0D1D71EACB000F97B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F62F0B1D71EACB000F97B2 /* Main.storyboard */; };
@@ -180,6 +183,13 @@
 		4886EE621D72FAC700BD35B7 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
 		4886EE631D72FAC700BD35B7 /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
 		489942A71D75D26D00E68FF2 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		489942AA1D75DBCE00E68FF2 /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		48EDF4A01D76734D001430F3 /* CRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationBar.h; sourceTree = "<group>"; };
+		48EDF4A11D76734D001430F3 /* CRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationBar.m; sourceTree = "<group>"; };
+		48EDF4A21D76734D001430F3 /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationController.h; sourceTree = "<group>"; };
+		48EDF4A31D76734D001430F3 /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationController.m; sourceTree = "<group>"; };
+		48EDF4A41D76734D001430F3 /* CRUIToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUIToolbar.h; sourceTree = "<group>"; };
+		48EDF4A51D76734D001430F3 /* CRUIToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUIToolbar.m; sourceTree = "<group>"; };
 		48F62EFF1D71EACB000F97B2 /* BusinessNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F62F031D71EACB000F97B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48F62F051D71EACB000F97B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -202,7 +212,6 @@
 		88DEFEA91D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFEAB1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFEAD1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFEAF1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFEB11D7295F00058DDEE /* CTViewControllerIntercepter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTViewControllerIntercepter.h; sourceTree = "<group>"; };
 		88DEFEB21D7295F00058DDEE /* CTViewControllerIntercepter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTViewControllerIntercepter.m; sourceTree = "<group>"; };
 		88DEFEB51D7295F00058DDEE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -217,9 +226,6 @@
 		88DEFEC61D7295F00058DDEE /* IndustrySitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustrySitesViewController.m; sourceTree = "<group>"; };
 		88DEFEC81D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFECA1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFECD1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFECF1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFED11D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFED41D7295F00058DDEE /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
 		88DEFED51D7295F00058DDEE /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
 		88DEFED71D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
@@ -463,6 +469,28 @@
 			path = "Object+Json";
 			sourceTree = "<group>";
 		};
+		489942A91D75DBCE00E68FF2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				48EDF49F1D76734D001430F3 /* CRNavigationController */,
+				489942AA1D75DBCE00E68FF2 /* replace.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		48EDF49F1D76734D001430F3 /* CRNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				48EDF4A01D76734D001430F3 /* CRNavigationBar.h */,
+				48EDF4A11D76734D001430F3 /* CRNavigationBar.m */,
+				48EDF4A21D76734D001430F3 /* CRNavigationController.h */,
+				48EDF4A31D76734D001430F3 /* CRNavigationController.m */,
+				48EDF4A41D76734D001430F3 /* CRUIToolbar.h */,
+				48EDF4A51D76734D001430F3 /* CRUIToolbar.m */,
+			);
+			path = CRNavigationController;
+			sourceTree = "<group>";
+		};
 		48F62EF61D71EACB000F97B2 = {
 			isa = PBXGroup;
 			children = (
@@ -496,8 +524,8 @@
 				88DEFEA81D7295F00058DDEE /* H5Resources */,
 				88DEFEAA1D7295F00058DDEE /* HRDdb */,
 				88DEFEAC1D7295F00058DDEE /* HRDPay */,
-				88DEFEAE1D7295F00058DDEE /* Library */,
 				4886ED961D72EF5700BD35B7 /* Architecture */,
+				489942A91D75DBCE00E68FF2 /* Common */,
 				4886ED9F1D72F04C00BD35B7 /* PublicTools */,
 				4886EE2A1D72F77300BD35B7 /* ThirdPart */,
 				48F62F051D71EACB000F97B2 /* AppDelegate.h */,
@@ -588,14 +616,6 @@
 			path = HRDPay;
 			sourceTree = "<group>";
 		};
-		88DEFEAE1D7295F00058DDEE /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				88DEFEAF1D7295F00058DDEE /* replace.h */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
 		88DEFEB01D7295F00058DDEE /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,7 +627,6 @@
 				88DEFEBE1D7295F00058DDEE /* MainNavigationController.m */,
 				88DEFEB31D7295F00058DDEE /* Home */,
 				88DEFEC31D7295F00058DDEE /* IndustrySites */,
-				88DEFECB1D7295F00058DDEE /* LoginAndRegiste */,
 				88DEFED21D7295F00058DDEE /* MyCollection */,
 			);
 			path = MainViewController;
@@ -679,40 +698,6 @@
 			isa = PBXGroup;
 			children = (
 				88DEFECA1D7295F00058DDEE /* replace.h */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		88DEFECB1D7295F00058DDEE /* LoginAndRegiste */ = {
-			isa = PBXGroup;
-			children = (
-				88DEFECC1D7295F00058DDEE /* Controllers */,
-				88DEFECE1D7295F00058DDEE /* Models */,
-				88DEFED01D7295F00058DDEE /* Views */,
-			);
-			path = LoginAndRegiste;
-			sourceTree = "<group>";
-		};
-		88DEFECC1D7295F00058DDEE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				88DEFECD1D7295F00058DDEE /* replace.h */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		88DEFECE1D7295F00058DDEE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				88DEFECF1D7295F00058DDEE /* replace.h */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		88DEFED01D7295F00058DDEE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				88DEFED11D7295F00058DDEE /* replace.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1101,9 +1086,12 @@
 				4886EE141D72F04C00BD35B7 /* SysTools.m in Sources */,
 				88DEFEDF1D7295F00058DDEE /* HomeViewController.m in Sources */,
 				4886EE3F1D72F77300BD35B7 /* DDAbstractDatabaseLogger.m in Sources */,
+				48EDF4A61D76734D001430F3 /* CRNavigationBar.m in Sources */,
+				48EDF4A71D76734D001430F3 /* CRNavigationController.m in Sources */,
 				4886EE091D72F04C00BD35B7 /* JSONObjectUtil.m in Sources */,
 				4886EE221D72F4A800BD35B7 /* NSNumber+Helpers.m in Sources */,
 				4886EE601D72FA3300BD35B7 /* SysInfo.m in Sources */,
+				48EDF4A81D76734D001430F3 /* CRUIToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
