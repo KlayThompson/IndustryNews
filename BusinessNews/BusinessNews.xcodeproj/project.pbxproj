@@ -14,9 +14,6 @@
 		0380A90D1D76CEA700196C1E /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9091D76CEA700196C1E /* BaseNavigationController.m */; };
 		0380A90E1D76CEA700196C1E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A90B1D76CEA700196C1E /* BaseViewController.m */; };
 		0380A9121D76CFD100196C1E /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9111D76CFD100196C1E /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0380A91A1D76D0F600196C1E /* UIImage+ImageNamed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9151D76D0F600196C1E /* UIImage+ImageNamed.m */; };
-		0380A91B1D76D0F600196C1E /* UIImage+imageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9171D76D0F600196C1E /* UIImage+imageWithColor.m */; };
-		0380A91C1D76D0F600196C1E /* UIImage-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9191D76D0F600196C1E /* UIImage-Extensions.m */; };
 		0380A91F1D76DA4E00196C1E /* SysDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A91E1D76DA4E00196C1E /* SysDirector.m */; };
 		073572181251DF34E9F6C09F /* libPods-BusinessNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B517B69D02ABE2E1A9CFA3C0 /* libPods-BusinessNews.a */; };
 		4886ED9D1D72EFA500BD35B7 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886ED9A1D72EFA500BD35B7 /* NSData+Base64.m */; };
@@ -66,6 +63,12 @@
 		48EDF4A81D76734D001430F3 /* CRUIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4A51D76734D001430F3 /* CRUIToolbar.m */; };
 		48EDF4B31D767EB2001430F3 /* MainNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4B11D767EB2001430F3 /* MainNewsTableViewCell.m */; };
 		48EDF4B41D767EB2001430F3 /* MainNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48EDF4B21D767EB2001430F3 /* MainNewsTableViewCell.xib */; };
+		48EDF4B91D77292A001430F3 /* SelectIndustryTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4B81D77292A001430F3 /* SelectIndustryTagView.m */; };
+		48EDF4C11D772DED001430F3 /* UIImage+ImageNamed.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4BC1D772DED001430F3 /* UIImage+ImageNamed.m */; };
+		48EDF4C21D772DED001430F3 /* UIImage+imageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4BE1D772DED001430F3 /* UIImage+imageWithColor.m */; };
+		48EDF4C31D772DED001430F3 /* UIImage-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4C01D772DED001430F3 /* UIImage-Extensions.m */; };
+		48EDF4C71D772E0F001430F3 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4C61D772E0F001430F3 /* UIViewAdditions.m */; };
+		48EDF4CA1D772E19001430F3 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4C91D772E19001430F3 /* UIView+Size.m */; };
 		48F62F041D71EACB000F97B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F031D71EACB000F97B2 /* main.m */; };
 		48F62F071D71EACB000F97B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F061D71EACB000F97B2 /* AppDelegate.m */; };
 		48F62F0D1D71EACB000F97B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F62F0B1D71EACB000F97B2 /* Main.storyboard */; };
@@ -116,12 +119,6 @@
 		0380A90C1D76CEA700196C1E /* PageActionSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageActionSource.h; sourceTree = "<group>"; };
 		0380A9101D76CFD100196C1E /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		0380A9111D76CFD100196C1E /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
-		0380A9141D76D0F600196C1E /* UIImage+ImageNamed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageNamed.h"; sourceTree = "<group>"; };
-		0380A9151D76D0F600196C1E /* UIImage+ImageNamed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageNamed.m"; sourceTree = "<group>"; };
-		0380A9161D76D0F600196C1E /* UIImage+imageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+imageWithColor.h"; sourceTree = "<group>"; };
-		0380A9171D76D0F600196C1E /* UIImage+imageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+imageWithColor.m"; sourceTree = "<group>"; };
-		0380A9181D76D0F600196C1E /* UIImage-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extensions.h"; sourceTree = "<group>"; };
-		0380A9191D76D0F600196C1E /* UIImage-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extensions.m"; sourceTree = "<group>"; };
 		0380A91D1D76DA4E00196C1E /* SysDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysDirector.h; sourceTree = "<group>"; };
 		0380A91E1D76DA4E00196C1E /* SysDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysDirector.m; sourceTree = "<group>"; };
 		0EC134D1A9B20EE25FA82035 /* Pods-BusinessNewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsUITests/Pods-BusinessNewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +225,18 @@
 		48EDF4B01D767EB2001430F3 /* MainNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNewsTableViewCell.h; sourceTree = "<group>"; };
 		48EDF4B11D767EB2001430F3 /* MainNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNewsTableViewCell.m; sourceTree = "<group>"; };
 		48EDF4B21D767EB2001430F3 /* MainNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNewsTableViewCell.xib; sourceTree = "<group>"; };
+		48EDF4B71D77292A001430F3 /* SelectIndustryTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectIndustryTagView.h; sourceTree = "<group>"; };
+		48EDF4B81D77292A001430F3 /* SelectIndustryTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectIndustryTagView.m; sourceTree = "<group>"; };
+		48EDF4BB1D772DED001430F3 /* UIImage+ImageNamed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageNamed.h"; sourceTree = "<group>"; };
+		48EDF4BC1D772DED001430F3 /* UIImage+ImageNamed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageNamed.m"; sourceTree = "<group>"; };
+		48EDF4BD1D772DED001430F3 /* UIImage+imageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+imageWithColor.h"; sourceTree = "<group>"; };
+		48EDF4BE1D772DED001430F3 /* UIImage+imageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+imageWithColor.m"; sourceTree = "<group>"; };
+		48EDF4BF1D772DED001430F3 /* UIImage-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extensions.h"; sourceTree = "<group>"; };
+		48EDF4C01D772DED001430F3 /* UIImage-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extensions.m"; sourceTree = "<group>"; };
+		48EDF4C51D772E0F001430F3 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		48EDF4C61D772E0F001430F3 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		48EDF4C81D772E19001430F3 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
+		48EDF4C91D772E19001430F3 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		48F62EFF1D71EACB000F97B2 /* BusinessNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F62F031D71EACB000F97B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48F62F051D71EACB000F97B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -333,19 +342,6 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
-		0380A9131D76D0F600196C1E /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-				0380A9141D76D0F600196C1E /* UIImage+ImageNamed.h */,
-				0380A9151D76D0F600196C1E /* UIImage+ImageNamed.m */,
-				0380A9161D76D0F600196C1E /* UIImage+imageWithColor.h */,
-				0380A9171D76D0F600196C1E /* UIImage+imageWithColor.m */,
-				0380A9181D76D0F600196C1E /* UIImage-Extensions.h */,
-				0380A9191D76D0F600196C1E /* UIImage-Extensions.m */,
-			);
-			path = UIImage;
-			sourceTree = "<group>";
-		};
 		4886ECEE1D729FC500BD35B7 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,7 +359,6 @@
 		4886ED961D72EF5700BD35B7 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
-				0380A9131D76D0F600196C1E /* UIImage */,
 				0380A8FA1D768EDA00196C1E /* NetWork */,
 				4886ED971D72EF8800BD35B7 /* Categorys */,
 			);
@@ -373,6 +368,8 @@
 		4886ED971D72EF8800BD35B7 /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
+				48EDF4C41D772DFF001430F3 /* UIView */,
+				48EDF4BA1D772DED001430F3 /* UIImage */,
 				4886EE611D72FAC700BD35B7 /* Object+Json */,
 				4886EE4B1D72F94C00BD35B7 /* NSString */,
 				4886EE231D72F4CC00BD35B7 /* NSDate */,
@@ -577,6 +574,30 @@
 			path = CRNavigationController;
 			sourceTree = "<group>";
 		};
+		48EDF4BA1D772DED001430F3 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				48EDF4BB1D772DED001430F3 /* UIImage+ImageNamed.h */,
+				48EDF4BC1D772DED001430F3 /* UIImage+ImageNamed.m */,
+				48EDF4BD1D772DED001430F3 /* UIImage+imageWithColor.h */,
+				48EDF4BE1D772DED001430F3 /* UIImage+imageWithColor.m */,
+				48EDF4BF1D772DED001430F3 /* UIImage-Extensions.h */,
+				48EDF4C01D772DED001430F3 /* UIImage-Extensions.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		48EDF4C41D772DFF001430F3 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				48EDF4C81D772E19001430F3 /* UIView+Size.h */,
+				48EDF4C91D772E19001430F3 /* UIView+Size.m */,
+				48EDF4C51D772E0F001430F3 /* UIViewAdditions.h */,
+				48EDF4C61D772E0F001430F3 /* UIViewAdditions.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		48F62EF61D71EACB000F97B2 = {
 			isa = PBXGroup;
 			children = (
@@ -754,6 +775,8 @@
 				48EDF4B01D767EB2001430F3 /* MainNewsTableViewCell.h */,
 				48EDF4B11D767EB2001430F3 /* MainNewsTableViewCell.m */,
 				48EDF4B21D767EB2001430F3 /* MainNewsTableViewCell.xib */,
+				48EDF4B71D77292A001430F3 /* SelectIndustryTagView.h */,
+				48EDF4B81D77292A001430F3 /* SelectIndustryTagView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1139,6 +1162,7 @@
 				4886EE421D72F77300BD35B7 /* DDLog.m in Sources */,
 				4886EE0B1D72F04C00BD35B7 /* NetTools.m in Sources */,
 				4886EE451D72F77300BD35B7 /* DDDispatchQueueLogFormatter.m in Sources */,
+				48EDF4C11D772DED001430F3 /* UIImage+ImageNamed.m in Sources */,
 				4886EE001D72F04C00BD35B7 /* DTTimePeriodGroup.m in Sources */,
 				88DEFEDE1D7295F00058DDEE /* CTViewControllerIntercepter.m in Sources */,
 				48F62F071D71EACB000F97B2 /* AppDelegate.m in Sources */,
@@ -1156,6 +1180,7 @@
 				0380A9061D76BD5D00196C1E /* BaseCmd.m in Sources */,
 				4886EE131D72F04C00BD35B7 /* StringTools.m in Sources */,
 				48F62F041D71EACB000F97B2 /* main.m in Sources */,
+				48EDF4CA1D772E19001430F3 /* UIView+Size.m in Sources */,
 				88DEFEE01D7295F00058DDEE /* MainViewController.m in Sources */,
 				0380A9031D76B96600196C1E /* BNAPI.m in Sources */,
 				4886EDF71D72F04C00BD35B7 /* LunarHelper.m in Sources */,
@@ -1169,9 +1194,9 @@
 				4886EE441D72F77300BD35B7 /* DDContextFilterLogFormatter.m in Sources */,
 				4886EE291D72F4CC00BD35B7 /* NSDate+Tool.m in Sources */,
 				4886EE401D72F77300BD35B7 /* DDASLLogger.m in Sources */,
+				48EDF4C71D772E0F001430F3 /* UIViewAdditions.m in Sources */,
 				4886EE461D72F77300BD35B7 /* DDMultiFormatter.m in Sources */,
 				4886EE5D1D72F94C00BD35B7 /* NSString+WBEncode.m in Sources */,
-				0380A91A1D76D0F600196C1E /* UIImage+ImageNamed.m in Sources */,
 				48EDF4B31D767EB2001430F3 /* MainNewsTableViewCell.m in Sources */,
 				88DEFEE41D7295F00058DDEE /* IndustrySitesViewController.m in Sources */,
 				4886EE641D72FAC700BD35B7 /* NSObject+JSON.m in Sources */,
@@ -1180,12 +1205,12 @@
 				4886EE431D72F77300BD35B7 /* DDTTYLogger.m in Sources */,
 				0380A9121D76CFD100196C1E /* Toast+UIView.m in Sources */,
 				4886EE281D72F4CC00BD35B7 /* NSDate+Formats.m in Sources */,
+				48EDF4B91D77292A001430F3 /* SelectIndustryTagView.m in Sources */,
+				48EDF4C31D772DED001430F3 /* UIImage-Extensions.m in Sources */,
 				4886EE031D72F04C00BD35B7 /* ErrorManager.m in Sources */,
 				4886EE0A1D72F04C00BD35B7 /* LocalPushManager.m in Sources */,
 				4886EDFD1D72F04C00BD35B7 /* DTTimePeriod.m in Sources */,
 				4886EE141D72F04C00BD35B7 /* SysTools.m in Sources */,
-				0380A91B1D76D0F600196C1E /* UIImage+imageWithColor.m in Sources */,
-				0380A91C1D76D0F600196C1E /* UIImage-Extensions.m in Sources */,
 				88DEFEDF1D7295F00058DDEE /* HomeViewController.m in Sources */,
 				0380A90E1D76CEA700196C1E /* BaseViewController.m in Sources */,
 				4886EE3F1D72F77300BD35B7 /* DDAbstractDatabaseLogger.m in Sources */,
@@ -1194,6 +1219,7 @@
 				4886EE091D72F04C00BD35B7 /* JSONObjectUtil.m in Sources */,
 				0380A90D1D76CEA700196C1E /* BaseNavigationController.m in Sources */,
 				4886EE221D72F4A800BD35B7 /* NSNumber+Helpers.m in Sources */,
+				48EDF4C21D772DED001430F3 /* UIImage+imageWithColor.m in Sources */,
 				4886EE601D72FA3300BD35B7 /* SysInfo.m in Sources */,
 				48EDF4A81D76734D001430F3 /* CRUIToolbar.m in Sources */,
 			);
