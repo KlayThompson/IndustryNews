@@ -7,22 +7,105 @@
 //
 
 #import "MyCollectionViewController.h"
+#import "MainNewsTableViewCell.h"
+#import "SysTools.h"
+#import "Masonry.h"
 
-@interface MyCollectionViewController ()
+#define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
+
+@interface MyCollectionViewController ()<UITableViewDelegate,UITableViewDataSource> {
+    
+    MainNewsTableViewCell *cellRef;
+    NSArray *orderMessageArray;
+}
+
+
+@property (nonatomic, strong) UITableView *uTableView;
 
 @end
 
 @implementation MyCollectionViewController
 
+
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = COLOR_UI_BG;
+    
+    [self.view addSubview:self.uTableView];
+    
+    [self.uTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 初始化
+- (UITableView *) uTableView {
+    
+    if (!_uTableView) {
+        _uTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _uTableView.dataSource = self;
+        _uTableView.delegate = self;
+        _uTableView.backgroundColor = COLOR_UI_BG;
+        _uTableView.tableFooterView = [UIView new];
+        [_uTableView registerNib:[UINib nibWithNibName:@"MainNewsTableViewCell" bundle:nil] forCellReuseIdentifier:kCellIdentifyMainNewsCell];
+        
+    }
+    return _uTableView;
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+//    if(orderMessageArray){
+//        return orderMessageArray.count;
+//    }else{
+//        return 0;
+//    }
+    return 10;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MainNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifyMainNewsCell forIndexPath:indexPath];
+    
+    cell.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105;
+    
+//    ZBOrderMessageListModel *model = [orderMessageArray objectAtIndex:indexPath.row];
+//    
+//    [cell configureOrderMessageWithOrderModel:model];
+    
+    return cell;
+}
+
+#pragma mark -UITableViewDelegate
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(!cellRef){
+        cellRef = [SysTools createViewFromXib:@"MainNewsTableViewCell"];
+    }
+    cellRef.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105 - 8;
+    
+//    ZBOrderMessageListModel *model = [orderMessageArray objectAtIndex:indexPath.row];
+//    
+//    [cellRef configureOrderMessageWithOrderModel:model];
+    
+    cellRef.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cellRef.bounds));
+    CGFloat height = [cellRef.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    
+    // 要为cell的分割线加上额外的1pt高度。因为分隔线是被加在cell底边和contentView底边之间的。
+    height += 1.0f;
+    return height;
 }
 
 - (NSString *)title {
