@@ -528,6 +528,7 @@ void ProviderReleaseData (void *info, const void *data, size_t size)
 }
 
 
+
 +(id)createViewFromXib:(NSString*)xibName
 {
     NSArray *nib = [[NSBundle mainBundle]loadNibNamed:xibName owner:self options:nil];

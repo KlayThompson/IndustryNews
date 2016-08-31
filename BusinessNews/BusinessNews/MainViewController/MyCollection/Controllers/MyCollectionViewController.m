@@ -10,8 +10,11 @@
 #import "MainNewsTableViewCell.h"
 #import "SysTools.h"
 #import "Masonry.h"
+#import "BNAPI.h"
+#import "AppDelegate.h"
 
 #define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
+
 
 @interface MyCollectionViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
@@ -28,7 +31,11 @@
 
 
 
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self loadDataFormServer];
+}
 
 
 - (void)viewDidLoad {
@@ -41,6 +48,10 @@
     [self.uTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    SLOG(@"!@!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    [self loadDataFormServer];
+ 
+    
 }
 
 #pragma mark - 初始化
@@ -56,6 +67,20 @@
         
     }
     return _uTableView;
+}
+
+#pragma mark - 网络
+- (void)loadDataFormServer {
+
+    __weak typeof (self) weakSelf = self;
+    [BNAPI news_loadNewsContentWithNewsId:@(968742) industryID:@(1) websitId:@(8) Block:^(id JSON, NSError *error) {
+        if (error) {
+            [weakSelf makeToastInBottom:TIP_NETWORK_ERROR];
+            SLOG(@"%@",error);
+        } else {
+            NSLog(@"%@",JSON);
+        }
+    }];
 }
 
 #pragma mark - UITableViewDataSource

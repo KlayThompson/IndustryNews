@@ -7,6 +7,7 @@
 //
 
 #import "IndustrySitesViewController.h"
+#import "AppDelegate.h"
 
 @interface IndustrySitesViewController ()
 
@@ -20,7 +21,7 @@
     self.view.backgroundColor = COLOR_UI_BG;
     
     
-    
+    [[AppDelegate sysDirector] showToastinCenter:@"wolaila"];
 }
 
 - (void)didReceiveMemoryWarning {

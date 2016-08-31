@@ -23,16 +23,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    [self setUp];
     
-    [self InitializationTabbar];
-    self.window.rootViewController = self.sysTabBarController;
-    
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; 
-    
-    // Override point for customization after application launch.
     return YES;
 }
 
@@ -60,12 +52,20 @@
 
 #pragma mark -
 
-- (void)InitializationTabbar {
-    
-    
-    
+- (void)setUp {
 
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     
+    [self InitializationTabbar];
+    self.window.rootViewController = self.sysTabBarController;
+    
+    self.sysDirector = [SysDirector GetInstance];
+}
+
+- (void)InitializationTabbar {
+
     // 头条
     HomeViewController *home = [[HomeViewController alloc] init];
     
@@ -126,4 +126,9 @@
     
 }
 
++ (SysDirector*)sysDirector
+{
+    AppDelegate *app=(AppDelegate*)[UIApplication sharedApplication].delegate;
+    return app.sysDirector;
+}
 @end

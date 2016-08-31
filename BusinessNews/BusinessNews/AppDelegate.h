@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SysDirector.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *sysTabBarController;
+@property (nonatomic,strong) SysDirector *sysDirector;
 
++ (SysDirector*)sysDirector;
 
 @end
 

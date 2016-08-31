@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface MyCollectionViewController : UIViewController
+@interface MyCollectionViewController : BaseViewController
 
 @end

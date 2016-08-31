@@ -112,7 +112,7 @@ CPId_YMT:@"https://itunes.apple.com/us/app/ren-mai-tong-fu-zhuang-mian/id1012235
 
 //#define SERVER_PATH_URL  @"api.9tong.com"           //正式的生产服务器
 //#define SERVER_PATH_URL  @"192.168.254.120"         // 测试服务器
-#define SERVER_PATH_URL  @"140.206.176.238:18057"    //192.168.254.120测试服务器的公网映射地址
+//#define SERVER_PATH_URL  @"140.206.176.238:18057"    //192.168.254.120测试服务器的公网映射地址
 //#define SERVER_PATH_URL @"139.196.14.165:18057"  //正式环境地址
 //#define SERVER_PATH_URL  @"api.9tong.com"
 //#define SERVER_PATH_URL  @"192.168.254.120"         // 测试服务器
@@ -121,6 +121,8 @@ CPId_YMT:@"https://itunes.apple.com/us/app/ren-mai-tong-fu-zhuang-mian/id1012235
 //#define SERVER_PATH_URL  @"61.129.52.141:18057"       // 公网
 //#define SERVER_PATH_URL  @"192.168.254.54:8080/RMT"       // 宋同玉
 //#define SERVER_PATH_URL  @"192.168.254.52:8080/RMT"       // 胥攀
+#define SERVER_PATH_URL  @"head.9tong.com"    //商业头条
+
 
 #define S_SERVER_PATH_URL  @"s1.9tong.com"            // 静态资源文件的首地址
 
@@ -273,7 +275,8 @@ CPId_YMT:@"https://itunes.apple.com/us/app/ren-mai-tong-fu-zhuang-mian/id1012235
 //通知图片的点击跳转html地址
 #define Notice_Html_Path [NSString stringWithFormat:@"http://%@/notice_pic/notice.html",S_SERVER_PATH_URL]
 
-
+//版本号
+#define kVersion_BNT [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 
 
 #endif

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0380A8F91D7689C100196C1E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0380A8F81D7689C100196C1E /* Info.plist */; };
+		0380A9001D768EF000196C1E /* NetworkAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A8FF1D768EF000196C1E /* NetworkAPIClient.m */; };
+		0380A9031D76B96600196C1E /* BNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9021D76B96600196C1E /* BNAPI.m */; };
+		0380A9061D76BD5D00196C1E /* BaseCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9051D76BD5D00196C1E /* BaseCmd.m */; };
+		0380A90D1D76CEA700196C1E /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9091D76CEA700196C1E /* BaseNavigationController.m */; };
+		0380A90E1D76CEA700196C1E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A90B1D76CEA700196C1E /* BaseViewController.m */; };
+		0380A9121D76CFD100196C1E /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9111D76CFD100196C1E /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0380A91A1D76D0F600196C1E /* UIImage+ImageNamed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9151D76D0F600196C1E /* UIImage+ImageNamed.m */; };
+		0380A91B1D76D0F600196C1E /* UIImage+imageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9171D76D0F600196C1E /* UIImage+imageWithColor.m */; };
+		0380A91C1D76D0F600196C1E /* UIImage-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9191D76D0F600196C1E /* UIImage-Extensions.m */; };
+		0380A91F1D76DA4E00196C1E /* SysDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A91E1D76DA4E00196C1E /* SysDirector.m */; };
 		073572181251DF34E9F6C09F /* libPods-BusinessNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B517B69D02ABE2E1A9CFA3C0 /* libPods-BusinessNews.a */; };
 		4886ED9D1D72EFA500BD35B7 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886ED9A1D72EFA500BD35B7 /* NSData+Base64.m */; };
 		4886ED9E1D72EFA500BD35B7 /* NSData+WBEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886ED9C1D72EFA500BD35B7 /* NSData+WBEncode.m */; };
@@ -91,6 +102,28 @@
 
 /* Begin PBXFileReference section */
 		0368CA8C592AAFB9E4C55C99 /* libPods-BusinessNewsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessNewsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0380A8F81D7689C100196C1E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0380A8FE1D768EF000196C1E /* NetworkAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAPIClient.h; sourceTree = "<group>"; };
+		0380A8FF1D768EF000196C1E /* NetworkAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkAPIClient.m; sourceTree = "<group>"; };
+		0380A9011D76B96600196C1E /* BNAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNAPI.h; sourceTree = "<group>"; };
+		0380A9021D76B96600196C1E /* BNAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNAPI.m; sourceTree = "<group>"; };
+		0380A9041D76BD5D00196C1E /* BaseCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCmd.h; sourceTree = "<group>"; };
+		0380A9051D76BD5D00196C1E /* BaseCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCmd.m; sourceTree = "<group>"; };
+		0380A9081D76CEA700196C1E /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		0380A9091D76CEA700196C1E /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		0380A90A1D76CEA700196C1E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		0380A90B1D76CEA700196C1E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		0380A90C1D76CEA700196C1E /* PageActionSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageActionSource.h; sourceTree = "<group>"; };
+		0380A9101D76CFD100196C1E /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		0380A9111D76CFD100196C1E /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		0380A9141D76D0F600196C1E /* UIImage+ImageNamed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageNamed.h"; sourceTree = "<group>"; };
+		0380A9151D76D0F600196C1E /* UIImage+ImageNamed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageNamed.m"; sourceTree = "<group>"; };
+		0380A9161D76D0F600196C1E /* UIImage+imageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+imageWithColor.h"; sourceTree = "<group>"; };
+		0380A9171D76D0F600196C1E /* UIImage+imageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+imageWithColor.m"; sourceTree = "<group>"; };
+		0380A9181D76D0F600196C1E /* UIImage-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extensions.h"; sourceTree = "<group>"; };
+		0380A9191D76D0F600196C1E /* UIImage-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extensions.m"; sourceTree = "<group>"; };
+		0380A91D1D76DA4E00196C1E /* SysDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysDirector.h; sourceTree = "<group>"; };
+		0380A91E1D76DA4E00196C1E /* SysDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysDirector.m; sourceTree = "<group>"; };
 		0EC134D1A9B20EE25FA82035 /* Pods-BusinessNewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsUITests/Pods-BusinessNewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		333F4AD2D37008E111A044CE /* Pods-BusinessNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsTests/Pods-BusinessNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4886ECEF1D72A00800BD35B7 /* ColorDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorDefinition.h; sourceTree = "<group>"; };
@@ -202,10 +235,8 @@
 		48F62F0C1D71EACB000F97B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48F62F0E1D71EACB000F97B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F62F111D71EACB000F97B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		48F62F131D71EACB000F97B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48F62F181D71EACC000F97B2 /* BusinessNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinessNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F62F1C1D71EACC000F97B2 /* BusinessNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessNewsTests.m; sourceTree = "<group>"; };
-		48F62F1E1D71EACC000F97B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48F62F231D71EACC000F97B2 /* BusinessNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinessNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F62F271D71EACC000F97B2 /* BusinessNewsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessNewsUITests.m; sourceTree = "<group>"; };
 		48F62F291D71EACC000F97B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -268,6 +299,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0380A8FA1D768EDA00196C1E /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				0380A9041D76BD5D00196C1E /* BaseCmd.h */,
+				0380A9051D76BD5D00196C1E /* BaseCmd.m */,
+				0380A8FE1D768EF000196C1E /* NetworkAPIClient.h */,
+				0380A8FF1D768EF000196C1E /* NetworkAPIClient.m */,
+				0380A9011D76B96600196C1E /* BNAPI.h */,
+				0380A9021D76B96600196C1E /* BNAPI.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		0380A9071D76CEA700196C1E /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0380A9081D76CEA700196C1E /* BaseNavigationController.h */,
+				0380A9091D76CEA700196C1E /* BaseNavigationController.m */,
+				0380A90A1D76CEA700196C1E /* BaseViewController.h */,
+				0380A90B1D76CEA700196C1E /* BaseViewController.m */,
+				0380A90C1D76CEA700196C1E /* PageActionSource.h */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		0380A90F1D76CFD100196C1E /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				0380A9101D76CFD100196C1E /* Toast+UIView.h */,
+				0380A9111D76CFD100196C1E /* Toast+UIView.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		0380A9131D76D0F600196C1E /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				0380A9141D76D0F600196C1E /* UIImage+ImageNamed.h */,
+				0380A9151D76D0F600196C1E /* UIImage+ImageNamed.m */,
+				0380A9161D76D0F600196C1E /* UIImage+imageWithColor.h */,
+				0380A9171D76D0F600196C1E /* UIImage+imageWithColor.m */,
+				0380A9181D76D0F600196C1E /* UIImage-Extensions.h */,
+				0380A9191D76D0F600196C1E /* UIImage-Extensions.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
 		4886ECEE1D729FC500BD35B7 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +363,8 @@
 		4886ED961D72EF5700BD35B7 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				0380A9131D76D0F600196C1E /* UIImage */,
+				0380A8FA1D768EDA00196C1E /* NetWork */,
 				4886ED971D72EF8800BD35B7 /* Categorys */,
 			);
 			path = Architecture;
@@ -410,6 +490,7 @@
 		4886EE2A1D72F77300BD35B7 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				0380A90F1D76CFD100196C1E /* Toast */,
 				4886EE2B1D72F77300BD35B7 /* CocoaLumberjack */,
 			);
 			path = ThirdPart;
@@ -546,7 +627,7 @@
 		48F62F021D71EACB000F97B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				48F62F131D71EACB000F97B2 /* Info.plist */,
+				0380A8F81D7689C100196C1E /* Info.plist */,
 				48F62F031D71EACB000F97B2 /* main.m */,
 				4886ECF51D72A13A00BD35B7 /* BN-Prefix.pch */,
 			);
@@ -557,7 +638,6 @@
 			isa = PBXGroup;
 			children = (
 				48F62F1C1D71EACC000F97B2 /* BusinessNewsTests.m */,
-				48F62F1E1D71EACC000F97B2 /* Info.plist */,
 			);
 			path = BusinessNewsTests;
 			sourceTree = "<group>";
@@ -593,6 +673,8 @@
 			isa = PBXGroup;
 			children = (
 				88DEFEA71D7295F00058DDEE /* replace.h */,
+				0380A91D1D76DA4E00196C1E /* SysDirector.h */,
+				0380A91E1D76DA4E00196C1E /* SysDirector.m */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -630,6 +712,7 @@
 				88DEFEBC1D7295F00058DDEE /* MainViewController.m */,
 				88DEFEBD1D7295F00058DDEE /* MainNavigationController.h */,
 				88DEFEBE1D7295F00058DDEE /* MainNavigationController.m */,
+				0380A9071D76CEA700196C1E /* BaseViewController */,
 				88DEFEB31D7295F00058DDEE /* Home */,
 				88DEFEC31D7295F00058DDEE /* IndustrySites */,
 				88DEFED21D7295F00058DDEE /* MyCollection */,
@@ -884,6 +967,7 @@
 			files = (
 				48F62F121D71EACB000F97B2 /* LaunchScreen.storyboard in Resources */,
 				48F62F0F1D71EACB000F97B2 /* Assets.xcassets in Resources */,
+				0380A8F91D7689C100196C1E /* Info.plist in Resources */,
 				489942A81D75D26D00E68FF2 /* File in Resources */,
 				4886EDFA1D72F04C00BD35B7 /* README.textile in Resources */,
 				48F62F0D1D71EACB000F97B2 /* Main.storyboard in Resources */,
@@ -952,7 +1036,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		59EF3C49AE35E9F5A146DDBD /* [CP] Copy Pods Resources */ = {
@@ -997,7 +1081,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7863DF820B71F843BE185C83 /* [CP] Check Pods Manifest.lock */ = {
@@ -1012,7 +1096,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E38C930788D2ED51C25B2792 /* [CP] Copy Pods Resources */ = {
@@ -1069,13 +1153,17 @@
 				4886EE211D72F4A800BD35B7 /* NSNumber+CustomDate.m in Sources */,
 				4886EE5A1D72F94C00BD35B7 /* NSString+EmojiExtension.m in Sources */,
 				4886EDFE1D72F04C00BD35B7 /* DTTimePeriodChain.m in Sources */,
+				0380A9061D76BD5D00196C1E /* BaseCmd.m in Sources */,
 				4886EE131D72F04C00BD35B7 /* StringTools.m in Sources */,
 				48F62F041D71EACB000F97B2 /* main.m in Sources */,
 				88DEFEE01D7295F00058DDEE /* MainViewController.m in Sources */,
+				0380A9031D76B96600196C1E /* BNAPI.m in Sources */,
 				4886EDF71D72F04C00BD35B7 /* LunarHelper.m in Sources */,
 				4886EDFF1D72F04C00BD35B7 /* DTTimePeriodCollection.m in Sources */,
 				4886EDF81D72F04C00BD35B7 /* NSDate+convenience.m in Sources */,
+				0380A9001D768EF000196C1E /* NetworkAPIClient.m in Sources */,
 				4886EE021D72F04C00BD35B7 /* DateTools.m in Sources */,
+				0380A91F1D76DA4E00196C1E /* SysDirector.m in Sources */,
 				4886EE5C1D72F94C00BD35B7 /* NSString+URL.m in Sources */,
 				4886EDF31D72F04C00BD35B7 /* AutoFitDeviceFontSize.m in Sources */,
 				4886EE441D72F77300BD35B7 /* DDContextFilterLogFormatter.m in Sources */,
@@ -1083,22 +1171,28 @@
 				4886EE401D72F77300BD35B7 /* DDASLLogger.m in Sources */,
 				4886EE461D72F77300BD35B7 /* DDMultiFormatter.m in Sources */,
 				4886EE5D1D72F94C00BD35B7 /* NSString+WBEncode.m in Sources */,
+				0380A91A1D76D0F600196C1E /* UIImage+ImageNamed.m in Sources */,
 				48EDF4B31D767EB2001430F3 /* MainNewsTableViewCell.m in Sources */,
 				88DEFEE41D7295F00058DDEE /* IndustrySitesViewController.m in Sources */,
 				4886EE641D72FAC700BD35B7 /* NSObject+JSON.m in Sources */,
 				4886EE011D72F04C00BD35B7 /* NSDate+DateTools.m in Sources */,
 				4886ED9E1D72EFA500BD35B7 /* NSData+WBEncode.m in Sources */,
 				4886EE431D72F77300BD35B7 /* DDTTYLogger.m in Sources */,
+				0380A9121D76CFD100196C1E /* Toast+UIView.m in Sources */,
 				4886EE281D72F4CC00BD35B7 /* NSDate+Formats.m in Sources */,
 				4886EE031D72F04C00BD35B7 /* ErrorManager.m in Sources */,
 				4886EE0A1D72F04C00BD35B7 /* LocalPushManager.m in Sources */,
 				4886EDFD1D72F04C00BD35B7 /* DTTimePeriod.m in Sources */,
 				4886EE141D72F04C00BD35B7 /* SysTools.m in Sources */,
+				0380A91B1D76D0F600196C1E /* UIImage+imageWithColor.m in Sources */,
+				0380A91C1D76D0F600196C1E /* UIImage-Extensions.m in Sources */,
 				88DEFEDF1D7295F00058DDEE /* HomeViewController.m in Sources */,
+				0380A90E1D76CEA700196C1E /* BaseViewController.m in Sources */,
 				4886EE3F1D72F77300BD35B7 /* DDAbstractDatabaseLogger.m in Sources */,
 				48EDF4A61D76734D001430F3 /* CRNavigationBar.m in Sources */,
 				48EDF4A71D76734D001430F3 /* CRNavigationController.m in Sources */,
 				4886EE091D72F04C00BD35B7 /* JSONObjectUtil.m in Sources */,
+				0380A90D1D76CEA700196C1E /* BaseNavigationController.m in Sources */,
 				4886EE221D72F4A800BD35B7 /* NSNumber+Helpers.m in Sources */,
 				4886EE601D72FA3300BD35B7 /* SysInfo.m in Sources */,
 				48EDF4A81D76734D001430F3 /* CRUIToolbar.m in Sources */,
