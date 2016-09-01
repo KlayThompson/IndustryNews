@@ -12,6 +12,7 @@
 #import "Masonry.h"
 #import "BNAPI.h"
 #import "AppDelegate.h"
+#import "MJRefresh.h"
 
 #define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
 
@@ -34,9 +35,15 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self loadDataFormServer];
+//    [self loadDataFormServer];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+//    [self.uTableView.mj_header beginRefreshing];
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,10 +55,10 @@
     [self.uTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    SLOG(@"!@!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    [self loadDataFormServer];
- 
     
+    [self.uTableView.mj_header beginRefreshing];
+    self.uTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDataFormServer)];
+
 }
 
 #pragma mark - 初始化
@@ -74,6 +81,7 @@
 
     __weak typeof (self) weakSelf = self;
     [BNAPI news_loadNewsContentWithNewsId:@(968742) industryID:@(1) websitId:@(8) Block:^(id JSON, NSError *error) {
+        [weakSelf.uTableView.mj_header endRefreshing];
         if (error) {
             [weakSelf makeToastInBottom:TIP_NETWORK_ERROR];
             SLOG(@"%@",error);
@@ -110,7 +118,6 @@
 #pragma mark -UITableViewDelegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     
 }
 
