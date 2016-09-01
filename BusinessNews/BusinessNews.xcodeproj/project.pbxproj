@@ -15,6 +15,18 @@
 		0380A90E1D76CEA700196C1E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A90B1D76CEA700196C1E /* BaseViewController.m */; };
 		0380A9121D76CFD100196C1E /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9111D76CFD100196C1E /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0380A91F1D76DA4E00196C1E /* SysDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A91E1D76DA4E00196C1E /* SysDirector.m */; };
+		039F944E1D77D8D100DF5B42 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F944D1D77D8D100DF5B42 /* SKTagView.m */; };
+		039F94531D77D90900DF5B42 /* SKTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F94501D77D90900DF5B42 /* SKTag.m */; };
+		039F94541D77D90900DF5B42 /* SKTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F94521D77D90900DF5B42 /* SKTagButton.m */; };
+		039F94571D77E60D00DF5B42 /* IndustryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F94561D77E60D00DF5B42 /* IndustryCollectionViewController.m */; };
+		039F945F1D77FDF800DF5B42 /* CHTCollectionViewWaterfallFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F945A1D77FDF800DF5B42 /* CHTCollectionViewWaterfallFooter.m */; };
+		039F94601D77FDF800DF5B42 /* CHTCollectionViewWaterfallHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F945C1D77FDF800DF5B42 /* CHTCollectionViewWaterfallHeader.m */; };
+		039F94611D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F945E1D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.m */; };
+		039F94651D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F94631D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.m */; };
+		039F94661D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039F94641D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.xib */; };
+		039F946B1D7831DE00DF5B42 /* NoDataTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F94691D7831DE00DF5B42 /* NoDataTipView.m */; };
+		039F946C1D7831DE00DF5B42 /* NoDataTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039F946A1D7831DE00DF5B42 /* NoDataTipView.xib */; };
+		039F946F1D783A8600DF5B42 /* NewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F946E1D783A8600DF5B42 /* NewsDetailModel.m */; };
 		073572181251DF34E9F6C09F /* libPods-BusinessNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B517B69D02ABE2E1A9CFA3C0 /* libPods-BusinessNews.a */; };
 		4886ED9D1D72EFA500BD35B7 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886ED9A1D72EFA500BD35B7 /* NSData+Base64.m */; };
 		4886ED9E1D72EFA500BD35B7 /* NSData+WBEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886ED9C1D72EFA500BD35B7 /* NSData+WBEncode.m */; };
@@ -121,6 +133,28 @@
 		0380A9111D76CFD100196C1E /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		0380A91D1D76DA4E00196C1E /* SysDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysDirector.h; sourceTree = "<group>"; };
 		0380A91E1D76DA4E00196C1E /* SysDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysDirector.m; sourceTree = "<group>"; };
+		039F944C1D77D8D100DF5B42 /* SKTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagView.h; sourceTree = "<group>"; };
+		039F944D1D77D8D100DF5B42 /* SKTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagView.m; sourceTree = "<group>"; };
+		039F944F1D77D90900DF5B42 /* SKTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTag.h; sourceTree = "<group>"; };
+		039F94501D77D90900DF5B42 /* SKTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTag.m; sourceTree = "<group>"; };
+		039F94511D77D90900DF5B42 /* SKTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagButton.h; sourceTree = "<group>"; };
+		039F94521D77D90900DF5B42 /* SKTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagButton.m; sourceTree = "<group>"; };
+		039F94551D77E60D00DF5B42 /* IndustryCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustryCollectionViewController.h; sourceTree = "<group>"; };
+		039F94561D77E60D00DF5B42 /* IndustryCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustryCollectionViewController.m; sourceTree = "<group>"; };
+		039F94591D77FDF800DF5B42 /* CHTCollectionViewWaterfallFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallFooter.h; sourceTree = "<group>"; };
+		039F945A1D77FDF800DF5B42 /* CHTCollectionViewWaterfallFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallFooter.m; sourceTree = "<group>"; };
+		039F945B1D77FDF800DF5B42 /* CHTCollectionViewWaterfallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallHeader.h; sourceTree = "<group>"; };
+		039F945C1D77FDF800DF5B42 /* CHTCollectionViewWaterfallHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallHeader.m; sourceTree = "<group>"; };
+		039F945D1D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
+		039F945E1D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
+		039F94621D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustryWebsiteCollectionViewCell.h; sourceTree = "<group>"; };
+		039F94631D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustryWebsiteCollectionViewCell.m; sourceTree = "<group>"; };
+		039F94641D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndustryWebsiteCollectionViewCell.xib; sourceTree = "<group>"; };
+		039F94681D7831DE00DF5B42 /* NoDataTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoDataTipView.h; sourceTree = "<group>"; };
+		039F94691D7831DE00DF5B42 /* NoDataTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoDataTipView.m; sourceTree = "<group>"; };
+		039F946A1D7831DE00DF5B42 /* NoDataTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataTipView.xib; sourceTree = "<group>"; };
+		039F946D1D783A8600DF5B42 /* NewsDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailModel.h; sourceTree = "<group>"; };
+		039F946E1D783A8600DF5B42 /* NewsDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailModel.m; sourceTree = "<group>"; };
 		0EC134D1A9B20EE25FA82035 /* Pods-BusinessNewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsUITests/Pods-BusinessNewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		333F4AD2D37008E111A044CE /* Pods-BusinessNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsTests/Pods-BusinessNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4886ECEF1D72A00800BD35B7 /* ColorDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorDefinition.h; sourceTree = "<group>"; };
@@ -262,7 +296,6 @@
 		88DEFEB51D7295F00058DDEE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		88DEFEB61D7295F00058DDEE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		88DEFEB81D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFEBA1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFEBB1D7295F00058DDEE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		88DEFEBC1D7295F00058DDEE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		88DEFEBD1D7295F00058DDEE /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
@@ -270,7 +303,6 @@
 		88DEFEC51D7295F00058DDEE /* IndustrySitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustrySitesViewController.h; sourceTree = "<group>"; };
 		88DEFEC61D7295F00058DDEE /* IndustrySitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustrySitesViewController.m; sourceTree = "<group>"; };
 		88DEFEC81D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFECA1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFED41D7295F00058DDEE /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
 		88DEFED51D7295F00058DDEE /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
 		88DEFED71D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
@@ -340,6 +372,42 @@
 				0380A9111D76CFD100196C1E /* Toast+UIView.m */,
 			);
 			path = Toast;
+			sourceTree = "<group>";
+		};
+		039F944B1D77D8C300DF5B42 /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+				039F944F1D77D90900DF5B42 /* SKTag.h */,
+				039F94501D77D90900DF5B42 /* SKTag.m */,
+				039F94511D77D90900DF5B42 /* SKTagButton.h */,
+				039F94521D77D90900DF5B42 /* SKTagButton.m */,
+				039F944C1D77D8D100DF5B42 /* SKTagView.h */,
+				039F944D1D77D8D100DF5B42 /* SKTagView.m */,
+			);
+			path = TagView;
+			sourceTree = "<group>";
+		};
+		039F94581D77FDE600DF5B42 /* CHTCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				039F94591D77FDF800DF5B42 /* CHTCollectionViewWaterfallFooter.h */,
+				039F945A1D77FDF800DF5B42 /* CHTCollectionViewWaterfallFooter.m */,
+				039F945B1D77FDF800DF5B42 /* CHTCollectionViewWaterfallHeader.h */,
+				039F945C1D77FDF800DF5B42 /* CHTCollectionViewWaterfallHeader.m */,
+				039F945D1D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.h */,
+				039F945E1D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.m */,
+			);
+			path = CHTCollectionView;
+			sourceTree = "<group>";
+		};
+		039F94671D7831DE00DF5B42 /* NoDataTipView */ = {
+			isa = PBXGroup;
+			children = (
+				039F94681D7831DE00DF5B42 /* NoDataTipView.h */,
+				039F94691D7831DE00DF5B42 /* NoDataTipView.m */,
+				039F946A1D7831DE00DF5B42 /* NoDataTipView.xib */,
+			);
+			path = NoDataTipView;
 			sourceTree = "<group>";
 		};
 		4886ECEE1D729FC500BD35B7 /* Definition */ = {
@@ -487,6 +555,7 @@
 		4886EE2A1D72F77300BD35B7 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				039F94581D77FDE600DF5B42 /* CHTCollectionView */,
 				0380A90F1D76CFD100196C1E /* Toast */,
 				4886EE2B1D72F77300BD35B7 /* CocoaLumberjack */,
 			);
@@ -764,6 +833,8 @@
 			isa = PBXGroup;
 			children = (
 				88DEFEB81D7295F00058DDEE /* replace.h */,
+				039F946D1D783A8600DF5B42 /* NewsDetailModel.h */,
+				039F946E1D783A8600DF5B42 /* NewsDetailModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -771,7 +842,7 @@
 		88DEFEB91D7295F00058DDEE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				88DEFEBA1D7295F00058DDEE /* replace.h */,
+				039F944B1D77D8C300DF5B42 /* TagView */,
 				48EDF4B01D767EB2001430F3 /* MainNewsTableViewCell.h */,
 				48EDF4B11D767EB2001430F3 /* MainNewsTableViewCell.m */,
 				48EDF4B21D767EB2001430F3 /* MainNewsTableViewCell.xib */,
@@ -796,6 +867,8 @@
 			children = (
 				88DEFEC51D7295F00058DDEE /* IndustrySitesViewController.h */,
 				88DEFEC61D7295F00058DDEE /* IndustrySitesViewController.m */,
+				039F94551D77E60D00DF5B42 /* IndustryCollectionViewController.h */,
+				039F94561D77E60D00DF5B42 /* IndustryCollectionViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -811,7 +884,9 @@
 		88DEFEC91D7295F00058DDEE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				88DEFECA1D7295F00058DDEE /* replace.h */,
+				039F94621D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.h */,
+				039F94631D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.m */,
+				039F94641D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -846,6 +921,7 @@
 		88DEFED81D7295F00058DDEE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				039F94671D7831DE00DF5B42 /* NoDataTipView */,
 				88DEFED91D7295F00058DDEE /* replace.h */,
 			);
 			path = Views;
@@ -988,6 +1064,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039F946C1D7831DE00DF5B42 /* NoDataTipView.xib in Resources */,
 				48F62F121D71EACB000F97B2 /* LaunchScreen.storyboard in Resources */,
 				48F62F0F1D71EACB000F97B2 /* Assets.xcassets in Resources */,
 				0380A8F91D7689C100196C1E /* Info.plist in Resources */,
@@ -996,6 +1073,7 @@
 				48F62F0D1D71EACB000F97B2 /* Main.storyboard in Resources */,
 				4886EE471D72F77300BD35B7 /* README.txt in Resources */,
 				4886EDFB1D72F04C00BD35B7 /* DateTools.bundle in Resources */,
+				039F94661D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.xib in Resources */,
 				48EDF4B41D767EB2001430F3 /* MainNewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1177,18 +1255,24 @@
 				4886EE211D72F4A800BD35B7 /* NSNumber+CustomDate.m in Sources */,
 				4886EE5A1D72F94C00BD35B7 /* NSString+EmojiExtension.m in Sources */,
 				4886EDFE1D72F04C00BD35B7 /* DTTimePeriodChain.m in Sources */,
+				039F94541D77D90900DF5B42 /* SKTagButton.m in Sources */,
 				0380A9061D76BD5D00196C1E /* BaseCmd.m in Sources */,
 				4886EE131D72F04C00BD35B7 /* StringTools.m in Sources */,
 				48F62F041D71EACB000F97B2 /* main.m in Sources */,
 				48EDF4CA1D772E19001430F3 /* UIView+Size.m in Sources */,
 				88DEFEE01D7295F00058DDEE /* MainViewController.m in Sources */,
+				039F946F1D783A8600DF5B42 /* NewsDetailModel.m in Sources */,
+				039F945F1D77FDF800DF5B42 /* CHTCollectionViewWaterfallFooter.m in Sources */,
+				039F94571D77E60D00DF5B42 /* IndustryCollectionViewController.m in Sources */,
 				0380A9031D76B96600196C1E /* BNAPI.m in Sources */,
 				4886EDF71D72F04C00BD35B7 /* LunarHelper.m in Sources */,
+				039F94601D77FDF800DF5B42 /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				4886EDFF1D72F04C00BD35B7 /* DTTimePeriodCollection.m in Sources */,
 				4886EDF81D72F04C00BD35B7 /* NSDate+convenience.m in Sources */,
 				0380A9001D768EF000196C1E /* NetworkAPIClient.m in Sources */,
 				4886EE021D72F04C00BD35B7 /* DateTools.m in Sources */,
 				0380A91F1D76DA4E00196C1E /* SysDirector.m in Sources */,
+				039F94531D77D90900DF5B42 /* SKTag.m in Sources */,
 				4886EE5C1D72F94C00BD35B7 /* NSString+URL.m in Sources */,
 				4886EDF31D72F04C00BD35B7 /* AutoFitDeviceFontSize.m in Sources */,
 				4886EE441D72F77300BD35B7 /* DDContextFilterLogFormatter.m in Sources */,
@@ -1199,12 +1283,14 @@
 				4886EE5D1D72F94C00BD35B7 /* NSString+WBEncode.m in Sources */,
 				48EDF4B31D767EB2001430F3 /* MainNewsTableViewCell.m in Sources */,
 				88DEFEE41D7295F00058DDEE /* IndustrySitesViewController.m in Sources */,
+				039F94611D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				4886EE641D72FAC700BD35B7 /* NSObject+JSON.m in Sources */,
 				4886EE011D72F04C00BD35B7 /* NSDate+DateTools.m in Sources */,
 				4886ED9E1D72EFA500BD35B7 /* NSData+WBEncode.m in Sources */,
 				4886EE431D72F77300BD35B7 /* DDTTYLogger.m in Sources */,
 				0380A9121D76CFD100196C1E /* Toast+UIView.m in Sources */,
 				4886EE281D72F4CC00BD35B7 /* NSDate+Formats.m in Sources */,
+				039F94651D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.m in Sources */,
 				48EDF4B91D77292A001430F3 /* SelectIndustryTagView.m in Sources */,
 				48EDF4C31D772DED001430F3 /* UIImage-Extensions.m in Sources */,
 				4886EE031D72F04C00BD35B7 /* ErrorManager.m in Sources */,
@@ -1217,7 +1303,9 @@
 				48EDF4A61D76734D001430F3 /* CRNavigationBar.m in Sources */,
 				48EDF4A71D76734D001430F3 /* CRNavigationController.m in Sources */,
 				4886EE091D72F04C00BD35B7 /* JSONObjectUtil.m in Sources */,
+				039F946B1D7831DE00DF5B42 /* NoDataTipView.m in Sources */,
 				0380A90D1D76CEA700196C1E /* BaseNavigationController.m in Sources */,
+				039F944E1D77D8D100DF5B42 /* SKTagView.m in Sources */,
 				4886EE221D72F4A800BD35B7 /* NSNumber+Helpers.m in Sources */,
 				48EDF4C21D772DED001430F3 /* UIImage+imageWithColor.m in Sources */,
 				4886EE601D72FA3300BD35B7 /* SysInfo.m in Sources */,

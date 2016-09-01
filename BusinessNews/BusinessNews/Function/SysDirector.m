@@ -8,6 +8,7 @@
 
 #import "SysDirector.h"
 #import "Toast+UIView.h"
+#import <AdSupport/ASIdentifierManager.h>
 
 static SysDirector *instance;
 
@@ -22,6 +23,17 @@ static SysDirector *instance;
     });
     
     return instance;
+}
+
+
+#pragma mark - IDFA
++ (NSString*)getIDFA{
+    // V1.680审核被拒
+    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    
+    return idfa ? idfa : @"";
+    
+    return @"";
 }
 
 #pragma mark - Toast

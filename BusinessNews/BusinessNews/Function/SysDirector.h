@@ -12,6 +12,8 @@
 
 +(SysDirector*)GetInstance;
 
++(NSString*)getIDFA;
+
 #pragma mark - Toast
 - (void)showToast:(NSString*)title;
 

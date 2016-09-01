@@ -12,20 +12,24 @@
 #import "MyCollectionViewController.h"
 #import "SelectIndustryTagView.h"
 #import "UIView+Size.h"
+#import "SKTagView.h"
 
 @interface HomeViewController ()
 
-@property (nonatomic, strong) SelectIndustryTagView *tagView;
+@property (nonatomic, strong) SelectIndustryTagView *tagBgView;
 @property (nonatomic, strong) UIButton *showMoreButton;
 @property (nonatomic, strong) NinaPagerView *slideView;
+@property (nonatomic, strong) SKTagView *tagView;
+
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
     self.view.backgroundColor = COLOR_UI_BG;
+    
     self.navigationController.navigationBar.translucent = NO;
     
     [self setUpSubViews];
@@ -80,19 +84,68 @@
     [self.slideView addSubview:self.showMoreButton];
 }
 
+- (void)buildIndustryTagView {
+
+    
+    
+    [self setupTagView];
+}
+
+- (void)setupTagView
+{
+    self.tagView = ({
+        SKTagView *view = [SKTagView new];
+        view.backgroundColor = kColorWithRGBA(255, 255, 255, 0.95);
+        view.padding = UIEdgeInsetsMake(10, 25, 10, 25);
+        view.interitemSpacing = 8;
+        view.lineSpacing = 10;
+        view.regularHeight = 30;
+        view.didTapTagAtIndex = ^(NSUInteger index){
+            NSLog(@"Tap");
+        };
+        view;
+    });
+    [self.view addSubview:self.tagView];
+    UIView *superView = self.view;
+    [self.tagView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(superView);
+        make.leading.equalTo(superView);
+        make.trailing.equalTo(superView);
+    }];
+    
+    
+    //Add Tags
+    [@[@"微商", @"服装面料", @"金融投资", @"互联网金融", @"农副产品", @"房地产投资", @"汽车制造"] enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
+        SKTag *tag = [SKTag tagWithText:text];
+        tag.textColor = kColorWithHex(0x5f5a5a);
+        tag.bgColor = kColorWithHex(0xececec);
+        tag.cornerRadius = 3;
+        tag.fontSize = 15;
+        tag.padding = UIEdgeInsetsMake(13.5, 12.5, 13.5, 12.5);
+        
+        [self.tagView addTag:tag];
+    }];
+    
+    [self.tagView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.top.mas_equalTo(39);
+        make.right.equalTo(self.view.mas_right);
+        make.bottom.equalTo(self.view.mas_bottom);
+    }];
+}
 #pragma mark - Actions
 - (void)showTagViewButtonClick {
-
     BOOL select = self.showMoreButton.selected;
     
     // 根据状态做事情
     if (select) {
-        
+        [self.tagView removeFromSuperview];
         [UIView animateWithDuration:0.35 animations:^{
             self.showMoreButton.transform = CGAffineTransformIdentity;
         }];
     } else {
-     
+        [self buildIndustryTagView];
+
         [UIView animateWithDuration:0.35 animations:^{
             self.showMoreButton.transform = CGAffineTransformMakeRotation(0.000001 - M_PI);
         }];

@@ -9,6 +9,7 @@
 #import "NetworkAPIClient.h"
 #import "NSString+EmojiExtension.h"
 #import "Publish_Definition.h"
+#import "SysDirector.h"
 
 @implementation NetworkAPIClient
 
@@ -44,7 +45,7 @@
     
     if([aPath rangeOfString:@"?"].location == NSNotFound){
         //m=1:表示iOS客户端
-        aPath = [NSString stringWithFormat:@"%@?v=%@&m=1&from=",aPath,kVersion_BNT];
+        aPath = [NSString stringWithFormat:@"%@?v=%@&m=1&ifa=%@&from=",aPath,kVersion_BNT,[SysDirector getIDFA]];
     }else{
         aPath = [NSString stringWithFormat:@"%@&v=%@&m=1&from=",aPath,kVersion_BNT];
     }

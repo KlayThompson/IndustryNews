@@ -8,6 +8,7 @@
 
 #import "SelectIndustryTagView.h"
 
+
 @implementation SelectIndustryTagView
 
 

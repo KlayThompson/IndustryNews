@@ -13,6 +13,7 @@
 #import "BNAPI.h"
 #import "AppDelegate.h"
 #import "MJRefresh.h"
+#import "NoDataTipView.h"
 
 #define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
 
@@ -25,6 +26,7 @@
 
 
 @property (nonatomic, strong) UITableView *uTableView;
+@property (nonatomic, strong) NoDataTipView *noDataView;
 
 @end
 
@@ -58,7 +60,12 @@
     
     [self.uTableView.mj_header beginRefreshing];
     self.uTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDataFormServer)];
-
+    
+    //提示没有数据
+    [self.uTableView addSubview:self.noDataView];
+    [self.noDataView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.uTableView).insets(UIEdgeInsetsMake(0, FS(38, 48, 58), 0, 0));
+    }];
 }
 
 #pragma mark - 初始化
@@ -76,18 +83,33 @@
     return _uTableView;
 }
 
+- (NoDataTipView *)noDataView {
+
+    if (!_noDataView) {
+        _noDataView = [SysTools createViewFromXib:@"NoDataTipView"];
+        _noDataView.publishButton.hidden = YES;
+        _noDataView.tipDetailLabel.hidden = YES;
+        _noDataView.imageViewToTopSpaceConstant.constant = FS(150, 200, 220);
+        _noDataView.hidden = YES;
+    }
+    return _noDataView;
+}
+
 #pragma mark - 网络
 - (void)loadDataFormServer {
 
     __weak typeof (self) weakSelf = self;
-    [BNAPI news_loadNewsContentWithNewsId:@(968742) industryID:@(1) websitId:@(8) Block:^(id JSON, NSError *error) {
-        [weakSelf.uTableView.mj_header endRefreshing];
-        if (error) {
-            [weakSelf makeToastInBottom:TIP_NETWORK_ERROR];
-            SLOG(@"%@",error);
-        } else {
-            NSLog(@"%@",JSON);
-        }
+//    [BNAPI news_loadNewsContentWithNewsId:@(968742) industryID:@(1) websitId:@(8) Block:^(BaseCmd *model, NSError *error) {
+//        [weakSelf.uTableView.mj_header endRefreshing];
+//        if (error) {
+//            [weakSelf makeToastInBottom:TIP_NETWORK_ERROR];
+//            SLOG(@"%@",error);
+//        } else {
+//            NSLog(@"%@",model);
+//        }
+//    }];
+    [BNAPI news_loadNewsByRmtIndustryWithPn:@(1) ps:@(20) rmtInId:@"0617" Block:^(BaseCmd *model, NSError *error) {
+        
     }];
 }
 
@@ -99,7 +121,7 @@
 //    }else{
 //        return 0;
 //    }
-    return 10;
+    return 0;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
