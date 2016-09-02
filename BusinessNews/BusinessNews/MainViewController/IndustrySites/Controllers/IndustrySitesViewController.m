@@ -14,6 +14,7 @@
 #import "SelectIndustryTagView.h"
 #import "UIView+Size.h"
 #import "SKTagView.h"
+#import "SysTools.h"
 
 
 @interface IndustrySitesViewController ()
@@ -38,25 +39,16 @@
 
 - (void)setUpSubViews {
     
-    NSArray *titleArray = @[
-                            @"全部",
-                            @"服装服饰",
-                            @"微商",
-                            @"汽车配件",
-                            @"新浪新闻",
-                            @"电子设备",
-                            @"互联网",
-                            @"金融投资",
-                            @"美发造型"
-                            ];
+    NSMutableArray *titleArray = [NSMutableArray new];
     NSMutableArray *vcsArray = [NSMutableArray new];
     
-    for (int index = 0; index < titleArray.count; index ++) {
-        
+    for (int index = 0; index < [AppDelegate sysDirector].currentIndstryTree.count; index++) {
+        IndustryCmd *cmd = [AppDelegate sysDirector].currentIndstryTree[index];
+        [titleArray addObject:StringObj(cmd.industryName)];
         IndustryCollectionViewController *view = [[IndustryCollectionViewController alloc] init];
-        
         [vcsArray addObject:view];
     }
+    
     
     NSArray *colorArray = @[
                             kColorWithHex(0xd41e12), /**< Title SelectColor  **/
@@ -88,10 +80,11 @@
     self.tagView = ({
         SKTagView *view = [SKTagView new];
         view.backgroundColor = kColorWithRGBA(255, 255, 255, 0.95);
-        view.padding = UIEdgeInsetsMake(10, 25, 10, 25);
+        view.padding = UIEdgeInsetsMake(10, 10, 10, 10);
         view.interitemSpacing = 8;
         view.lineSpacing = 10;
         view.regularHeight = 30;
+        view.regularWidth = 79;
         view.didTapTagAtIndex = ^(NSUInteger index){
             NSLog(@"Tap");
         };
@@ -112,7 +105,7 @@
         tag.textColor = kColorWithHex(0x5f5a5a);
         tag.bgColor = kColorWithHex(0xececec);
         tag.cornerRadius = 3;
-        tag.fontSize = 15;
+        tag.fontSize = 14;
         tag.padding = UIEdgeInsetsMake(13.5, 12.5, 13.5, 12.5);
         
         [self.tagView addTag:tag];

@@ -13,13 +13,8 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey{
     return @{@"newsId": @"id",
-             @"isTop":@"isTop",
-             @"content":@"content",
-             @"articleName":@"articleName",
              @"imagePic": @"pic",
-             @"sourceUrl":@"url",
-             @"publishTime":@"publishTime",
-             @"contentId":@"contentId",
-             @"websitId":@"websitId"};
+             @"sourceUrl":@"url"};
 }
+
 @end

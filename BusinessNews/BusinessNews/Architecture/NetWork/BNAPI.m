@@ -10,6 +10,9 @@
 #import "NetworkAPIClient.h"
 #import "SysTools.h"
 #import "SysDirector.h"
+#import "NewsListModel.h"
+#import "IndustryTreeCmd.h"
+
 
 @implementation BNAPI
 
@@ -90,7 +93,8 @@
                                                             if (error) {
                                                                 block(nil, error);
                                                             } else {
-                                                                BaseCmd *cmd = [self modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                
                                                                 block(cmd, nil);
                                                             }
                                                         }];
@@ -121,7 +125,7 @@
                                                             if (error) {
                                                                 block(nil, error);
                                                             } else {
-                                                                BaseCmd *cmd = [self modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsListModel class] fromJSONDictionary:data error:&error];
                                                                 block(cmd, nil);
                                                             }
                                                         }];
@@ -155,7 +159,7 @@
                                                             if (error) {
                                                                 block(nil, error);
                                                             } else {
-                                                                BaseCmd *cmd = [self modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
                                                                 block(cmd, nil);
                                                             }
                                                         }];
@@ -176,7 +180,7 @@
                                                             if (error) {
                                                                 block(nil, error);
                                                             } else {
-                                                                BaseCmd *cmd = [self modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                BaseCmd *cmd = [[self class] modelOfClass:[IndustryTreeCmd class] fromJSONDictionary:data error:&error];
                                                                 block(cmd, nil);
                                                             }
                                                         }];
@@ -203,7 +207,7 @@
                                                             if (error) {
                                                                 block(nil, error);
                                                             } else {
-                                                                BaseCmd *cmd = [self modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
                                                                 block(cmd, nil);
                                                             }
                                                         }];
@@ -249,7 +253,7 @@
                                                             if (error) {
                                                                 block(nil, error);
                                                             } else {
-                                                                BaseCmd *cmd = [self modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
                                                                 block(cmd, nil);
                                                             }
                                                         }];

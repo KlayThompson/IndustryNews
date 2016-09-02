@@ -6,8 +6,9 @@
 //  Copyright © 2016年 KlayThompson. All rights reserved.
 //
 
-#import <Mantle/Mantle.h>
+#import "Mantle.h"
 #import "BaseCmd.h"
+#import "NewsListUnit.h"
 
 @interface NewsDetailModel : BaseCmd<MTLJSONSerializing>
 
@@ -20,5 +21,6 @@
 @property (nonatomic, strong) NSString *content;        //新闻内容
 @property (nonatomic, strong) NSNumber *isTop;          //是否置顶？
 @property (nonatomic, strong) NSNumber *publishTime;    //发布时间
+@property (nonatomic, strong) NSMutableArray<NewsListUnit*> *newsList;
 
 @end

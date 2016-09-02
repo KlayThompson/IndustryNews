@@ -8,7 +8,6 @@ target 'BusinessNews' do
   # Pods for BusinessNews
   pod 'AFNetworking'
   pod 'MJRefresh'
-  pod 'Mantle'
   pod 'SDWebImage'
   pod 'Masonry'
   pod 'MBProgressHUD'

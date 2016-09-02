@@ -9,10 +9,19 @@
 #import "IndustryCollectionViewController.h"
 #import "Masonry.h"
 #import "IndustryWebsiteCollectionViewCell.h"
+#import "BNAPI.h"
+#import "AppDelegate.h"
+#import "IndustryTreeCmd.h"
+#import "IndustryWebsiteNewsListViewController.h"
+#import "SysTools.h"
 
-@interface IndustryCollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface IndustryCollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate> {
+
+    IndustryCmd *industryCmd;
+}
 
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSArray *websiteArray;
 
 @end
 
@@ -23,6 +32,10 @@
     
     
     [self initSubViews];
+    
+    industryCmd = [AppDelegate sysDirector].currentIndstryTree[0];
+    
+    self.websiteArray = industryCmd.websits;
 }
 
 - (UICollectionView *)collectionView {
@@ -58,6 +71,18 @@
     }];
 }
 
+- (NSArray *)websiteArray {
+
+    if (!_websiteArray) {
+        _websiteArray = [NSArray new];
+    }
+    return _websiteArray;
+}
+
+- (void)reloadCollectionView {
+    
+    [self.collectionView reloadData];
+}
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -67,7 +92,11 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    if(self.websiteArray){
+        return self.websiteArray.count;
+    }else{
+        return 0;
+    }
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -77,7 +106,9 @@
     
     IndustryWebsiteCollectionViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"IndustryWebsiteCollectionViewCell" forIndexPath:indexPath];
     
+    WebsitesUnit *unit = [self.websiteArray objectAtIndex:indexPath.row];
     
+    [cell configureCellWithIndustryCmd:unit];
     
     return cell;
     
@@ -85,6 +116,12 @@
 
 // 选中某个cell
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    WebsitesUnit *unit = [self.websiteArray objectAtIndex:indexPath.row];
+    
+    IndustryWebsiteNewsListViewController *list = [[IndustryWebsiteNewsListViewController alloc] initWithIndustryId:NumberObj(industryCmd.industryCode) websiteId:NumberObj(unit.websiteId)];
+    
+    [self pushViewController:list animated:YES];
     
 }
 

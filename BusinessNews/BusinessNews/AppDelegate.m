@@ -59,10 +59,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [self InitializationTabbar];
-    self.window.rootViewController = self.sysTabBarController;
-    
     self.sysDirector = [SysDirector GetInstance];
+    
+    [self InitializationTabbar];
+    
+    self.window.rootViewController = self.sysTabBarController; 
 }
 
 - (void)InitializationTabbar {
@@ -127,9 +128,12 @@
     
 }
 
-+ (SysDirector*)sysDirector
-{
++ (SysDirector*)sysDirector {
+    
     AppDelegate *app=(AppDelegate*)[UIApplication sharedApplication].delegate;
     return app.sysDirector;
 }
+
+
+
 @end

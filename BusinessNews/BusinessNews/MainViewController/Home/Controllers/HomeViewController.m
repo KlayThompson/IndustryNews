@@ -9,10 +9,13 @@
 #import "HomeViewController.h"
 #import "NinaPagerView.h"
 #import "Masonry.h"
-#import "MyCollectionViewController.h"
+#import "HomeNewsListViewController.h"
 #import "SelectIndustryTagView.h"
 #import "UIView+Size.h"
 #import "SKTagView.h"
+#import "AppDelegate.h"
+#import "SysTools.h"
+#import "Notification_Definition.h"
 
 @interface HomeViewController ()
 
@@ -32,6 +35,8 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUpSubViews) name:NOTIFICATION_UpdateIndustryCode object:nil];
+    
     [self setUpSubViews];
     
 }
@@ -39,23 +44,14 @@
 
 - (void)setUpSubViews {
 
-    NSArray *titleArray = @[
-                            @"全部",
-                            @"服装服饰",
-                            @"微商",
-                            @"汽车配件",
-                            @"新浪新闻",
-                            @"电子设备",
-                            @"互联网",
-                            @"金融投资",
-                            @"美发造型"
-                            ];
+    NSMutableArray *titleArray = [NSMutableArray new];
     NSMutableArray *vcsArray = [NSMutableArray new];
     
-    for (int index = 0; index < titleArray.count; index ++) {
+    for (int index = 0; index < [AppDelegate sysDirector].currentIndstryTree.count; index++) {
+        IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:index];
+        [titleArray addObject:StringObj(cmd.industryName)];
         
-        MyCollectionViewController *view = [[MyCollectionViewController alloc] init];
-        
+        HomeNewsListViewController *view = [[HomeNewsListViewController alloc] initWithIndustryId:NumberObj(cmd.industryCode)];
         [vcsArray addObject:view];
     }
     
@@ -84,15 +80,8 @@
     [self.slideView addSubview:self.showMoreButton];
 }
 
-- (void)buildIndustryTagView {
-
+- (void)setupTagView {
     
-    
-    [self setupTagView];
-}
-
-- (void)setupTagView
-{
     self.tagView = ({
         SKTagView *view = [SKTagView new];
         view.backgroundColor = kColorWithRGBA(255, 255, 255, 0.95);
@@ -144,7 +133,7 @@
             self.showMoreButton.transform = CGAffineTransformIdentity;
         }];
     } else {
-        [self buildIndustryTagView];
+        [self setupTagView];
 
         [UIView animateWithDuration:0.35 animations:^{
             self.showMoreButton.transform = CGAffineTransformMakeRotation(0.000001 - M_PI);
@@ -154,7 +143,12 @@
 }
 
 - (NSString *)title {
-    return @"头条";
+    return @"商业头条";
+}
+
+- (void)dealloc {
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

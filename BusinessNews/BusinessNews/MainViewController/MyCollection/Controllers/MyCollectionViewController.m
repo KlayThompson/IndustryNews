@@ -15,13 +15,15 @@
 #import "MJRefresh.h"
 #import "NoDataTipView.h"
 
+#import "NewsListModel.h"
+#import "IndustryWebsiteNewsListViewController.h"
+
 #define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
 
 
 @interface MyCollectionViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
     MainNewsTableViewCell *cellRef;
-    NSArray *orderMessageArray;
 }
 
 
@@ -99,18 +101,14 @@
 - (void)loadDataFormServer {
 
     __weak typeof (self) weakSelf = self;
-//    [BNAPI news_loadNewsContentWithNewsId:@(968742) industryID:@(1) websitId:@(8) Block:^(BaseCmd *model, NSError *error) {
-//        [weakSelf.uTableView.mj_header endRefreshing];
-//        if (error) {
-//            [weakSelf makeToastInBottom:TIP_NETWORK_ERROR];
-//            SLOG(@"%@",error);
-//        } else {
-//            NSLog(@"%@",model);
-//        }
-//    }];
-    [BNAPI news_loadNewsByRmtIndustryWithPn:@(1) ps:@(20) rmtInId:@"0617" Block:^(BaseCmd *model, NSError *error) {
+    [BNAPI news_loadNewsContentWithNewsId:@(968742) industryID:@(1) websitId:@(8) Block:^(BaseCmd *model, NSError *error) {
         [weakSelf.uTableView.mj_header endRefreshing];
-
+        if (error) {
+            [weakSelf makeToastInBottom:TIP_NETWORK_ERROR];
+            SLOG(@"%@",error);
+        } else {
+            NSLog(@"%@",model);
+        }
     }];
 }
 
@@ -122,7 +120,7 @@
 //    }else{
 //        return 0;
 //    }
-    return 0;
+    return 10;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -141,7 +139,8 @@
 #pragma mark -UITableViewDelegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    IndustryWebsiteNewsListViewController *list = [[IndustryWebsiteNewsListViewController alloc] init];
+    [self pushViewController:list animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

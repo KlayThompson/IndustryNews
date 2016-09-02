@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031617EC1D7965A2003C77DF /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617CC1D7965A2003C77DF /* EXTRuntimeExtensions.m */; };
+		031617ED1D7965A2003C77DF /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617CE1D7965A2003C77DF /* EXTScope.m */; };
+		031617EE1D7965A2003C77DF /* NSValueTransformer+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617D21D7965A2003C77DF /* NSValueTransformer+NSString.m */; };
+		031617EF1D7965A2003C77DF /* MTLJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617D51D7965A2003C77DF /* MTLJSONAdapter.m */; };
+		031617F01D7965A2003C77DF /* MTLManagedObjectAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617D71D7965A2003C77DF /* MTLManagedObjectAdapter.m */; };
+		031617F11D7965A2003C77DF /* MTLModel+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617D91D7965A2003C77DF /* MTLModel+NSCoding.m */; };
+		031617F21D7965A2003C77DF /* MTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617DB1D7965A2003C77DF /* MTLModel.m */; };
+		031617F31D7965A2003C77DF /* MTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617DD1D7965A2003C77DF /* MTLReflection.m */; };
+		031617F41D7965A2003C77DF /* MTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617DF1D7965A2003C77DF /* MTLValueTransformer.m */; };
+		031617F51D7965A2003C77DF /* NSArray+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617E11D7965A2003C77DF /* NSArray+MTLManipulationAdditions.m */; };
+		031617F61D7965A2003C77DF /* NSDictionary+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617E31D7965A2003C77DF /* NSDictionary+MTLManipulationAdditions.m */; };
+		031617F71D7965A2003C77DF /* NSError+MTLModelException.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617E51D7965A2003C77DF /* NSError+MTLModelException.m */; };
+		031617F81D7965A2003C77DF /* NSObject+MTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617E71D7965A2003C77DF /* NSObject+MTLComparisonAdditions.m */; };
+		031617F91D7965A2003C77DF /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617E91D7965A2003C77DF /* NSValueTransformer+MTLInversionAdditions.m */; };
+		031617FA1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617EB1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */; };
 		0380A8F91D7689C100196C1E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0380A8F81D7689C100196C1E /* Info.plist */; };
 		0380A9001D768EF000196C1E /* NetworkAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A8FF1D768EF000196C1E /* NetworkAPIClient.m */; };
 		0380A9031D76B96600196C1E /* BNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9021D76B96600196C1E /* BNAPI.m */; };
@@ -27,6 +42,12 @@
 		039F946B1D7831DE00DF5B42 /* NoDataTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F94691D7831DE00DF5B42 /* NoDataTipView.m */; };
 		039F946C1D7831DE00DF5B42 /* NoDataTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039F946A1D7831DE00DF5B42 /* NoDataTipView.xib */; };
 		039F946F1D783A8600DF5B42 /* NewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F946E1D783A8600DF5B42 /* NewsDetailModel.m */; };
+		03A9CF991D7930F200C5A7D6 /* NewsListUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A9CF981D7930F200C5A7D6 /* NewsListUnit.m */; };
+		03B664001D7927CD00BAB19F /* NewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B663FF1D7927CD00BAB19F /* NewsListModel.m */; };
+		03CC97371D79686500173D53 /* HomeNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC97361D79686500173D53 /* HomeNewsListViewController.m */; };
+		03FF4CA41D797F97004AA63B /* IndustryTreeCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FF4CA31D797F97004AA63B /* IndustryTreeCmd.m */; };
+		03FF4CA71D798061004AA63B /* IndustryCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FF4CA61D798061004AA63B /* IndustryCmd.m */; };
+		03FF4CAA1D798ACD004AA63B /* IndustryWebsiteNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FF4CA91D798ACD004AA63B /* IndustryWebsiteNewsListViewController.m */; };
 		073572181251DF34E9F6C09F /* libPods-BusinessNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B517B69D02ABE2E1A9CFA3C0 /* libPods-BusinessNews.a */; };
 		4886ED9D1D72EFA500BD35B7 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886ED9A1D72EFA500BD35B7 /* NSData+Base64.m */; };
 		4886ED9E1D72EFA500BD35B7 /* NSData+WBEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886ED9C1D72EFA500BD35B7 /* NSData+WBEncode.m */; };
@@ -115,6 +136,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031617CA1D7965A2003C77DF /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTKeyPathCoding.h; sourceTree = "<group>"; };
+		031617CB1D7965A2003C77DF /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		031617CC1D7965A2003C77DF /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		031617CD1D7965A2003C77DF /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
+		031617CE1D7965A2003C77DF /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
+		031617CF1D7965A2003C77DF /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		031617D11D7965A2003C77DF /* NSValueTransformer+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+NSString.h"; sourceTree = "<group>"; };
+		031617D21D7965A2003C77DF /* NSValueTransformer+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+NSString.m"; sourceTree = "<group>"; };
+		031617D31D7965A2003C77DF /* Mantle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mantle.h; sourceTree = "<group>"; };
+		031617D41D7965A2003C77DF /* MTLJSONAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLJSONAdapter.h; sourceTree = "<group>"; };
+		031617D51D7965A2003C77DF /* MTLJSONAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLJSONAdapter.m; sourceTree = "<group>"; };
+		031617D61D7965A2003C77DF /* MTLManagedObjectAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLManagedObjectAdapter.h; sourceTree = "<group>"; };
+		031617D71D7965A2003C77DF /* MTLManagedObjectAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLManagedObjectAdapter.m; sourceTree = "<group>"; };
+		031617D81D7965A2003C77DF /* MTLModel+NSCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTLModel+NSCoding.h"; sourceTree = "<group>"; };
+		031617D91D7965A2003C77DF /* MTLModel+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTLModel+NSCoding.m"; sourceTree = "<group>"; };
+		031617DA1D7965A2003C77DF /* MTLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLModel.h; sourceTree = "<group>"; };
+		031617DB1D7965A2003C77DF /* MTLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLModel.m; sourceTree = "<group>"; };
+		031617DC1D7965A2003C77DF /* MTLReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLReflection.h; sourceTree = "<group>"; };
+		031617DD1D7965A2003C77DF /* MTLReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLReflection.m; sourceTree = "<group>"; };
+		031617DE1D7965A2003C77DF /* MTLValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLValueTransformer.h; sourceTree = "<group>"; };
+		031617DF1D7965A2003C77DF /* MTLValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLValueTransformer.m; sourceTree = "<group>"; };
+		031617E01D7965A2003C77DF /* NSArray+MTLManipulationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		031617E11D7965A2003C77DF /* NSArray+MTLManipulationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		031617E21D7965A2003C77DF /* NSDictionary+MTLManipulationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		031617E31D7965A2003C77DF /* NSDictionary+MTLManipulationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		031617E41D7965A2003C77DF /* NSError+MTLModelException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+MTLModelException.h"; sourceTree = "<group>"; };
+		031617E51D7965A2003C77DF /* NSError+MTLModelException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+MTLModelException.m"; sourceTree = "<group>"; };
+		031617E61D7965A2003C77DF /* NSObject+MTLComparisonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MTLComparisonAdditions.h"; sourceTree = "<group>"; };
+		031617E71D7965A2003C77DF /* NSObject+MTLComparisonAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MTLComparisonAdditions.m"; sourceTree = "<group>"; };
+		031617E81D7965A2003C77DF /* NSValueTransformer+MTLInversionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+MTLInversionAdditions.h"; sourceTree = "<group>"; };
+		031617E91D7965A2003C77DF /* NSValueTransformer+MTLInversionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MTLInversionAdditions.m"; sourceTree = "<group>"; };
+		031617EA1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+MTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
+		031617EB1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
 		0368CA8C592AAFB9E4C55C99 /* libPods-BusinessNewsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessNewsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0380A8F81D7689C100196C1E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0380A8FE1D768EF000196C1E /* NetworkAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAPIClient.h; sourceTree = "<group>"; };
@@ -154,6 +208,19 @@
 		039F946A1D7831DE00DF5B42 /* NoDataTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataTipView.xib; sourceTree = "<group>"; };
 		039F946D1D783A8600DF5B42 /* NewsDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailModel.h; sourceTree = "<group>"; };
 		039F946E1D783A8600DF5B42 /* NewsDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailModel.m; sourceTree = "<group>"; };
+		03A9CF971D7930F200C5A7D6 /* NewsListUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListUnit.h; sourceTree = "<group>"; };
+		03A9CF981D7930F200C5A7D6 /* NewsListUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListUnit.m; sourceTree = "<group>"; };
+		03B663FE1D7927CD00BAB19F /* NewsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListModel.h; sourceTree = "<group>"; };
+		03B663FF1D7927CD00BAB19F /* NewsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListModel.m; sourceTree = "<group>"; };
+		03CC97351D79686500173D53 /* HomeNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNewsListViewController.h; sourceTree = "<group>"; };
+		03CC97361D79686500173D53 /* HomeNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNewsListViewController.m; sourceTree = "<group>"; };
+		03FF4CA21D797F97004AA63B /* IndustryTreeCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustryTreeCmd.h; sourceTree = "<group>"; };
+		03FF4CA31D797F97004AA63B /* IndustryTreeCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustryTreeCmd.m; sourceTree = "<group>"; };
+		03FF4CA51D798061004AA63B /* IndustryCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustryCmd.h; sourceTree = "<group>"; };
+		03FF4CA61D798061004AA63B /* IndustryCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustryCmd.m; sourceTree = "<group>"; };
+		03FF4CA81D798ACC004AA63B /* IndustryWebsiteNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustryWebsiteNewsListViewController.h; sourceTree = "<group>"; };
+		03FF4CA91D798ACD004AA63B /* IndustryWebsiteNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustryWebsiteNewsListViewController.m; sourceTree = "<group>"; };
+		03FF4CAB1D79AD1A004AA63B /* Notification_Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification_Definition.h; sourceTree = "<group>"; };
 		0EC134D1A9B20EE25FA82035 /* Pods-BusinessNewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsUITests/Pods-BusinessNewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		333F4AD2D37008E111A044CE /* Pods-BusinessNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsTests/Pods-BusinessNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4886ECEF1D72A00800BD35B7 /* ColorDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorDefinition.h; sourceTree = "<group>"; };
@@ -292,14 +359,12 @@
 		88DEFEAD1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFEB51D7295F00058DDEE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		88DEFEB61D7295F00058DDEE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		88DEFEB81D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFEBB1D7295F00058DDEE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		88DEFEBC1D7295F00058DDEE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		88DEFEBD1D7295F00058DDEE /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		88DEFEBE1D7295F00058DDEE /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		88DEFEC51D7295F00058DDEE /* IndustrySitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustrySitesViewController.h; sourceTree = "<group>"; };
 		88DEFEC61D7295F00058DDEE /* IndustrySitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustrySitesViewController.m; sourceTree = "<group>"; };
-		88DEFEC81D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFED41D7295F00058DDEE /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
 		88DEFED51D7295F00058DDEE /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
 		88DEFED71D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
@@ -337,6 +402,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031617C81D7965A2003C77DF /* Mantle */ = {
+			isa = PBXGroup;
+			children = (
+				031617C91D7965A2003C77DF /* extobjc */,
+				031617D01D7965A2003C77DF /* ExtraCatecaty */,
+				031617D31D7965A2003C77DF /* Mantle.h */,
+				031617D41D7965A2003C77DF /* MTLJSONAdapter.h */,
+				031617D51D7965A2003C77DF /* MTLJSONAdapter.m */,
+				031617D61D7965A2003C77DF /* MTLManagedObjectAdapter.h */,
+				031617D71D7965A2003C77DF /* MTLManagedObjectAdapter.m */,
+				031617D81D7965A2003C77DF /* MTLModel+NSCoding.h */,
+				031617D91D7965A2003C77DF /* MTLModel+NSCoding.m */,
+				031617DA1D7965A2003C77DF /* MTLModel.h */,
+				031617DB1D7965A2003C77DF /* MTLModel.m */,
+				031617DC1D7965A2003C77DF /* MTLReflection.h */,
+				031617DD1D7965A2003C77DF /* MTLReflection.m */,
+				031617DE1D7965A2003C77DF /* MTLValueTransformer.h */,
+				031617DF1D7965A2003C77DF /* MTLValueTransformer.m */,
+				031617E01D7965A2003C77DF /* NSArray+MTLManipulationAdditions.h */,
+				031617E11D7965A2003C77DF /* NSArray+MTLManipulationAdditions.m */,
+				031617E21D7965A2003C77DF /* NSDictionary+MTLManipulationAdditions.h */,
+				031617E31D7965A2003C77DF /* NSDictionary+MTLManipulationAdditions.m */,
+				031617E41D7965A2003C77DF /* NSError+MTLModelException.h */,
+				031617E51D7965A2003C77DF /* NSError+MTLModelException.m */,
+				031617E61D7965A2003C77DF /* NSObject+MTLComparisonAdditions.h */,
+				031617E71D7965A2003C77DF /* NSObject+MTLComparisonAdditions.m */,
+				031617E81D7965A2003C77DF /* NSValueTransformer+MTLInversionAdditions.h */,
+				031617E91D7965A2003C77DF /* NSValueTransformer+MTLInversionAdditions.m */,
+				031617EA1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */,
+				031617EB1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */,
+			);
+			path = Mantle;
+			sourceTree = "<group>";
+		};
+		031617C91D7965A2003C77DF /* extobjc */ = {
+			isa = PBXGroup;
+			children = (
+				031617CA1D7965A2003C77DF /* EXTKeyPathCoding.h */,
+				031617CB1D7965A2003C77DF /* EXTRuntimeExtensions.h */,
+				031617CC1D7965A2003C77DF /* EXTRuntimeExtensions.m */,
+				031617CD1D7965A2003C77DF /* EXTScope.h */,
+				031617CE1D7965A2003C77DF /* EXTScope.m */,
+				031617CF1D7965A2003C77DF /* metamacros.h */,
+			);
+			path = extobjc;
+			sourceTree = "<group>";
+		};
+		031617D01D7965A2003C77DF /* ExtraCatecaty */ = {
+			isa = PBXGroup;
+			children = (
+				031617D11D7965A2003C77DF /* NSValueTransformer+NSString.h */,
+				031617D21D7965A2003C77DF /* NSValueTransformer+NSString.m */,
+			);
+			path = ExtraCatecaty;
+			sourceTree = "<group>";
+		};
 		0380A8FA1D768EDA00196C1E /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +538,7 @@
 				4886ECF01D72A01300BD35B7 /* FontDefinition.h */,
 				4886ECEF1D72A00800BD35B7 /* ColorDefinition.h */,
 				4886ECF41D72A0C100BD35B7 /* DataCheck.h */,
+				03FF4CAB1D79AD1A004AA63B /* Notification_Definition.h */,
 			);
 			path = Definition;
 			sourceTree = "<group>";
@@ -552,6 +674,7 @@
 		4886EE2A1D72F77300BD35B7 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				031617C81D7965A2003C77DF /* Mantle */,
 				039F94581D77FDE600DF5B42 /* CHTCollectionView */,
 				0380A90F1D76CFD100196C1E /* Toast */,
 				4886EE2B1D72F77300BD35B7 /* CocoaLumberjack */,
@@ -820,6 +943,8 @@
 			children = (
 				88DEFEB51D7295F00058DDEE /* HomeViewController.h */,
 				88DEFEB61D7295F00058DDEE /* HomeViewController.m */,
+				03CC97351D79686500173D53 /* HomeNewsListViewController.h */,
+				03CC97361D79686500173D53 /* HomeNewsListViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -827,9 +952,12 @@
 		88DEFEB71D7295F00058DDEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				88DEFEB81D7295F00058DDEE /* replace.h */,
 				039F946D1D783A8600DF5B42 /* NewsDetailModel.h */,
 				039F946E1D783A8600DF5B42 /* NewsDetailModel.m */,
+				03B663FE1D7927CD00BAB19F /* NewsListModel.h */,
+				03B663FF1D7927CD00BAB19F /* NewsListModel.m */,
+				03A9CF971D7930F200C5A7D6 /* NewsListUnit.h */,
+				03A9CF981D7930F200C5A7D6 /* NewsListUnit.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -864,6 +992,8 @@
 				88DEFEC61D7295F00058DDEE /* IndustrySitesViewController.m */,
 				039F94551D77E60D00DF5B42 /* IndustryCollectionViewController.h */,
 				039F94561D77E60D00DF5B42 /* IndustryCollectionViewController.m */,
+				03FF4CA81D798ACC004AA63B /* IndustryWebsiteNewsListViewController.h */,
+				03FF4CA91D798ACD004AA63B /* IndustryWebsiteNewsListViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -871,7 +1001,10 @@
 		88DEFEC71D7295F00058DDEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				88DEFEC81D7295F00058DDEE /* replace.h */,
+				03FF4CA21D797F97004AA63B /* IndustryTreeCmd.h */,
+				03FF4CA31D797F97004AA63B /* IndustryTreeCmd.m */,
+				03FF4CA51D798061004AA63B /* IndustryCmd.h */,
+				03FF4CA61D798061004AA63B /* IndustryCmd.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1233,17 +1366,23 @@
 			files = (
 				4886EE421D72F77300BD35B7 /* DDLog.m in Sources */,
 				4886EE0B1D72F04C00BD35B7 /* NetTools.m in Sources */,
+				031617F91D7965A2003C77DF /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
 				4886EE451D72F77300BD35B7 /* DDDispatchQueueLogFormatter.m in Sources */,
 				48EDF4C11D772DED001430F3 /* UIImage+ImageNamed.m in Sources */,
 				4886EE001D72F04C00BD35B7 /* DTTimePeriodGroup.m in Sources */,
+				031617F41D7965A2003C77DF /* MTLValueTransformer.m in Sources */,
 				48F62F071D71EACB000F97B2 /* AppDelegate.m in Sources */,
 				4886ED9D1D72EFA500BD35B7 /* NSData+Base64.m in Sources */,
 				4886EE411D72F77300BD35B7 /* DDFileLogger.m in Sources */,
 				4886EE5B1D72F94C00BD35B7 /* NSString+Helpers.m in Sources */,
 				4886EDF91D72F04C00BD35B7 /* NSDate+Helper.m in Sources */,
+				031617ED1D7965A2003C77DF /* EXTScope.m in Sources */,
+				031617EC1D7965A2003C77DF /* EXTRuntimeExtensions.m in Sources */,
+				03B664001D7927CD00BAB19F /* NewsListModel.m in Sources */,
 				88DEFEE11D7295F00058DDEE /* MainNavigationController.m in Sources */,
 				4886EDFC1D72F04C00BD35B7 /* DTError.m in Sources */,
 				4886EE591D72F94C00BD35B7 /* NSString+Check.m in Sources */,
+				03FF4CAA1D798ACD004AA63B /* IndustryWebsiteNewsListViewController.m in Sources */,
 				88DEFEE51D7295F00058DDEE /* MyCollectionViewController.m in Sources */,
 				4886EE211D72F4A800BD35B7 /* NSNumber+CustomDate.m in Sources */,
 				4886EE5A1D72F94C00BD35B7 /* NSString+EmojiExtension.m in Sources */,
@@ -1255,6 +1394,7 @@
 				48EDF4CA1D772E19001430F3 /* UIView+Size.m in Sources */,
 				88DEFEE01D7295F00058DDEE /* MainViewController.m in Sources */,
 				039F946F1D783A8600DF5B42 /* NewsDetailModel.m in Sources */,
+				031617F21D7965A2003C77DF /* MTLModel.m in Sources */,
 				039F945F1D77FDF800DF5B42 /* CHTCollectionViewWaterfallFooter.m in Sources */,
 				039F94571D77E60D00DF5B42 /* IndustryCollectionViewController.m in Sources */,
 				0380A9031D76B96600196C1E /* BNAPI.m in Sources */,
@@ -1264,25 +1404,34 @@
 				4886EDF81D72F04C00BD35B7 /* NSDate+convenience.m in Sources */,
 				0380A9001D768EF000196C1E /* NetworkAPIClient.m in Sources */,
 				4886EE021D72F04C00BD35B7 /* DateTools.m in Sources */,
+				031617F61D7965A2003C77DF /* NSDictionary+MTLManipulationAdditions.m in Sources */,
 				0380A91F1D76DA4E00196C1E /* SysDirector.m in Sources */,
 				039F94531D77D90900DF5B42 /* SKTag.m in Sources */,
+				031617F11D7965A2003C77DF /* MTLModel+NSCoding.m in Sources */,
+				031617F71D7965A2003C77DF /* NSError+MTLModelException.m in Sources */,
 				4886EE5C1D72F94C00BD35B7 /* NSString+URL.m in Sources */,
+				031617EE1D7965A2003C77DF /* NSValueTransformer+NSString.m in Sources */,
 				4886EDF31D72F04C00BD35B7 /* AutoFitDeviceFontSize.m in Sources */,
 				4886EE441D72F77300BD35B7 /* DDContextFilterLogFormatter.m in Sources */,
 				4886EE291D72F4CC00BD35B7 /* NSDate+Tool.m in Sources */,
 				4886EE401D72F77300BD35B7 /* DDASLLogger.m in Sources */,
+				03FF4CA71D798061004AA63B /* IndustryCmd.m in Sources */,
+				031617F81D7965A2003C77DF /* NSObject+MTLComparisonAdditions.m in Sources */,
 				48EDF4C71D772E0F001430F3 /* UIViewAdditions.m in Sources */,
 				4886EE461D72F77300BD35B7 /* DDMultiFormatter.m in Sources */,
 				4886EE5D1D72F94C00BD35B7 /* NSString+WBEncode.m in Sources */,
 				48EDF4B31D767EB2001430F3 /* MainNewsTableViewCell.m in Sources */,
 				88DEFEE41D7295F00058DDEE /* IndustrySitesViewController.m in Sources */,
 				039F94611D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.m in Sources */,
+				03A9CF991D7930F200C5A7D6 /* NewsListUnit.m in Sources */,
 				4886EE641D72FAC700BD35B7 /* NSObject+JSON.m in Sources */,
 				4886EE011D72F04C00BD35B7 /* NSDate+DateTools.m in Sources */,
 				4886ED9E1D72EFA500BD35B7 /* NSData+WBEncode.m in Sources */,
+				031617FA1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
 				4886EE431D72F77300BD35B7 /* DDTTYLogger.m in Sources */,
 				0380A9121D76CFD100196C1E /* Toast+UIView.m in Sources */,
 				4886EE281D72F4CC00BD35B7 /* NSDate+Formats.m in Sources */,
+				031617F31D7965A2003C77DF /* MTLReflection.m in Sources */,
 				039F94651D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.m in Sources */,
 				48EDF4B91D77292A001430F3 /* SelectIndustryTagView.m in Sources */,
 				48EDF4C31D772DED001430F3 /* UIImage-Extensions.m in Sources */,
@@ -1293,13 +1442,18 @@
 				88DEFEDF1D7295F00058DDEE /* HomeViewController.m in Sources */,
 				0380A90E1D76CEA700196C1E /* BaseViewController.m in Sources */,
 				4886EE3F1D72F77300BD35B7 /* DDAbstractDatabaseLogger.m in Sources */,
+				031617EF1D7965A2003C77DF /* MTLJSONAdapter.m in Sources */,
 				48EDF4A61D76734D001430F3 /* CRNavigationBar.m in Sources */,
+				031617F01D7965A2003C77DF /* MTLManagedObjectAdapter.m in Sources */,
+				03FF4CA41D797F97004AA63B /* IndustryTreeCmd.m in Sources */,
 				48EDF4A71D76734D001430F3 /* CRNavigationController.m in Sources */,
+				031617F51D7965A2003C77DF /* NSArray+MTLManipulationAdditions.m in Sources */,
 				4886EE091D72F04C00BD35B7 /* JSONObjectUtil.m in Sources */,
 				039F946B1D7831DE00DF5B42 /* NoDataTipView.m in Sources */,
 				0380A90D1D76CEA700196C1E /* BaseNavigationController.m in Sources */,
 				039F944E1D77D8D100DF5B42 /* SKTagView.m in Sources */,
 				4886EE221D72F4A800BD35B7 /* NSNumber+Helpers.m in Sources */,
+				03CC97371D79686500173D53 /* HomeNewsListViewController.m in Sources */,
 				48EDF4C21D772DED001430F3 /* UIImage+imageWithColor.m in Sources */,
 				4886EE601D72FA3300BD35B7 /* SysInfo.m in Sources */,
 				48EDF4A81D76734D001430F3 /* CRUIToolbar.m in Sources */,

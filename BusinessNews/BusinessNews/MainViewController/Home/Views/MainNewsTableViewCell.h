@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewsListUnit.h"
 
 @interface MainNewsTableViewCell : UITableViewCell
 
@@ -19,4 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *sourceNewsLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *readCountLabel;
+
+- (void)configureNewsListCellWithNewsListUnit:(NewsListUnit *)unit;
+
+
 @end

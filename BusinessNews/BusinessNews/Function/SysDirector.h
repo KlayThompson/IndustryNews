@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IndustryTreeCmd.h"
 
 @interface SysDirector : NSObject
+
+
+@property (nonatomic, strong) NSMutableArray<IndustryCmd*> *currentIndstryTree;
 
 +(SysDirector*)GetInstance;
 

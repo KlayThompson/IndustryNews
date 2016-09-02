@@ -9,6 +9,10 @@
 #import "SysDirector.h"
 #import "Toast+UIView.h"
 #import <AdSupport/ASIdentifierManager.h>
+#import "BNAPI.h"
+#import "IndustryTreeCmd.h"
+#import "AppDelegate.h"
+#import "Notification_Definition.h"
 
 static SysDirector *instance;
 
@@ -25,6 +29,14 @@ static SysDirector *instance;
     return instance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self loadIndustryCodeFromServer];
+    }
+    return self;
+}
 
 #pragma mark - IDFA
 + (NSString*)getIDFA{
@@ -68,4 +80,23 @@ static SysDirector *instance;
     [window makeToast:title duration:2 position:@"bottom"];
 }
 
+- (void)loadIndustryCodeFromServer {
+    
+    __weak typeof (self) weakSelf = self;
+    [BNAPI news_rmtInidListBlock:^(BaseCmd *model, NSError *error) {
+        [model errorCheckSuccess:^{
+            
+            if ([model isKindOfClass:[IndustryTreeCmd class]]) {
+                
+                IndustryTreeCmd *cmd = (IndustryTreeCmd *)model;
+                weakSelf.currentIndstryTree = cmd.industryTree;
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UpdateIndustryCode object:nil];
+            }
+            
+        } failed:^(NSInteger errCode) {
+            [[AppDelegate sysDirector] showToastInBottom:[model errorMsg]];
+        }];
+    }];
+}
 @end
