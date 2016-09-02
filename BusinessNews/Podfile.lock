@@ -14,21 +14,19 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Aspects (1.4.1)
-  - Mantle (2.0.6):
-    - Mantle/extobjc (= 2.0.6)
-  - Mantle/extobjc (2.0.6)
-  - Masonry (1.0.0)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
+  - Masonry (1.0.1)
   - MBProgressHUD (1.0.0)
-  - MJRefresh (3.1.0)
-  - NinaPagerView (1.3.0)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
+  - MJRefresh (3.1.12)
+  - NinaPagerView (1.1.2)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
   - AFNetworking
-  - Aspects (~> 1.4.1)
   - Mantle
   - Masonry
   - MBProgressHUD
@@ -38,14 +36,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  Mantle: 299966b00759634931699f69cb6a30b9239b944d
-  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
-  NinaPagerView: 5439d6c3b8cfdcb166aa56917c55a0f3f0f01dd8
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  NinaPagerView: efebdfb7ba3c7c9990c8ddfe04680de582caeff8
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 2463616a7f24acefda8e4a77163c22adde52f5b7
+PODFILE CHECKSUM: e5f26755cf5d6248ae6b6d571cc32fb68fffb5c0
 
 COCOAPODS: 1.0.1

@@ -58,8 +58,8 @@
         make.edges.equalTo(self.view);
     }];
     
-    [self.uTableView.mj_header beginRefreshing];
     self.uTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDataFormServer)];
+    [self.uTableView.mj_header beginRefreshing];
     
     //提示没有数据
     [self.uTableView addSubview:self.noDataView];
@@ -109,7 +109,8 @@
 //        }
 //    }];
     [BNAPI news_loadNewsByRmtIndustryWithPn:@(1) ps:@(20) rmtInId:@"0617" Block:^(BaseCmd *model, NSError *error) {
-        
+        [weakSelf.uTableView.mj_header endRefreshing];
+
     }];
 }
 

@@ -6,7 +6,6 @@ target 'BusinessNews' do
   # use_frameworks!
 
   # Pods for BusinessNews
-  pod 'Aspects', '~> 1.4.1'
   pod 'AFNetworking'
   pod 'MJRefresh'
   pod 'Mantle'

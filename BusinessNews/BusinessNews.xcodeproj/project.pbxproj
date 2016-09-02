@@ -88,7 +88,6 @@
 		48F62F121D71EACB000F97B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F62F101D71EACB000F97B2 /* LaunchScreen.storyboard */; };
 		48F62F1D1D71EACC000F97B2 /* BusinessNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F1C1D71EACC000F97B2 /* BusinessNewsTests.m */; };
 		48F62F281D71EACC000F97B2 /* BusinessNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F62F271D71EACC000F97B2 /* BusinessNewsUITests.m */; };
-		88DEFEDE1D7295F00058DDEE /* CTViewControllerIntercepter.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEB21D7295F00058DDEE /* CTViewControllerIntercepter.m */; };
 		88DEFEDF1D7295F00058DDEE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEB61D7295F00058DDEE /* HomeViewController.m */; };
 		88DEFEE01D7295F00058DDEE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEBC1D7295F00058DDEE /* MainViewController.m */; };
 		88DEFEE11D7295F00058DDEE /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DEFEBE1D7295F00058DDEE /* MainNavigationController.m */; };
@@ -291,8 +290,6 @@
 		88DEFEA91D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFEAB1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFEAD1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFEB11D7295F00058DDEE /* CTViewControllerIntercepter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTViewControllerIntercepter.h; sourceTree = "<group>"; };
-		88DEFEB21D7295F00058DDEE /* CTViewControllerIntercepter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTViewControllerIntercepter.m; sourceTree = "<group>"; };
 		88DEFEB51D7295F00058DDEE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		88DEFEB61D7295F00058DDEE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		88DEFEB81D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
@@ -796,8 +793,6 @@
 		88DEFEB01D7295F00058DDEE /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
-				88DEFEB11D7295F00058DDEE /* CTViewControllerIntercepter.h */,
-				88DEFEB21D7295F00058DDEE /* CTViewControllerIntercepter.m */,
 				88DEFEBB1D7295F00058DDEE /* MainViewController.h */,
 				88DEFEBC1D7295F00058DDEE /* MainViewController.m */,
 				88DEFEBD1D7295F00058DDEE /* MainNavigationController.h */,
@@ -1025,7 +1020,6 @@
 				TargetAttributes = {
 					48F62EFE1D71EACB000F97B2 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 3BB36MF7NL;
 					};
 					48F62F171D71EACC000F97B2 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1242,7 +1236,6 @@
 				4886EE451D72F77300BD35B7 /* DDDispatchQueueLogFormatter.m in Sources */,
 				48EDF4C11D772DED001430F3 /* UIImage+ImageNamed.m in Sources */,
 				4886EE001D72F04C00BD35B7 /* DTTimePeriodGroup.m in Sources */,
-				88DEFEDE1D7295F00058DDEE /* CTViewControllerIntercepter.m in Sources */,
 				48F62F071D71EACB000F97B2 /* AppDelegate.m in Sources */,
 				4886ED9D1D72EFA500BD35B7 /* NSData+Base64.m in Sources */,
 				4886EE411D72F77300BD35B7 /* DDFileLogger.m in Sources */,
@@ -1453,6 +1446,7 @@
 			baseConfigurationReference = 9331DB5961BEA724A498D2A9 /* Pods-BusinessNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BusinessNews/BN-Prefix.pch";
 				INFOPLIST_FILE = BusinessNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1467,6 +1461,7 @@
 			baseConfigurationReference = 8440D5E377C9E96DE2DBEFE6 /* Pods-BusinessNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BusinessNews/BN-Prefix.pch";
 				INFOPLIST_FILE = BusinessNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
