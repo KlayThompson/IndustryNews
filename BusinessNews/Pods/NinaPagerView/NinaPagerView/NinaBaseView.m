@@ -32,8 +32,8 @@
     UIView *lineBottom;
     UIView *topTabBottomLine;
     NSMutableArray *btnArray;
-    NSArray *titlesArray; /**<  标题   **/
-    NSInteger arrayCount; /**<  topTab数量   **/
+    NSArray *titlesArray;
+    NSInteger arrayCount;
     UIColor *selectBtn;
     UIColor *unselectBtn;
     UIColor *underline;
@@ -123,6 +123,13 @@
             additionCount = (arrayCount - 5.0) / 5.0;
         }
         _topTab.contentSize = CGSizeMake((1 + additionCount) * FUll_VIEW_WIDTH, PageBtn - TabbarHeight);
+        if (NinaDefaultPageIndex > 2 && NinaDefaultPageIndex < titlesArray.count) {
+            if (titlesArray.count >= 5) {
+                _topTab.contentOffset = CGPointMake(1.0 / 5.0 * FUll_VIEW_WIDTH * (NinaDefaultPageIndex - 2), 0);
+            }else {
+                _topTab.contentOffset = CGPointMake(1.0 / titlesArray.count * FUll_VIEW_WIDTH * (NinaDefaultPageIndex - 2), 0);
+            }
+        }
         btnArray = [NSMutableArray array];
         for (NSInteger i = 0; i < titlesArray.count; i++) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -133,7 +140,7 @@
                 button.titleLabel.numberOfLines = 0;
                 button.titleLabel.textAlignment = NSTextAlignmentCenter;
             }else {
-                NSLog(@"您所提供的标题%li格式不正确。 Your title%li not fit for topTab,please correct it to NSString!",(long)i + 1,(long)i + 1);
+                NSLog(@"Your title%li not fit for topTab,please correct it to NSString!",(long)i + 1);
             }
             if (titlesArray.count > 5) {
                 button.frame = CGRectMake(More5LineWidth * i, 0, More5LineWidth, PageBtn);
@@ -158,11 +165,11 @@
                 }
             }
         }
-        //创建tabTop下方总览线
+        //Create Toptab underline.
         topTabBottomLine = [UIView new];
         topTabBottomLine.backgroundColor = UIColorFromRGB(0xcecece);
         [_topTab addSubview:topTabBottomLine];
-        //创建选中移动线
+        //Create Toptab bottomline.
         lineBottom = [UIView new];
         if (underline) {
             lineBottom.backgroundColor = underline;
@@ -172,7 +179,7 @@
         lineBottom.clipsToBounds = YES;
         lineBottom.userInteractionEnabled = YES;
         [_topTab addSubview:lineBottom];
-        //创建ninaMaskView
+        //Create ninaMaskView.
         ninaMaskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (1 + additionCount) * FUll_VIEW_WIDTH, SliderHeight)];
         ninaMaskView.backgroundColor = [UIColor clearColor];
         for (NSInteger j = 0; j < titlesArray.count; j++) {
@@ -230,6 +237,7 @@
                 case 0:
                     if (SelectBottomLineHeight >= 3) {
                         lineBottom.frame = CGRectMake(scrollView.contentOffset.x / 5 + lineBottomDis, PageBtn - 3, yourCount * FUll_VIEW_WIDTH * SelectBottomLinePer, 3);
+                        break;
                     }
                     lineBottom.frame = CGRectMake(scrollView.contentOffset.x / 5 + lineBottomDis, PageBtn - SelectBottomLineHeight, yourCount * FUll_VIEW_WIDTH * SelectBottomLinePer, SelectBottomLineHeight);
                     break;
@@ -307,7 +315,8 @@
             if (SelectBottomLineHeight >= 3) {
                 lineBottom.frame = CGRectMake(lineBottomDis, PageBtn - 3, yourCount * FUll_VIEW_WIDTH * SelectBottomLinePer, 3);
             }else {
-                lineBottom.frame = CGRectMake(lineBottomDis, PageBtn - SelectBottomLineHeight, yourCount * FUll_VIEW_WIDTH * SelectBottomLinePer, SelectBottomLineHeight);
+                NSInteger defaultPage = (NinaDefaultPageIndex > 0 && NinaDefaultPageIndex < titlesArray.count)?NinaDefaultPageIndex:0;
+                lineBottom.frame = CGRectMake(lineBottomDis + FUll_VIEW_WIDTH * yourCount * defaultPage, PageBtn - SelectBottomLineHeight, yourCount * FUll_VIEW_WIDTH * SelectBottomLinePer, SelectBottomLineHeight);
             }
             break;
         case 1:
