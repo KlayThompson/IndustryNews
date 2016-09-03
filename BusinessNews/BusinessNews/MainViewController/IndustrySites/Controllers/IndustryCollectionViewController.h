@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "IndustryTreeCmd.h"
 
 @interface IndustryCollectionViewController : BaseViewController
+
+
+- (instancetype)initWithIndustryCmd:(IndustryCmd *)industryCmd;
 
 @end

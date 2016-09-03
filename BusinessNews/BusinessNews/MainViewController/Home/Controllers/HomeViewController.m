@@ -17,7 +17,10 @@
 #import "SysTools.h"
 #import "Notification_Definition.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () {
+
+    NSMutableArray *titleArray;
+}
 
 @property (nonatomic, strong) SelectIndustryTagView *tagBgView;
 @property (nonatomic, strong) UIButton *showMoreButton;
@@ -44,7 +47,7 @@
 
 - (void)setUpSubViews {
 
-    NSMutableArray *titleArray = [NSMutableArray new];
+    titleArray = [NSMutableArray new];
     NSMutableArray *vcsArray = [NSMutableArray new];
     
     for (int index = 0; index < [AppDelegate sysDirector].currentIndstryTree.count; index++) {
@@ -63,21 +66,23 @@
                             ];
     
     self.slideView = [[NinaPagerView alloc] initWithNinaPagerStyle:NinaPagerStyleStateNormal WithTitles:titleArray WithVCs:vcsArray WithColorArrays:colorArray];
-    
     [self.view addSubview:self.slideView];
-    
+    self.slideView.pushEnabled = YES;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"covered_bg"]];
-    imageView.frame = CGRectMake(WIDTH_SCREEN - 60, 0, 60, 34);
+    imageView.frame = CGRectMake(WIDTH_SCREEN - 60, 0, 60, 38);
     [self.slideView addSubview:imageView];
-    
+    imageView.userInteractionEnabled = YES;
     //添加一个button展开tag
     self.showMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.showMoreButton.frame = CGRectMake(WIDTH_SCREEN - 30, 13, 14, 16);
+    self.showMoreButton.frame = CGRectMake(WIDTH_SCREEN - 30, 15, 12, 12);
     [self.showMoreButton addTarget:self action:@selector(showTagViewButtonClick) forControlEvents:UIControlEventTouchUpInside];
-//    [self.button setImage:[UIImage imageNamed:@"drop-down"] forState:UIControlStateNormal];
     [self.showMoreButton setBackgroundImage:[UIImage imageNamed:@"drop-down"] forState:UIControlStateNormal];
     [self.slideView addSubview:self.showMoreButton];
+    self.showMoreButton.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showTagViewButtonClick)];
+    [imageView addGestureRecognizer:tap];
 }
 
 - (void)setupTagView {
@@ -104,7 +109,7 @@
     
     
     //Add Tags
-    [@[@"微商", @"服装面料", @"金融投资", @"互联网金融", @"农副产品", @"房地产投资", @"汽车制造"] enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
+    [titleArray enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
         SKTag *tag = [SKTag tagWithText:text];
         tag.textColor = kColorWithHex(0x5f5a5a);
         tag.bgColor = kColorWithHex(0xececec);

@@ -17,7 +17,10 @@
 #import "SysTools.h"
 
 
-@interface IndustrySitesViewController ()
+@interface IndustrySitesViewController () {
+
+    NSMutableArray *titleArray;
+}
 
 @property (nonatomic, strong) UIButton *showMoreButton;
 @property (nonatomic, strong) NinaPagerView *slideView;
@@ -39,13 +42,13 @@
 
 - (void)setUpSubViews {
     
-    NSMutableArray *titleArray = [NSMutableArray new];
+    titleArray = [NSMutableArray new];
     NSMutableArray *vcsArray = [NSMutableArray new];
     
     for (int index = 0; index < [AppDelegate sysDirector].currentIndstryTree.count; index++) {
         IndustryCmd *cmd = [AppDelegate sysDirector].currentIndstryTree[index];
         [titleArray addObject:StringObj(cmd.industryName)];
-        IndustryCollectionViewController *view = [[IndustryCollectionViewController alloc] init];
+        IndustryCollectionViewController *view = [[IndustryCollectionViewController alloc] initWithIndustryCmd:cmd];
         [vcsArray addObject:view];
     }
     
@@ -58,21 +61,23 @@
                             ];
     
     self.slideView = [[NinaPagerView alloc] initWithNinaPagerStyle:NinaPagerStyleStateNormal WithTitles:titleArray WithVCs:vcsArray WithColorArrays:colorArray];
-    
     [self.view addSubview:self.slideView];
-    
+    self.slideView.pushEnabled = YES;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"covered_bg"]];
-    imageView.frame = CGRectMake(WIDTH_SCREEN - 60, 0, 60, 34);
+    imageView.frame = CGRectMake(WIDTH_SCREEN - 60, 0, 60, 38);
     [self.slideView addSubview:imageView];
+    imageView.userInteractionEnabled = YES;
     
     //添加一个button展开tag
     self.showMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.showMoreButton.frame = CGRectMake(WIDTH_SCREEN - 30, 13, 14, 16);
+    self.showMoreButton.frame = CGRectMake(WIDTH_SCREEN - 30, 15, 12, 12);
     [self.showMoreButton addTarget:self action:@selector(showTagViewButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    //    [self.button setImage:[UIImage imageNamed:@"drop-down"] forState:UIControlStateNormal];
     [self.showMoreButton setBackgroundImage:[UIImage imageNamed:@"drop-down"] forState:UIControlStateNormal];
     [self.slideView addSubview:self.showMoreButton];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showTagViewButtonClick)];
+    [imageView addGestureRecognizer:tap];
 }
 
 - (void)setupTagView {
@@ -81,12 +86,13 @@
         SKTagView *view = [SKTagView new];
         view.backgroundColor = kColorWithRGBA(255, 255, 255, 0.95);
         view.padding = UIEdgeInsetsMake(10, 10, 10, 10);
-        view.interitemSpacing = 8;
-        view.lineSpacing = 10;
+        view.interitemSpacing = 20;
+        view.lineSpacing = 15;
         view.regularHeight = 30;
-        view.regularWidth = 79;
+//        view.regularWidth = 75;
         view.didTapTagAtIndex = ^(NSUInteger index){
             NSLog(@"Tap");
+            [self showTagViewButtonClick];
         };
         view;
     });
@@ -100,7 +106,7 @@
     
     
     //Add Tags
-    [@[@"微商", @"服装面料", @"金融投资", @"互联网金融", @"农副产品", @"房地产投资", @"汽车制造"] enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
+    [titleArray enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
         SKTag *tag = [SKTag tagWithText:text];
         tag.textColor = kColorWithHex(0x5f5a5a);
         tag.bgColor = kColorWithHex(0xececec);

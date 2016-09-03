@@ -11,21 +11,26 @@
 #import "IndustryWebsiteCollectionViewCell.h"
 #import "BNAPI.h"
 #import "AppDelegate.h"
-#import "IndustryTreeCmd.h"
 #import "IndustryWebsiteNewsListViewController.h"
 #import "SysTools.h"
 
-@interface IndustryCollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate> {
-
-    IndustryCmd *industryCmd;
-}
+@interface IndustryCollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *websiteArray;
-
+@property (nonatomic, strong) IndustryCmd *industryCmd;
 @end
 
 @implementation IndustryCollectionViewController
+
+- (instancetype)initWithIndustryCmd:(IndustryCmd *)industryCmd;
+{
+    self = [super init];
+    if (self) {
+        _industryCmd = industryCmd;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,9 +38,7 @@
     
     [self initSubViews];
     
-    industryCmd = [AppDelegate sysDirector].currentIndstryTree[0];
-    
-    self.websiteArray = industryCmd.websits;
+    self.websiteArray = self.industryCmd.websits;
 }
 
 - (UICollectionView *)collectionView {
@@ -119,7 +122,7 @@
     
     WebsitesUnit *unit = [self.websiteArray objectAtIndex:indexPath.row];
     
-    IndustryWebsiteNewsListViewController *list = [[IndustryWebsiteNewsListViewController alloc] initWithIndustryId:NumberObj(industryCmd.industryCode) websiteId:NumberObj(unit.websiteId)];
+    IndustryWebsiteNewsListViewController *list = [[IndustryWebsiteNewsListViewController alloc] initWithIndustryId:NumberObj(self.industryCmd.industryCode) websiteId:NumberObj(unit.websiteId)];
     
     [self pushViewController:list animated:YES];
     
