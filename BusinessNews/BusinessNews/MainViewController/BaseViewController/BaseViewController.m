@@ -91,6 +91,7 @@
     return self;
 }
 
+
 - (void)dissMiss{
     [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
 //    tranbAppDelegate *appDelegate = [self appDelegate];

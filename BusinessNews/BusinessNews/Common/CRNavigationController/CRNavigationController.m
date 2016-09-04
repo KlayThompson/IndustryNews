@@ -74,11 +74,11 @@
          https://www.douban.com/note/536194761/
          */
         
-        if(_currentAnimating) {
-            return;
-        } else if(animated) {
-            _currentAnimating = YES;
-        }
+//        if(_currentAnimating) {
+//            return;
+//        } else if(animated) {
+//            _currentAnimating = YES;
+//        }
     }
     [super pushViewController:viewController animated:animated];
     if (IOS7_SDK_AVAILABLE) {
@@ -101,11 +101,11 @@
          尝试解决 Can't add self as subview 的bug
          https://www.douban.com/note/536194761/
          */
-        if(_currentAnimating) {
-            return nil;
-        } else if(animated) {
-            _currentAnimating = YES;
-        }
+//        if(_currentAnimating) {
+//            return nil;
+//        } else if(animated) {
+//            _currentAnimating = YES;
+//        }
     }
     
     return [super popViewControllerAnimated:animated];
