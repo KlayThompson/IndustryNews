@@ -33,11 +33,32 @@ typedef NS_ENUM(NSInteger, NinaPagerStyle) {
 
 @protocol NinaPagerViewDelegate <NSObject>
 @optional
-- (BOOL)deallocVCsIfUnnecessary; /**< 只保留最近的5个控制器，释放其他控制器的空间，如果滑到对应位置在对其重新创建加载 **/
+/**
+ *  Dealloc Method
+ *
+ *  @return If YES,just keep recent five views or controllers,dealloc others,init them again when needed.If NO,keep all.
+ */
+- (BOOL)deallocVCsIfUnnecessary;
+/**
+ *  Get current page
+ *
+ *  @param currentPage Current page when you scroll to or choose the view or controller.
+ */
+- (void)ninaCurrentPageIndex:(NSString *)currentPage;
 @end
 
 @interface NinaPagerView : UIView
+/**
+ *  NinaPagerView init method.
+ *
+ *  @param ninaPagerStyle NinaPagerView show style.
+ *  @param titles         Titles in Toptab.
+ *  @param childVCs       Controllers or views in NinaPagerView.
+ *  @param colors         Several colors can set in NinaPagerView.
+ *
+ */
 - (instancetype)initWithNinaPagerStyle:(NinaPagerStyle)ninaPagerStyle WithTitles:(NSArray *)titles WithVCs:(NSArray *)childVCs WithColorArrays:(NSArray *)colors;
+
 @property (strong, nonatomic) UIColor *selectColor; /**<  选中时的颜色   **/
 @property (strong, nonatomic) UIColor *unselectColor; /**<  未选中时的颜色   **/
 @property (strong, nonatomic) UIColor *underlineColor; /**<  下划线的颜色   **/
@@ -47,4 +68,5 @@ typedef NS_ENUM(NSInteger, NinaPagerStyle) {
 @property (assign, nonatomic) CGFloat titleScale; /**<  标题缩放比例   **/
 @property (assign, nonatomic) BOOL nina_navigationBarHidden; /**<  是否隐藏了导航栏   **/
 @property (weak, nonatomic) id<NinaPagerViewDelegate>delegate; /**< NinaPagerView代理 **/
+
 @end
