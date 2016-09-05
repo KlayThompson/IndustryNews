@@ -698,6 +698,20 @@
     return result;
 }
 
-
++(NSDictionary*)formatDateAndWeek:(NSString*)_dateStr byFormat:(NSString*)_format toFormat:(NSString*)_2format;
+{
+    NSDate *tempDate;
+    NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
+    //    [formatter setDateFormat:@"yyyyMMdd-HHmmss"];
+    [formatter setDateFormat:_format];
+    tempDate=[formatter dateFromString:_dateStr];
+    [formatter setDateFormat:@"EEEE"];
+    NSString *weekStr=[formatter stringFromDate:tempDate];
+    [formatter setDateFormat:_2format];
+    NSString *formatStr=[formatter stringFromDate:tempDate];
+    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:weekStr,@"week",formatStr,@"date", nil];
+    
+    return dic;
+}
 
 @end

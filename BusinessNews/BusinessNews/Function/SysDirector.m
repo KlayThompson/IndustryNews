@@ -152,7 +152,6 @@ static SysDirector *instance;
                 return NSOrderedSame;
             }
         }];
-        self.currentIndstryTree = industryTree;
         
     } else {
         //存储到本地
@@ -160,7 +159,8 @@ static SysDirector *instance;
         [[NSUserDefaults standardUserDefaults] setObject:tempSubmitOrderCmd forKey:SaveIndustryCode];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    
+    self.currentIndstryTree = industryTree;
+
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UpdateIndustryCode object:nil];
 

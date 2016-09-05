@@ -150,5 +150,7 @@ typedef enum
 + (NSString*)getMoneyFomatString:(id)source unitName:(NSString*)unitName;
 
 
++(NSDictionary*)formatDateAndWeek:(NSString*)_dateStr byFormat:(NSString*)_format toFormat:(NSString*)_2format;
+
 @end
 
