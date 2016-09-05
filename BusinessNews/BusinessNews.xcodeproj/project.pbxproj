@@ -22,6 +22,9 @@
 		031617F81D7965A2003C77DF /* NSObject+MTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617E71D7965A2003C77DF /* NSObject+MTLComparisonAdditions.m */; };
 		031617F91D7965A2003C77DF /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617E91D7965A2003C77DF /* NSValueTransformer+MTLInversionAdditions.m */; };
 		031617FA1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617EB1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */; };
+		037024991D7D153800E34B48 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024931D7D153800E34B48 /* NinaBaseView.m */; };
+		0370249A1D7D153800E34B48 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024951D7D153800E34B48 /* NinaPagerView.m */; };
+		0370249B1D7D153800E34B48 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024981D7D153800E34B48 /* UIView+ViewController.m */; };
 		0380A8F91D7689C100196C1E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0380A8F81D7689C100196C1E /* Info.plist */; };
 		0380A9001D768EF000196C1E /* NetworkAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A8FF1D768EF000196C1E /* NetworkAPIClient.m */; };
 		0380A9031D76B96600196C1E /* BNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9021D76B96600196C1E /* BNAPI.m */; };
@@ -170,6 +173,13 @@
 		031617EA1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+MTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
 		031617EB1D7965A2003C77DF /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
 		0368CA8C592AAFB9E4C55C99 /* libPods-BusinessNewsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessNewsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		037024921D7D153800E34B48 /* NinaBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaBaseView.h; sourceTree = "<group>"; };
+		037024931D7D153800E34B48 /* NinaBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaBaseView.m; sourceTree = "<group>"; };
+		037024941D7D153800E34B48 /* NinaPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaPagerView.h; sourceTree = "<group>"; };
+		037024951D7D153800E34B48 /* NinaPagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaPagerView.m; sourceTree = "<group>"; };
+		037024961D7D153800E34B48 /* UIParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIParameter.h; sourceTree = "<group>"; };
+		037024971D7D153800E34B48 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
+		037024981D7D153800E34B48 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
 		0380A8F81D7689C100196C1E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0380A8FE1D768EF000196C1E /* NetworkAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAPIClient.h; sourceTree = "<group>"; };
 		0380A8FF1D768EF000196C1E /* NetworkAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkAPIClient.m; sourceTree = "<group>"; };
@@ -458,6 +468,20 @@
 			path = ExtraCatecaty;
 			sourceTree = "<group>";
 		};
+		037024911D7D153800E34B48 /* NinaPagerView */ = {
+			isa = PBXGroup;
+			children = (
+				037024921D7D153800E34B48 /* NinaBaseView.h */,
+				037024931D7D153800E34B48 /* NinaBaseView.m */,
+				037024941D7D153800E34B48 /* NinaPagerView.h */,
+				037024951D7D153800E34B48 /* NinaPagerView.m */,
+				037024961D7D153800E34B48 /* UIParameter.h */,
+				037024971D7D153800E34B48 /* UIView+ViewController.h */,
+				037024981D7D153800E34B48 /* UIView+ViewController.m */,
+			);
+			path = NinaPagerView;
+			sourceTree = "<group>";
+		};
 		0380A8FA1D768EDA00196C1E /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +698,7 @@
 		4886EE2A1D72F77300BD35B7 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				037024911D7D153800E34B48 /* NinaPagerView */,
 				031617C81D7965A2003C77DF /* Mantle */,
 				039F94581D77FDE600DF5B42 /* CHTCollectionView */,
 				0380A90F1D76CFD100196C1E /* Toast */,
@@ -1383,7 +1408,9 @@
 				4886EDFC1D72F04C00BD35B7 /* DTError.m in Sources */,
 				4886EE591D72F94C00BD35B7 /* NSString+Check.m in Sources */,
 				03FF4CAA1D798ACD004AA63B /* IndustryWebsiteNewsListViewController.m in Sources */,
+				037024991D7D153800E34B48 /* NinaBaseView.m in Sources */,
 				88DEFEE51D7295F00058DDEE /* MyCollectionViewController.m in Sources */,
+				0370249B1D7D153800E34B48 /* UIView+ViewController.m in Sources */,
 				4886EE211D72F4A800BD35B7 /* NSNumber+CustomDate.m in Sources */,
 				4886EE5A1D72F94C00BD35B7 /* NSString+EmojiExtension.m in Sources */,
 				4886EDFE1D72F04C00BD35B7 /* DTTimePeriodChain.m in Sources */,
@@ -1443,6 +1470,7 @@
 				0380A90E1D76CEA700196C1E /* BaseViewController.m in Sources */,
 				4886EE3F1D72F77300BD35B7 /* DDAbstractDatabaseLogger.m in Sources */,
 				031617EF1D7965A2003C77DF /* MTLJSONAdapter.m in Sources */,
+				0370249A1D7D153800E34B48 /* NinaPagerView.m in Sources */,
 				48EDF4A61D76734D001430F3 /* CRNavigationBar.m in Sources */,
 				031617F01D7965A2003C77DF /* MTLManagedObjectAdapter.m in Sources */,
 				03FF4CA41D797F97004AA63B /* IndustryTreeCmd.m in Sources */,

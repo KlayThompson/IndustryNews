@@ -86,7 +86,7 @@
 }
 
 - (void)setupTagView {
-    
+    __weak typeof (self) weakSelf = self;
     self.tagView = ({
         SKTagView *view = [SKTagView new];
         view.backgroundColor = kColorWithRGBA(255, 255, 255, 0.95);
@@ -95,7 +95,8 @@
         view.lineSpacing = 10;
         view.regularHeight = 30;
         view.didTapTagAtIndex = ^(NSUInteger index){
-            NSLog(@"Tap");
+            [weakSelf.slideView selectPageIndex:index];
+            [weakSelf showTagViewButtonClick];
         };
         view;
     });
@@ -145,6 +146,11 @@
         }];
     }
     self.showMoreButton.selected = !self.showMoreButton.selected;
+}
+
+#pragma mark - NinaPagerViewDelegate
+- (BOOL)deallocVCsIfUnnecessary {
+    return YES;
 }
 
 - (NSString *)title {

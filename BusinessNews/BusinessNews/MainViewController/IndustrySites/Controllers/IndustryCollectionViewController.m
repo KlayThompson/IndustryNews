@@ -122,7 +122,7 @@
     
     WebsitesUnit *unit = [self.websiteArray objectAtIndex:indexPath.row];
     
-    IndustryWebsiteNewsListViewController *list = [[IndustryWebsiteNewsListViewController alloc] initWithIndustryId:NumberObj(self.industryCmd.industryCode) websiteId:NumberObj(unit.websiteId)];
+    IndustryWebsiteNewsListViewController *list = [[IndustryWebsiteNewsListViewController alloc] initWithIndustryId:NumberObj(unit.industryId) websiteId:NumberObj(unit.websiteId)];
     
     [self pushViewController:list animated:YES];
     

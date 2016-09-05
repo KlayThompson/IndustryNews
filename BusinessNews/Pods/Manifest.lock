@@ -17,7 +17,6 @@ PODS:
   - Masonry (1.0.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
-  - NinaPagerView (1.3.0)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
@@ -27,7 +26,6 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJRefresh
-  - NinaPagerView
   - SDWebImage
 
 SPEC CHECKSUMS:
@@ -35,9 +33,8 @@ SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  NinaPagerView: 5439d6c3b8cfdcb166aa56917c55a0f3f0f01dd8
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 1fc63a6a949e01f363af5187b75befd8e381b575
+PODFILE CHECKSUM: 3384e9c0db11b40539e9af1fb53744334dbf217a
 
 COCOAPODS: 1.0.1

@@ -41,4 +41,6 @@
  *
  */
 - (instancetype)initWithFrame:(CGRect)frame WithSelectColor:(UIColor *)selectColor WithUnselectorColor:(UIColor *)unselectColor WithUnderLineColor:(UIColor *)underlineColor WithtopTabColor:(UIColor *)topTabColor WithTopTabType:(NSInteger)topTabNum;
+
+- (void)selectPageIndex:(NSInteger)pageIndex;
 @end

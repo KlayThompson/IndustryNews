@@ -143,6 +143,10 @@ static NSString *const kObserverPage = @"currentPage";
         NSLog(@"You should correct titlesArray or childVCs count!");
     }
 }
+- (void)selectPageIndex:(NSInteger)pageIndex {
+
+    [pagerView selectPageIndex:pageIndex];
+}
 
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {

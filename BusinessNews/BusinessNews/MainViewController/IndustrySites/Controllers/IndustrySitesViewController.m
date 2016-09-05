@@ -81,7 +81,7 @@
 }
 
 - (void)setupTagView {
-    
+    __weak typeof (self) weakSelf = self;
     self.tagView = ({
         SKTagView *view = [SKTagView new];
         view.backgroundColor = kColorWithRGBA(255, 255, 255, 0.95);
@@ -91,8 +91,8 @@
         view.regularHeight = 30;
 //        view.regularWidth = 75;
         view.didTapTagAtIndex = ^(NSUInteger index){
-            NSLog(@"Tap");
-            [self showTagViewButtonClick];
+            [weakSelf.slideView selectPageIndex:index];
+            [weakSelf showTagViewButtonClick];
         };
         view;
     });

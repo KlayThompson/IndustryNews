@@ -204,6 +204,12 @@
     return _topTab;
 }
 
+- (void)selectPageIndex:(NSInteger)pageIndex {
+
+    [_scrollView setContentOffset:CGPointMake(FUll_VIEW_WIDTH * pageIndex, 0) animated:YES];
+    self.currentPage = (FUll_VIEW_WIDTH * pageIndex + FUll_VIEW_WIDTH / 2) / FUll_VIEW_WIDTH;
+}
+
 #pragma mark - BtnMethod
 - (void)touchAction:(UIButton *)button {
     [_scrollView setContentOffset:CGPointMake(FUll_VIEW_WIDTH * button.tag, 0) animated:YES];
