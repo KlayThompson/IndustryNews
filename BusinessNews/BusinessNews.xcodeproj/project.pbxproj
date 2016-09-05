@@ -25,8 +25,8 @@
 		037024991D7D153800E34B48 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024931D7D153800E34B48 /* NinaBaseView.m */; };
 		0370249A1D7D153800E34B48 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024951D7D153800E34B48 /* NinaPagerView.m */; };
 		0370249B1D7D153800E34B48 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024981D7D153800E34B48 /* UIView+ViewController.m */; };
-		037025171D7D9F1A00E34B48 /* FNNewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037025141D7D9F1A00E34B48 /* FNNewsDetailController.m */; };
-		037025181D7D9F1A00E34B48 /* FNNewsPhotoSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037025161D7D9F1A00E34B48 /* FNNewsPhotoSetController.m */; };
+		0370251C1D7DA0BE00E34B48 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0370251B1D7DA0BE00E34B48 /* MBProgressHUD+MJ.m */; };
+		0370251F1D7DA28500E34B48 /* FNUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0370251E1D7DA28500E34B48 /* FNUserDefaults.m */; };
 		0380A8F91D7689C100196C1E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0380A8F81D7689C100196C1E /* Info.plist */; };
 		0380A9001D768EF000196C1E /* NetworkAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A8FF1D768EF000196C1E /* NetworkAPIClient.m */; };
 		0380A9031D76B96600196C1E /* BNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0380A9021D76B96600196C1E /* BNAPI.m */; };
@@ -182,10 +182,10 @@
 		037024961D7D153800E34B48 /* UIParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIParameter.h; sourceTree = "<group>"; };
 		037024971D7D153800E34B48 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
 		037024981D7D153800E34B48 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
-		037025131D7D9F1A00E34B48 /* FNNewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNNewsDetailController.h; sourceTree = "<group>"; };
-		037025141D7D9F1A00E34B48 /* FNNewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNNewsDetailController.m; sourceTree = "<group>"; };
-		037025151D7D9F1A00E34B48 /* FNNewsPhotoSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNNewsPhotoSetController.h; sourceTree = "<group>"; };
-		037025161D7D9F1A00E34B48 /* FNNewsPhotoSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNNewsPhotoSetController.m; sourceTree = "<group>"; };
+		0370251A1D7DA0BE00E34B48 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		0370251B1D7DA0BE00E34B48 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		0370251D1D7DA28500E34B48 /* FNUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNUserDefaults.h; sourceTree = "<group>"; };
+		0370251E1D7DA28500E34B48 /* FNUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNUserDefaults.m; sourceTree = "<group>"; };
 		0380A8F81D7689C100196C1E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0380A8FE1D768EF000196C1E /* NetworkAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAPIClient.h; sourceTree = "<group>"; };
 		0380A8FF1D768EF000196C1E /* NetworkAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkAPIClient.m; sourceTree = "<group>"; };
@@ -491,12 +491,20 @@
 		037025121D7D9F0D00E34B48 /* NewsDetail */ = {
 			isa = PBXGroup;
 			children = (
-				037025131D7D9F1A00E34B48 /* FNNewsDetailController.h */,
-				037025141D7D9F1A00E34B48 /* FNNewsDetailController.m */,
-				037025151D7D9F1A00E34B48 /* FNNewsPhotoSetController.h */,
-				037025161D7D9F1A00E34B48 /* FNNewsPhotoSetController.m */,
+				037025191D7DA0B600E34B48 /* Category */,
 			);
 			path = NewsDetail;
+			sourceTree = "<group>";
+		};
+		037025191D7DA0B600E34B48 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0370251D1D7DA28500E34B48 /* FNUserDefaults.h */,
+				0370251E1D7DA28500E34B48 /* FNUserDefaults.m */,
+				0370251A1D7DA0BE00E34B48 /* MBProgressHUD+MJ.h */,
+				0370251B1D7DA0BE00E34B48 /* MBProgressHUD+MJ.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		0380A8FA1D768EDA00196C1E /* NetWork */ = {
@@ -1431,9 +1439,9 @@
 				0370249B1D7D153800E34B48 /* UIView+ViewController.m in Sources */,
 				4886EE211D72F4A800BD35B7 /* NSNumber+CustomDate.m in Sources */,
 				4886EE5A1D72F94C00BD35B7 /* NSString+EmojiExtension.m in Sources */,
-				037025171D7D9F1A00E34B48 /* FNNewsDetailController.m in Sources */,
 				4886EDFE1D72F04C00BD35B7 /* DTTimePeriodChain.m in Sources */,
 				039F94541D77D90900DF5B42 /* SKTagButton.m in Sources */,
+				0370251C1D7DA0BE00E34B48 /* MBProgressHUD+MJ.m in Sources */,
 				0380A9061D76BD5D00196C1E /* BaseCmd.m in Sources */,
 				4886EE131D72F04C00BD35B7 /* StringTools.m in Sources */,
 				48F62F041D71EACB000F97B2 /* main.m in Sources */,
@@ -1469,7 +1477,6 @@
 				48EDF4B31D767EB2001430F3 /* MainNewsTableViewCell.m in Sources */,
 				88DEFEE41D7295F00058DDEE /* IndustrySitesViewController.m in Sources */,
 				039F94611D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.m in Sources */,
-				037025181D7D9F1A00E34B48 /* FNNewsPhotoSetController.m in Sources */,
 				03A9CF991D7930F200C5A7D6 /* NewsListUnit.m in Sources */,
 				4886EE641D72FAC700BD35B7 /* NSObject+JSON.m in Sources */,
 				4886EE011D72F04C00BD35B7 /* NSDate+DateTools.m in Sources */,
@@ -1480,6 +1487,7 @@
 				4886EE281D72F4CC00BD35B7 /* NSDate+Formats.m in Sources */,
 				031617F31D7965A2003C77DF /* MTLReflection.m in Sources */,
 				039F94651D7801F500DF5B42 /* IndustryWebsiteCollectionViewCell.m in Sources */,
+				0370251F1D7DA28500E34B48 /* FNUserDefaults.m in Sources */,
 				48EDF4B91D77292A001430F3 /* SelectIndustryTagView.m in Sources */,
 				48EDF4C31D772DED001430F3 /* UIImage-Extensions.m in Sources */,
 				4886EE031D72F04C00BD35B7 /* ErrorManager.m in Sources */,
