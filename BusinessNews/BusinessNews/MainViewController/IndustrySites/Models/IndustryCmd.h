@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) NSMutableArray *websits;
 
+//选择的该行业tag的次数
+@property (nonatomic, assign) NSInteger selectCount;
 
 @end
 

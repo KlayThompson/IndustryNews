@@ -159,7 +159,7 @@
                                                             if (error) {
                                                                 block(nil, error);
                                                             } else {
-                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsListModel class] fromJSONDictionary:data error:&error];
                                                                 block(cmd, nil);
                                                             }
                                                         }];

@@ -10,12 +10,13 @@
 
 @implementation NewsListUnit
 
-//图片尚未转换
 + (NSDictionary *)JSONKeyPathsByPropertyKey{
     return @{@"newsId": @"id",
              @"viewCount":@"hits",
              @"websitId":@"webSitId",
-             @"contentId": @"contentid"};
+             @"contentId": @"contentid",
+             @"imagePic":@"pic",
+             @"industryId":@"inId"};
 }
 
 @end

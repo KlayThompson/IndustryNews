@@ -449,5 +449,5 @@ _Pragma("clang diagnostic pop")
 
 #pragma mark - 
 #define IMG_PLACEHOLDER_PRODUCT [UIImage imageNamed:@"product_image_default"]
-#define IMG_PLACEHOLDER_PURCHASE_ICON [UIImage imageNamed:@"img-default-160x160"]
+#define IMG_PLACEHOLDER_PURCHASE_ICON [UIImage imageNamed:@"shoucang_big"]
 

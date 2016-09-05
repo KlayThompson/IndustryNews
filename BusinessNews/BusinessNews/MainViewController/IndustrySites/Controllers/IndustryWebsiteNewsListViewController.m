@@ -13,6 +13,7 @@
 #import "BNAPI.h"
 #import "AppDelegate.h"
 #import "MJRefresh.h"
+#import "NewsListModel.h"
 
 #define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
 #define PageSize 20
@@ -56,6 +57,7 @@
     }];
     
     self.uTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
+    
     [self.uTableView.mj_header beginRefreshing];
     
     self.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
@@ -99,6 +101,59 @@
     
     [BNAPI news_loadNewsBySqtIndustryWithPn:@(targetPageIndex) ps:@(PageSize) inid:self.currentIndustryId webSitId:self.currentWebsiteId Block:^(BaseCmd *model, NSError *error) {
         
+        if (error) {
+            [[AppDelegate sysDirector] showToastInBottom:error.domain];
+        } else {
+            [model errorCheckSuccess:^{
+                
+                if ([model isKindOfClass:[NewsListModel class]]) {
+                    
+                    NewsListModel *unit = (NewsListModel *)model;
+                    
+                    if (targetPageIndex == 1) {
+                        
+                        [weakSelf.newsListArray removeAllObjects];
+                        weakSelf.newsListArray = [unit.newsList mutableCopy];
+                        currentPageIndex = 1;
+                    }else{
+                        if(unit.newsList){
+                            
+                            [weakSelf.newsListArray addObjectsFromArray:unit.newsList];
+                            
+                            currentPageIndex =  targetPageIndex;
+                        }else{
+                            //认为server端没有返回数据
+                        }
+                    }
+                    
+                    //控制上拉更多
+                    if (unit.newsList && unit.newsList.count < PageSize && unit.newsList.count >0 ) {
+                        
+                        weakSelf.uTableView.mj_footer = nil;
+                        
+                    } else if(unit.newsList.count == PageSize) {
+                        
+                        weakSelf.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
+                        
+                    } else if (unit.newsList.count == 0){
+                        
+                        weakSelf.uTableView.mj_footer = nil;
+                        
+                    } else {
+                        
+                        NSAssert(0, @"程序错误，检查代码！");
+                        
+                    }
+                    [weakSelf reloadTableView];
+                    
+                }else{
+                    NSAssert(0, @"程序错误，检查代码！");
+                }
+                
+            } failed:^(NSInteger errCode) {
+                [[AppDelegate sysDirector] showToastInBottom:[model errorMsg]];
+            }];
+        }
     }];
 }
 

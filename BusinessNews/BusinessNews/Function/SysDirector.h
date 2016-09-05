@@ -13,6 +13,7 @@
 
 
 @property (nonatomic, strong) NSMutableArray<IndustryCmd*> *currentIndstryTree;
+@property (nonatomic, strong) NSMutableArray<IndustryCmd*> *oldIndstryTree;
 
 +(SysDirector*)GetInstance;
 

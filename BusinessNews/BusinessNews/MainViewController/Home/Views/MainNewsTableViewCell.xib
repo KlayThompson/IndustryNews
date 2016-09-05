@@ -31,25 +31,22 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7bL-xB-aFJ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EYES" translatesAutoresizingMaskIntoConstraints="NO" id="7bL-xB-aFJ">
                         <rect key="frame" x="105" y="60" width="13" height="13"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="eXZ-EB-UN3"/>
                             <constraint firstAttribute="width" constant="13" id="efj-Gx-OHk"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vea-mF-Q7a">
-                        <rect key="frame" x="250" y="60" width="13" height="13"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EYES" translatesAutoresizingMaskIntoConstraints="NO" id="Vea-mF-Q7a">
+                        <rect key="frame" x="250" y="62" width="12" height="9"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="13" id="C9Y-FH-W9R"/>
-                            <constraint firstAttribute="width" constant="13" id="yRk-UX-IEz"/>
+                            <constraint firstAttribute="height" constant="9" id="C9Y-FH-W9R"/>
+                            <constraint firstAttribute="width" constant="12" id="yRk-UX-IEz"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="腾讯新闻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKw-Fp-oBb">
-                        <rect key="frame" x="126" y="60" width="88" height="13"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="88" id="fzs-ZR-ij7"/>
-                        </constraints>
+                        <rect key="frame" x="126" y="60" width="116" height="13"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -71,11 +68,12 @@
                     <constraint firstItem="GKw-Fp-oBb" firstAttribute="top" secondItem="nqA-xq-Wf6" secondAttribute="bottom" constant="34" id="5HR-7P-eJE"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nqA-xq-Wf6" secondAttribute="trailing" constant="8" id="9lW-bg-ATt"/>
                     <constraint firstItem="nqA-xq-Wf6" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-7" id="Cd4-SQ-1Bi"/>
-                    <constraint firstItem="egn-by-Ur0" firstAttribute="leading" secondItem="Vea-mF-Q7a" secondAttribute="trailing" constant="5" id="I01-4g-DF0"/>
+                    <constraint firstItem="egn-by-Ur0" firstAttribute="leading" secondItem="Vea-mF-Q7a" secondAttribute="trailing" constant="6" id="I01-4g-DF0"/>
                     <constraint firstItem="6cl-Mb-Vqo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="KR7-Yk-ieV"/>
-                    <constraint firstItem="Vea-mF-Q7a" firstAttribute="top" secondItem="nqA-xq-Wf6" secondAttribute="bottom" constant="34" id="Mug-jN-Ekx"/>
+                    <constraint firstItem="Vea-mF-Q7a" firstAttribute="top" secondItem="nqA-xq-Wf6" secondAttribute="bottom" constant="36" id="Mug-jN-Ekx"/>
                     <constraint firstItem="egn-by-Ur0" firstAttribute="top" secondItem="nqA-xq-Wf6" secondAttribute="bottom" constant="35" id="Y66-mI-UH7"/>
                     <constraint firstItem="nqA-xq-Wf6" firstAttribute="leading" secondItem="6cl-Mb-Vqo" secondAttribute="trailing" constant="10" id="fNH-O6-w8k"/>
+                    <constraint firstItem="Vea-mF-Q7a" firstAttribute="leading" secondItem="GKw-Fp-oBb" secondAttribute="trailing" constant="8" id="fca-X1-AAJ"/>
                     <constraint firstItem="nqA-xq-Wf6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="iRM-ec-0rc"/>
                     <constraint firstAttribute="trailingMargin" secondItem="egn-by-Ur0" secondAttribute="trailing" constant="-5" id="lXU-8j-b5q"/>
                     <constraint firstItem="GKw-Fp-oBb" firstAttribute="leading" secondItem="7bL-xB-aFJ" secondAttribute="trailing" constant="8" id="qJe-A0-DLq"/>
@@ -100,5 +98,6 @@
     </objects>
     <resources>
         <image name="209-3-1920x1200.jpg" width="120" height="120"/>
+        <image name="EYES" width="12" height="8"/>
     </resources>
 </document>

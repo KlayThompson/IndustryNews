@@ -19,8 +19,10 @@
 @property (nonatomic, strong) NSString *imagePic;       //新闻图片
 @property (nonatomic, strong) NSString *introduction;   //
 @property (nonatomic, strong) NSNumber *publishTime;    //发布时间
-@property (nonatomic ,strong) NSString *praiseCount;
-
+@property (nonatomic, strong) NSString *praiseCount;
+@property (nonatomic, strong) NSNumber *industryId;
+@property (nonatomic, strong) NSString *webSitName;
+@property (nonatomic, strong) NSString *webSitLogo;
 /**
  "articleName": "1299元魅蓝U20开箱图赏：颜值不一般",
  "contentid": "8782183",
