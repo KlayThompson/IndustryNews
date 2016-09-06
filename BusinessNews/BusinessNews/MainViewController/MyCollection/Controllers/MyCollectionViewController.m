@@ -18,6 +18,8 @@
 #import "NewsListModel.h"
 #import "IndustryWebsiteNewsListViewController.h"
 #import "NewsDetailViewController.h"
+#import "UIImageView+WebCache.h"
+#import "UIView+Size.h"
 
 #define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
 
@@ -42,7 +44,7 @@
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setBarTintColor:COLOR_THEME];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     //将保存的收藏列表copy到当前页面
     self.currentNewsArray = [AppDelegate sysDirector].collectNewsArray;

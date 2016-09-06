@@ -12,7 +12,7 @@
 #import "SysDirector.h"
 #import "NewsListModel.h"
 #import "IndustryTreeCmd.h"
-
+#import "NewsADModel.h"
 
 @implementation BNAPI
 
@@ -207,7 +207,7 @@
                                                             if (error) {
                                                                 block(nil, error);
                                                             } else {
-                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsADModel class] fromJSONDictionary:data error:&error];
                                                                 block(cmd, nil);
                                                             }
                                                         }];

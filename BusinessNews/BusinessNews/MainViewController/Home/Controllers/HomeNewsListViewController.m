@@ -16,10 +16,16 @@
 #import "NewsListModel.h"
 #import "NewsDetailViewController.h"
 
+#import "CycleScrollView.h"
+#import "UIImageView+WebCache.h"
+#import "UIView+Size.h"
+#import "NewsADModel.h"
+#import "ImageCycleScrollView.h"
+
 #define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
 #define PageSize 20
 
-@interface HomeNewsListViewController()<UITableViewDelegate,UITableViewDataSource> {
+@interface HomeNewsListViewController()<UITableViewDelegate,UITableViewDataSource,ImageCycleScrollViewDelegate> {
     
     MainNewsTableViewCell *cellRef;
     NSInteger currentPageIndex;
@@ -28,6 +34,8 @@
 @property (nonatomic, strong) UITableView *uTableView;
 @property (nonatomic, strong) NSMutableArray *newsListArray;
 @property (nonatomic, strong) NSNumber *currentIndustryId;
+//@property (nonatomic, strong) ImageCycleScrollView *imgCycleScrollView;
+@property (nonatomic, strong) NSMutableArray *currentAdArray;
 
 @end
 
@@ -46,13 +54,14 @@
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setBarTintColor:COLOR_THEME];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = COLOR_UI_BG;
+    self.view.backgroundColor = [UIColor redColor];
     
     [self.view addSubview:self.uTableView];
     
@@ -66,13 +75,16 @@
     [self.uTableView.mj_header beginRefreshing];
     
     self.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataFormServer)];
+    
+    [self loadBannerViewDataFromServer];
+    
 }
 
 #pragma mark - 初始化
 - (UITableView *) uTableView {
     
     if (!_uTableView) {
-        _uTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _uTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _uTableView.dataSource = self;
         _uTableView.delegate = self;
         _uTableView.backgroundColor = COLOR_UI_BG;
@@ -169,37 +181,87 @@
 - (void)reloadTableView {
     [self.uTableView.mj_header endRefreshing];
     [self.uTableView.mj_footer endRefreshing];
+    
     [self.uTableView reloadData];
 }
 
-#pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    if(self.newsListArray){
-        return self.newsListArray.count;
-    }else{
-        return 0;
-    }
+- (void)loadBannerViewDataFromServer {
+
+    __weak typeof (self) weakSelf = self;
+    [BNAPI news_loadTopNewsAticlesWithRmtInId:self.currentIndustryId Block:^(BaseCmd *model, NSError *error) {
+       
+        if (error) {
+            
+        } else {
+            [model errorCheckSuccess:^{
+                
+                if ([model isKindOfClass:[NewsADModel class]]) {
+                    NewsADModel *adModel = (NewsADModel *)model;
+                    weakSelf.currentAdArray = adModel.newsADList;
+                    [weakSelf reloadTableView];
+                }
+                
+            } failed:^(NSInteger errCode) {
+                [[AppDelegate sysDirector] showToastInBottom:[model errorMsg]];
+            }];
+        }
+    }];
 }
 
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    MainNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifyMainNewsCell forIndexPath:indexPath];
-    
-    cell.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105;
-    
-    NewsListUnit *unit = [self.newsListArray objectAtIndex:indexPath.row];
-    
-    [cell configureNewsListCellWithNewsListUnit:unit];
-    
-    return cell;
-}
+//- (void)configHeadAdView {
+//
+//    __weak typeof (self) weakSelf = self;
+//    self.headAdView.fetchContentViewAtIndex = ^UIView *(NSInteger aPageIndex){
+//        
+//        
+//        UIView *mContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, 120)];
+//        UIImageView *mImageView = [[UIImageView alloc] initWithFrame:mContentView.bounds];
+////        mImageView.clipsToBounds = YES;
+////        mImageView.contentMode = UIViewContentModeScaleAspectFill;
+//        NSString *urlString;
+//        if(aPageIndex<self.currentAdArray.count){
+//            
+//            NewsADCmd *adItem = [weakSelf.currentAdArray objectAtIndex:aPageIndex];
+//            urlString = adItem.pic?:@"";
+//            
+//        }else{
+//            urlString = @"";
+//        }
+//        [mImageView sd_setImageWithURL:[NSURL URLWithString:urlString]
+//                      placeholderImage:[UIImage imageNamed:@"209-3-1920x1200.jpg"]];
+//        [mContentView addSubview:mImageView];
+//        
+//        [mImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.edges.equalTo(mContentView);
+//        }];
+//        
+//        return mContentView;
+//    };
+//    
+//    self.headAdView.totalPagesCount = ^NSInteger(void){
+//        return weakSelf.currentAdArray.count;
+//    };
+//    self.headAdView.showPageControl = YES;
+//    
+//    self.headAdView.TapActionBlock = ^(NSInteger aPageIndex){
+//
+//        NewsADCmd *adItemClicked = [weakSelf.currentAdArray objectAtIndex:aPageIndex];
+//
+//        if (adItemClicked.type.integerValue == 0) {
+//            //新闻
+//            NewsListUnit *unit = [[NewsListUnit alloc] init];
+//            unit.newsId = adItemClicked.newsId;
+//            unit.websitId = adItemClicked.webSitId;
+//            unit.industryId = adItemClicked.industryId;
+//            [weakSelf jumpToNewsDetailPageWithNewsListUnit:unit];
+//        } else {
+//            //广告
+//        }
+//    };
+//}
 
-#pragma mark -UITableViewDelegate
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    NewsListUnit *unit = [self.newsListArray objectAtIndex:indexPath.row];
+#pragma mark - 跳转到新闻详情
+- (void)jumpToNewsDetailPageWithNewsListUnit:(NewsListUnit *)unit {
 
     __weak typeof (self) weakSelf = self;
     [BNAPI news_loadNewsContentWithNewsId:unit.newsId industryID:unit.industryId websitId:unit.websitId Block:^(BaseCmd *model, NSError *error) {
@@ -227,6 +289,67 @@
     }];
 }
 
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if(self.newsListArray){
+        return self.newsListArray.count;
+    }else{
+        return 0;
+    }
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MainNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifyMainNewsCell forIndexPath:indexPath];
+    
+    cell.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105;
+    
+    NewsListUnit *unit = [self.newsListArray objectAtIndex:indexPath.row];
+    
+    [cell configureNewsListCellWithNewsListUnit:unit];
+    
+    return cell;
+}
+
+#pragma mark -UITableViewDelegate
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
+    if (self.currentAdArray.count > 0) {
+        
+        NSMutableArray *imgArray = [NSMutableArray new];
+
+        for (int i = 0; i < self.currentAdArray.count; i++) {
+            NewsADCmd *cmd = [self.currentAdArray objectAtIndex:i];
+            [imgArray addObject:cmd.pic];
+        }
+        NSMutableArray *photoArray = [NSMutableArray new];
+        for(int i=0;i<imgArray.count;i++){
+            [photoArray addObject:[imgArray objectAtIndex:i]?:@""];
+        }
+        ImageCycleScrollView *imgCycleScrollView = [[ImageCycleScrollView alloc] initWithFrameRect:CGRectMake(0, 0, WIDTH_SCREEN, 120) ImageArray:photoArray TitleArray:nil IsShowPageControl:YES];
+        imgCycleScrollView.delegate = self;
+        
+        return imgCycleScrollView;
+    } else {
+        return nil;
+    }
+}
+
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NewsListUnit *unit = [self.newsListArray objectAtIndex:indexPath.row];
+
+    [self jumpToNewsDetailPageWithNewsListUnit:unit];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(!cellRef){
@@ -244,5 +367,36 @@
     // 要为cell的分割线加上额外的1pt高度。因为分隔线是被加在cell底边和contentView底边之间的。
     height += 1.0f;
     return height;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    if (self.currentAdArray.count > 0) {
+        return 120;
+    }
+    return 0.1f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    
+    return 0.1f;
+}
+
+#pragma mark - ImageCycleScrollViewDelegate
+-(void)ImageCycleScrollViewDidClicked:(NSUInteger)index {
+
+    NewsADCmd *adItemClicked = [self.currentAdArray objectAtIndex:index -1];
+    
+    if (adItemClicked.type.integerValue == 0) {
+        //新闻
+        NewsListUnit *unit = [[NewsListUnit alloc] init];
+        unit.newsId = adItemClicked.newsId;
+        unit.websitId = adItemClicked.webSitId;
+        unit.industryId = adItemClicked.industryId;
+        [self jumpToNewsDetailPageWithNewsListUnit:unit];
+    } else {
+        //广告
+    }
+    
 }
 @end

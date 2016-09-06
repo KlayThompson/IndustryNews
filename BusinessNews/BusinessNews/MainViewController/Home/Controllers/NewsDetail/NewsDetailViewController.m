@@ -77,7 +77,7 @@
     
     [self paintSnsIcons];
     
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:kColorWithHex(0x403c3c)}];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:kColorWithHex(0x403c3c)}];
     
     [self.navigationController.navigationBar setBarTintColor:kColorWithRGBA(255, 255, 255, 0.9)];
     //右边导航栏收藏功能
@@ -91,6 +91,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
     //设置返回按钮
+    [self setBackBarButtonWithTitle:nil imgName:nil];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setBackgroundImage:[UIImage imageNamed:@"backbutto"] forState:UIControlStateNormal];
     button.frame = CGRectMake(0, 0, 10, 17);

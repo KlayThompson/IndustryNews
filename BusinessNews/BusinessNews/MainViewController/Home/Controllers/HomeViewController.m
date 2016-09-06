@@ -42,6 +42,8 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUpSubViews) name:NOTIFICATION_UpdateIndustryCode object:nil];
     
     [self setUpSubViews];
@@ -60,6 +62,7 @@
         
         HomeNewsListViewController *view = [[HomeNewsListViewController alloc] initWithIndustryId:cmd.industryCode];
         [vcsArray addObject:view];
+        SLOG(@"--------------------%d%@",index,view);
     }
     
     NSArray *colorArray = @[
