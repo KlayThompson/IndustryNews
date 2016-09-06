@@ -100,16 +100,7 @@
 #pragma mark - 网络
 - (void)loadDataFormServer {
 
-    __weak typeof (self) weakSelf = self;
-    [BNAPI news_loadNewsContentWithNewsId:@(968742) industryID:@(1) websitId:@(8) Block:^(BaseCmd *model, NSError *error) {
-        [weakSelf.uTableView.mj_header endRefreshing];
-        if (error) {
-            [weakSelf makeToastInBottom:TIP_NETWORK_ERROR];
-            SLOG(@"%@",error);
-        } else {
-            NSLog(@"%@",model);
-        }
-    }];
+    
 }
 
 #pragma mark - UITableViewDataSource

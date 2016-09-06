@@ -7,51 +7,165 @@
 //
 
 #import "NewsDetailViewController.h"
-
+#import "ArticleHtmlCodeTranslate.h"
+#import "SysTools.h"
+#import "BNAPI.h"
+#import "AppDelegate.h"
+#import "UIView+Size.h"
 
 #define scrollViewHeight (APP_FRAME.size.height-44)
 
 @interface NewsDetailViewController ()<UIWebViewDelegate> {
 
     UIWebView *webViewCurrent;
+    UIView *shareIconContainerView;
 
 }
+
+@property (nonatomic, strong) NewsDetailModel *currentNewsDetailUnit;
+@property (nonatomic, strong) NSString *currentWebSiteName;
 
 @end
 
 @implementation NewsDetailViewController
 
+- (instancetype)initWithNewsDetailModel:(NewsDetailModel *)model webSiteName:(NSString *)webSiteName
+{
+    self = [super init];
+    if (self) {
+        _currentNewsDetailUnit = model;
+        _currentWebSiteName = webSiteName;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
-    webViewCurrent=[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, scrollViewHeight-44)];
+    self.view.backgroundColor = COLOR_UI_BG;
+    
+    webViewCurrent = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, scrollViewHeight-44)];
     webViewCurrent.dataDetectorTypes=!UIDataDetectorTypePhoneNumber;
-    webViewCurrent.backgroundColor=[UIColor whiteColor];
-    webViewCurrent.delegate=self;
+    webViewCurrent.backgroundColor = [UIColor whiteColor];
+    webViewCurrent.delegate = self;
     //    webViewCurrent.scrollView.delegate=self;
-    webViewCurrent.alpha=0;
+    webViewCurrent.alpha = 0;
     [self.view addSubview:webViewCurrent];
     
     [self performSelector:@selector(func_loadCurrendArticle) withObject:nil afterDelay:0.3];
 
+    [self paintSnsIcons];
+    
+    self.navigationItem.title = self.currentWebSiteName;
 }
 
+- (void)paintSnsIcons {
+    CGFloat labelWidth = FSS(50);
+    CGFloat py = APP_FRAME.size.height-44-44;
+    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, py, labelWidth, 44)];
+    lable.backgroundColor = [UIColor colorWithRed:235.0f/255.0f green:235.0f/255.0f blue:235.0f/255.0f alpha:1.0f];
+    lable.text = @"分享到:";
+    lable.font = Font11;
+    lable.textAlignment = NSTextAlignmentCenter;
+    lable.textColor = [UIColor darkGrayColor];
+    [self.view addSubview:lable];
+    
+    
+    shareIconContainerView = [[UIView alloc] initWithFrame:CGRectMake(labelWidth, py, WIDTH_SCREEN - labelWidth, 44)];
+    shareIconContainerView.backgroundColor = [UIColor colorWithRed:235.0f/255.0f green:235.0f/255.0f blue:235.0f/255.0f alpha:1.0f];
+    [self.view addSubview:shareIconContainerView];
+    
+    
+    CGFloat iconHPadding = 5.0f;
+    CGFloat iconWidth = (shareIconContainerView.width - 7*iconHPadding)/5;
+    
+    for (NSUInteger index = 0; index < 5; index ++) {
+        CGPoint origin = CGPointMake((iconWidth + iconHPadding)*index + iconHPadding, 2);
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.origin = origin;
+        btn.size = CGSizeMake(iconWidth, shareIconContainerView.height - 4);
+        [shareIconContainerView addSubview:btn];
+        
+        ///////
+        if (index == 0){
+            [btn setImage:[UIImage imageNamed:@"bottom_snswechat_c"] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(shareToWechatSession) forControlEvents:UIControlEventTouchUpInside];
+        }else if (index == 1){
+            [btn setImage:[UIImage imageNamed:@"bottom_snswechat_moment_c"] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(shareToWechatTimeLine) forControlEvents:UIControlEventTouchUpInside];
+        }else if (index == 4){
+            [btn setImage:[UIImage imageNamed:@"bottom_snsweibo"] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(shareToWeibo) forControlEvents:UIControlEventTouchUpInside];
+        }else if (index == 3){
+            [btn setImage:[UIImage imageNamed:@"bottom_snsqzone_c"] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(shareToQQZone) forControlEvents:UIControlEventTouchUpInside];
+        }else if (index == 2){
+            [btn setImage:[UIImage imageNamed:@"bottom_snsqq_c"] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(shareToQQFriend) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+}
+
+#pragma mark - Actions
 - (void)func_loadCurrendArticle {
     
     
     
+    [self func_ShowCurrentWebView];
+}
+
+-(void)func_ShowCurrentWebView {
     
+
+    webViewCurrent.frame=CGRectMake(0, 0, WIDTH_SCREEN, scrollViewHeight-44);
+    
+    NSString *htmlString = [ArticleHtmlCodeTranslate getHtmlByStringContact:self.currentNewsDetailUnit.content
+                                                                      title:self.currentNewsDetailUnit.articleName
+                                                                       time:[NSString stringWithFormat:@"%@",self.currentNewsDetailUnit.publishTime]
+                                                                       from:self.currentWebSiteName];
+    //    NSString *imageUrlString = @"http://ww3.sinaimg.cn/large/9b61f9b0jw1dtoj5cm0ghj.jpg";
+    //    NSString *yourText = article.content;
+    //    NSString *htmlString = [NSString stringWithFormat:@"<img style=\"max-width: 310px;height:auto;width:expression(this.width > 310 ? \"310px\" : this.width);\" src='%@' /><br><b>%@</b>", imageUrlString, yourText];
+    
+    [webViewCurrent loadHTMLString:htmlString baseURL:nil];
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1.0];
+    webViewCurrent.alpha=1.0;
+    [UIView commitAnimations];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark UIWebViewDelegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    NSString *picName = [[request URL] absoluteString];
+    SLOG(@"picName is %@",picName);
+    if ([picName hasPrefix:@"pic:"]) {
+//        self.aPhoto=[MWPhoto photoWithURL:[NSURL URLWithString:[picName substringFromIndex:4]]];
+//        MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+//        browser.displayNavArrows = YES;
+//        browser.displayActionButton = YES;
+//        //        browser.wantsFullScreenLayout = NO;
+//        browser.displayActionButton = NO;
+//        [self.navigationController pushViewController:browser animated:YES];
+        return NO;
+    }else {
+        return YES;
+    }
 }
-*/
 
+#pragma mark - SNS
+- (void)shareToWechatSession {
+}
+
+- (void)shareToWechatTimeLine {
+}
+
+- (void)shareToQQFriend {
+}
+
+- (void)shareToQQZone {
+}
+
+- (void)shareToWeibo {
+}
 @end

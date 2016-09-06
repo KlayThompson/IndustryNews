@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "NewsDetailModel.h"
 
 @interface NewsDetailViewController : BaseViewController
+
+
+- (instancetype)initWithNewsDetailModel:(NewsDetailModel *)model webSiteName:(NSString *)webSiteName;
 
 @end

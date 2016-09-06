@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 #import "MJRefresh.h"
 #import "NewsListModel.h"
+#import "NewsDetailViewController.h"
 
 #define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
 #define PageSize 20
@@ -190,6 +191,32 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    NewsListUnit *unit = [self.newsListArray objectAtIndex:indexPath.row];
+    
+    __weak typeof (self) weakSelf = self;
+    [BNAPI news_loadNewsContentWithNewsId:unit.newsId industryID:unit.industryId websitId:unit.websitId Block:^(BaseCmd *model, NSError *error) {
+        
+        if (error) {
+            [weakSelf makeToastInBottom:error.domain];
+            
+        } else {
+            
+            [model errorCheckSuccess:^{
+                
+                if ([model isKindOfClass:[NewsDetailModel class]]) {
+                    
+                    NewsDetailModel *detailModel = (NewsDetailModel *)model;
+                    
+                    NewsDetailViewController *detail = [[NewsDetailViewController alloc] initWithNewsDetailModel:detailModel webSiteName:unit.webSitName];
+                    
+                    [weakSelf pushViewController:detail animated:YES];
+                }
+                
+            } failed:^(NSInteger errCode) {
+                [[AppDelegate sysDirector] showToastInBottom:[model errorMsg]];
+            }];
+        }
+    }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
