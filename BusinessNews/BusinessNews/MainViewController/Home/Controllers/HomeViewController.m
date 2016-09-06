@@ -20,7 +20,7 @@
 
 #define SaveIndustryCode @"IndustryTree"
 
-@interface HomeViewController () {
+@interface HomeViewController ()<NinaPagerViewDelegate> {
 
     NSMutableArray *titleArray;
     UIScrollView *scroll;
@@ -74,6 +74,7 @@
     
     self.slideView = [[NinaPagerView alloc] initWithNinaPagerStyle:NinaPagerStyleStateNormal WithTitles:titleArray WithVCs:vcsArray WithColorArrays:colorArray];
     [self.view addSubview:self.slideView];
+    self.slideView.delegate = self;
     self.slideView.pushEnabled = YES;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"covered_bg"]];
@@ -186,6 +187,11 @@
 #pragma mark - NinaPagerViewDelegate
 - (BOOL)deallocVCsIfUnnecessary {
     return YES;
+}
+
+- (void)ninaCurrentPageIndex:(NSString *)currentPage {
+
+    
 }
 
 - (NSString *)title {

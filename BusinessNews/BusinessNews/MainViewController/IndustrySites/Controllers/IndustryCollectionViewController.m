@@ -132,6 +132,11 @@
     
     [self pushViewController:list animated:YES];
     
+    
+    //统计
+    [BNAPI sys_pushTrackEventWithType:@"click_industry_websit" name:nil value:nil rmtInId:nil websitid:unit.websiteId imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+        //do nothing
+    }];
 }
 
 #pragma mark - UICollectionViewWaterfallLayoutDelegate

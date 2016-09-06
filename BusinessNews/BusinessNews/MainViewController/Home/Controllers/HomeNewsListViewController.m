@@ -398,5 +398,9 @@
         //广告
     }
     
+    //统计
+    [BNAPI sys_pushTrackEventWithType:@"click_banner" name:nil value:nil rmtInId:adItemClicked.rmtInid websitid:adItemClicked.webSitId imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+        //do nothing
+    }];
 }
 @end

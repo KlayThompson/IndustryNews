@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "UIView+Size.h"
 #import "MWPhotoBrowser.h"
+#import "BNApi.h"
 
 #define scrollViewHeight (APP_FRAME.size.height-44)
 #define CollectNewsList @"CollectNewsList"
@@ -186,6 +187,11 @@
     [self saveCollectNewsToLocal];
     [self setRightBarWithBtn:nil imageName:@"topicon_collection_a" action:@selector(cancleCollectButtonClick)];
     [[AppDelegate sysDirector] showToastinCenter:@"收藏成功"];
+    
+    //统计
+    [BNAPI sys_pushTrackEventWithType:@"click_like" name:nil value:nil rmtInId:nil websitid:self.currentNewsListunit.websitId imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+            //do nothing
+    }];
 }
 
 //取消收藏

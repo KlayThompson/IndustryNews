@@ -223,12 +223,11 @@
  事件跟踪/统计
  事件跟踪/统计
  */
-+ (void)sys_pushTrackEventWithType:(NSNumber *)type
++ (void)sys_pushTrackEventWithType:(NSString *)type
                               name:(NSNumber *)name
                              value:(NSNumber *)value
                            rmtInId:(NSNumber *)rmtInId
                           websitid:(NSNumber *)websitid
-                               ifa:(NSNumber *)ifa
                               imei:(NSNumber *)imei
                           bannerId:(NSNumber *)bannerId
                              Block:(void(^)(BaseCmd *model, NSError *error))block {
@@ -241,7 +240,6 @@
                                 value,@"value",
                                 rmtInId,@"rmtInId",
                                 websitid,@"websitid",
-                                ifa,@"ifa",
                                 imei,@"imei",
                                 bannerId,@"bannerId",
                                 nil];
