@@ -9,13 +9,13 @@
 #import "NewsDetailViewController.h"
 #import "ArticleHtmlCodeTranslate.h"
 #import "SysTools.h"
-#import "BNAPI.h"
 #import "AppDelegate.h"
 #import "UIView+Size.h"
+#import "MWPhotoBrowser.h"
 
 #define scrollViewHeight (APP_FRAME.size.height-44)
 
-@interface NewsDetailViewController ()<UIWebViewDelegate> {
+@interface NewsDetailViewController ()<UIWebViewDelegate,MWPhotoBrowserDelegate> {
 
     UIWebView *webViewCurrent;
     UIView *shareIconContainerView;
@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) NewsDetailModel *currentNewsDetailUnit;
 @property (nonatomic, strong) NSString *currentWebSiteName;
+@property (nonatomic, strong) MWPhoto *aPhoto;
 
 @end
 
@@ -140,17 +141,27 @@
     NSString *picName = [[request URL] absoluteString];
     SLOG(@"picName is %@",picName);
     if ([picName hasPrefix:@"pic:"]) {
-//        self.aPhoto=[MWPhoto photoWithURL:[NSURL URLWithString:[picName substringFromIndex:4]]];
-//        MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-//        browser.displayNavArrows = YES;
-//        browser.displayActionButton = YES;
-//        //        browser.wantsFullScreenLayout = NO;
-//        browser.displayActionButton = NO;
-//        [self.navigationController pushViewController:browser animated:YES];
+        self.aPhoto=[MWPhoto photoWithURL:[NSURL URLWithString:[picName substringFromIndex:4]]];
+        MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+        browser.displayNavArrows = YES;
+        browser.displayActionButton = YES;
+        //        browser.wantsFullScreenLayout = NO;
+        browser.displayActionButton = NO;
+        [self.navigationController pushViewController:browser animated:YES];
         return NO;
     }else {
         return YES;
     }
+}
+
+#pragma mark - MWPhotoBrowserDelegate
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+
+    return 1;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    return self.aPhoto;
 }
 
 #pragma mark - SNS
