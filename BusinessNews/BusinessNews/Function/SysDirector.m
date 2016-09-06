@@ -15,6 +15,7 @@
 #import "Notification_Definition.h"
 
 #define SaveIndustryCode @"IndustryTree"
+#define CollectNewsList @"CollectNewsList"
 
 static SysDirector *instance;
 
@@ -35,7 +36,7 @@ static SysDirector *instance;
 {
     self = [super init];
     if (self) {
-        [self loadIndustryCodeFromServer];
+        [self setUpAPPData];
     }
     return self;
 }
@@ -82,6 +83,12 @@ static SysDirector *instance;
     [window makeToast:title duration:2 position:@"bottom"];
 }
 
+- (void)setUpAPPData {
+
+    self.collectNewsArray = [NSMutableArray new];
+    
+    [self loadIndustryCodeFromServer];
+}
 
 //启动从服务器获取分类数据
 - (void)loadIndustryCodeFromServer {
@@ -164,6 +171,9 @@ static SysDirector *instance;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UpdateIndustryCode object:nil];
 
+    NSData *dataCollect = [[NSUserDefaults standardUserDefaults] objectForKey:CollectNewsList];
+    self.collectNewsArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataCollect];
+    SLOG(@"");
 }
 
 @end

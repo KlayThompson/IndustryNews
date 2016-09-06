@@ -14,6 +14,7 @@
 #import "MWPhotoBrowser.h"
 
 #define scrollViewHeight (APP_FRAME.size.height-44)
+#define CollectNewsList @"CollectNewsList"
 
 @interface NewsDetailViewController ()<UIWebViewDelegate,MWPhotoBrowserDelegate> {
 
@@ -23,42 +24,78 @@
 }
 
 @property (nonatomic, strong) NewsDetailModel *currentNewsDetailUnit;
-@property (nonatomic, strong) NSString *currentWebSiteName;
+@property (nonatomic, strong) NewsListUnit *currentNewsListunit;
 @property (nonatomic, strong) MWPhoto *aPhoto;
+@property (nonatomic, strong) NSMutableArray<NewsListUnit*> *currentCollectNewsArray;
 
 @end
 
 @implementation NewsDetailViewController
 
-- (instancetype)initWithNewsDetailModel:(NewsDetailModel *)model webSiteName:(NSString *)webSiteName
+- (instancetype)initWithNewsDetailModel:(NewsDetailModel *)model newsListUnit:(NewsListUnit *)unit
 {
     self = [super init];
     if (self) {
         _currentNewsDetailUnit = model;
-        _currentWebSiteName = webSiteName;
+        _currentNewsListunit = unit;
     }
     return self;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.navigationController.navigationBar setBarTintColor:COLOR_THEME];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.currentCollectNewsArray = [NSMutableArray new];
+    
+    if (ARRAY_IS_NIL([AppDelegate sysDirector].collectNewsArray)) {
+        
+    } else {
+        self.currentCollectNewsArray = [AppDelegate sysDirector].collectNewsArray;
+    }
     
     self.view.backgroundColor = COLOR_UI_BG;
     
+    [self setUpSubVews];
+}
+
+- (void)setUpSubVews {
+
     webViewCurrent = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, scrollViewHeight-44)];
     webViewCurrent.dataDetectorTypes=!UIDataDetectorTypePhoneNumber;
     webViewCurrent.backgroundColor = [UIColor whiteColor];
     webViewCurrent.delegate = self;
-    //    webViewCurrent.scrollView.delegate=self;
     webViewCurrent.alpha = 0;
+    
     [self.view addSubview:webViewCurrent];
     
-    [self performSelector:@selector(func_loadCurrendArticle) withObject:nil afterDelay:0.3];
-
+    [self performSelector:@selector(func_ShowCurrentWebView) withObject:nil afterDelay:0.3];
+    
     [self paintSnsIcons];
     
-    self.navigationItem.title = self.currentWebSiteName;
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:kColorWithHex(0x403c3c)}];
+    
+    [self.navigationController.navigationBar setBarTintColor:kColorWithRGBA(255, 255, 255, 0.9)];
+    //右边导航栏收藏功能
+    if ([self verifyIsNewsCollect]) {
+        [self setRightBarWithBtn:nil imageName:@"topicon_collection_a" action:@selector(cancleCollectButtonClick)];
+    } else {
+        [self setRightBarWithBtn:nil imageName:@"topicon_collection_b" action:@selector(collectButtonClick)];
+    }
+    
+    //设置状态栏
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    
+    //设置返回按钮
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setBackgroundImage:[UIImage imageNamed:@"backbutto"] forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, 10, 17);
+    [button addTarget:self action:@selector(backButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 - (void)paintSnsIcons {
@@ -109,13 +146,6 @@
 }
 
 #pragma mark - Actions
-- (void)func_loadCurrendArticle {
-    
-    
-    
-    [self func_ShowCurrentWebView];
-}
-
 -(void)func_ShowCurrentWebView {
     
 
@@ -124,7 +154,7 @@
     NSString *htmlString = [ArticleHtmlCodeTranslate getHtmlByStringContact:self.currentNewsDetailUnit.content
                                                                       title:self.currentNewsDetailUnit.articleName
                                                                        time:[NSString stringWithFormat:@"%@",self.currentNewsDetailUnit.publishTime]
-                                                                       from:self.currentWebSiteName];
+                                                                       from:self.currentNewsListunit.webSitName];
     //    NSString *imageUrlString = @"http://ww3.sinaimg.cn/large/9b61f9b0jw1dtoj5cm0ghj.jpg";
     //    NSString *yourText = article.content;
     //    NSString *htmlString = [NSString stringWithFormat:@"<img style=\"max-width: 310px;height:auto;width:expression(this.width > 310 ? \"310px\" : this.width);\" src='%@' /><br><b>%@</b>", imageUrlString, yourText];
@@ -134,6 +164,51 @@
     [UIView setAnimationDuration:1.0];
     webViewCurrent.alpha=1.0;
     [UIView commitAnimations];
+}
+
+- (BOOL)verifyIsNewsCollect {
+
+    for (int i = 0; i < [AppDelegate sysDirector].collectNewsArray.count; i++) {
+        NewsListUnit *unit = [[AppDelegate sysDirector].collectNewsArray objectAtIndex:i];
+        if ([unit.newsId isEqual:self.currentNewsListunit.newsId]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+//收藏
+- (void)collectButtonClick {
+
+    [self.currentCollectNewsArray addObject:self.currentNewsListunit];
+    [AppDelegate sysDirector].collectNewsArray = self.currentCollectNewsArray;
+    [self saveCollectNewsToLocal];
+    [self setRightBarWithBtn:nil imageName:@"topicon_collection_a" action:@selector(cancleCollectButtonClick)];
+    [[AppDelegate sysDirector] showToastinCenter:@"收藏成功"];
+}
+
+//取消收藏
+- (void)cancleCollectButtonClick {
+    for (int i = 0; i < [AppDelegate sysDirector].collectNewsArray.count; i++) {
+        NewsListUnit *unit = [[AppDelegate sysDirector].collectNewsArray objectAtIndex:i];
+        if ([unit.newsId isEqual:self.currentNewsListunit.newsId]) {
+            [[AppDelegate sysDirector].collectNewsArray removeObjectAtIndex:i];
+        }
+    }
+    [self saveCollectNewsToLocal];
+    [self setRightBarWithBtn:nil imageName:@"topicon_collection_b" action:@selector(collectButtonClick)];
+    [[AppDelegate sysDirector] showToastinCenter:@"取消成功"];
+}
+
+- (void)saveCollectNewsToLocal {
+    NSData *tempSubmitOrderCmd = [NSKeyedArchiver archivedDataWithRootObject:[AppDelegate sysDirector].collectNewsArray];
+    [[NSUserDefaults standardUserDefaults] setObject:tempSubmitOrderCmd forKey:CollectNewsList];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)backButtonClick {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark UIWebViewDelegate
@@ -178,5 +253,9 @@
 }
 
 - (void)shareToWeibo {
+}
+
+- (NSString *)title {
+    return @"商业头条";
 }
 @end

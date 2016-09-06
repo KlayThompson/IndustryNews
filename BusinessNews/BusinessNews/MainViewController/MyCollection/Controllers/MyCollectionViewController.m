@@ -17,6 +17,7 @@
 
 #import "NewsListModel.h"
 #import "IndustryWebsiteNewsListViewController.h"
+#import "NewsDetailViewController.h"
 
 #define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
 
@@ -29,6 +30,7 @@
 
 @property (nonatomic, strong) UITableView *uTableView;
 @property (nonatomic, strong) NoDataTipView *noDataView;
+@property (nonatomic, strong) NSMutableArray<NewsListUnit*> *currentNewsArray;
 
 @end
 
@@ -38,8 +40,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBarTintColor:COLOR_THEME];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
-//    [self loadDataFormServer];
+    //将保存的收藏列表copy到当前页面
+    self.currentNewsArray = [AppDelegate sysDirector].collectNewsArray;
+    [self reloadTableView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,12 +63,11 @@
     
     [self.view addSubview:self.uTableView];
     
+    self.navigationController.navigationBar.translucent = NO;
+
     [self.uTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    
-    self.uTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDataFormServer)];
-    [self.uTableView.mj_header beginRefreshing];
     
     //提示没有数据
     [self.uTableView addSubview:self.noDataView];
@@ -97,21 +103,23 @@
     return _noDataView;
 }
 
-#pragma mark - 网络
-- (void)loadDataFormServer {
-
-    
+- (void)reloadTableView {
+    if (ARRAY_IS_NIL(self.currentNewsArray)) {
+        self.noDataView.hidden = NO;
+    } else {
+        self.noDataView.hidden = YES;
+    }
+    [self.uTableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-//    if(orderMessageArray){
-//        return orderMessageArray.count;
-//    }else{
-//        return 0;
-//    }
-    return 10;
+    if(self.currentNewsArray){
+        return self.currentNewsArray.count;
+    }else{
+        return 0;
+    }
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -120,9 +128,9 @@
     
     cell.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105;
     
-//    ZBOrderMessageListModel *model = [orderMessageArray objectAtIndex:indexPath.row];
-//    
-//    [cell configureOrderMessageWithOrderModel:model];
+    NewsListUnit *unit = [self.currentNewsArray objectAtIndex:indexPath.row];
+    
+    [cell configureNewsListCellWithNewsListUnit:unit];
     
     return cell;
 }
@@ -130,8 +138,34 @@
 #pragma mark -UITableViewDelegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    IndustryWebsiteNewsListViewController *list = [[IndustryWebsiteNewsListViewController alloc] init];
-    [self pushViewController:list animated:YES];
+    
+    NewsListUnit *unit = [self.currentNewsArray objectAtIndex:indexPath.row];
+    
+    __weak typeof (self) weakSelf = self;
+    [BNAPI news_loadNewsContentWithNewsId:unit.newsId industryID:unit.industryId websitId:unit.websitId Block:^(BaseCmd *model, NSError *error) {
+        
+        if (error) {
+            [weakSelf makeToastInBottom:error.domain];
+            
+        } else {
+            
+            [model errorCheckSuccess:^{
+                
+                if ([model isKindOfClass:[NewsDetailModel class]]) {
+                    
+                    NewsDetailModel *detailModel = (NewsDetailModel *)model;
+                    
+                    NewsDetailViewController *detail = [[NewsDetailViewController alloc] initWithNewsDetailModel:detailModel newsListUnit:unit];
+                    
+                    [weakSelf pushViewController:detail animated:YES];
+                }
+                
+            } failed:^(NSInteger errCode) {
+                [[AppDelegate sysDirector] showToastInBottom:[model errorMsg]];
+            }];
+        }
+    }];
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -141,9 +175,9 @@
     }
     cellRef.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105 - 8;
     
-//    ZBOrderMessageListModel *model = [orderMessageArray objectAtIndex:indexPath.row];
-//    
-//    [cellRef configureOrderMessageWithOrderModel:model];
+    NewsListUnit *unit = [self.currentNewsArray objectAtIndex:indexPath.row];
+    
+    [cellRef configureNewsListCellWithNewsListUnit:unit];
     
     cellRef.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cellRef.bounds));
     CGFloat height = [cellRef.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;

@@ -12,6 +12,6 @@
 @interface NewsDetailViewController : BaseViewController
 
 
-- (instancetype)initWithNewsDetailModel:(NewsDetailModel *)model webSiteName:(NSString *)webSiteName;
+- (instancetype)initWithNewsDetailModel:(NewsDetailModel *)model newsListUnit:(NewsListUnit *)unit;
 
 @end

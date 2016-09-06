@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "IndustryTreeCmd.h"
+#import "NewsListUnit.h"
 
 @interface SysDirector : NSObject
 
 
 @property (nonatomic, strong) NSMutableArray<IndustryCmd*> *currentIndstryTree;
 @property (nonatomic, strong) NSMutableArray<IndustryCmd*> *oldIndstryTree;
+@property (nonatomic, strong) NSMutableArray<NewsListUnit*> *collectNewsArray;
 
 +(SysDirector*)GetInstance;
 

@@ -1,13 +1,15 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "29-settings-(ios-5-8)@2x.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "58-retina-settings-(ios-5-8)@2x.png",
       "scale" : "2x"
     },
     {
@@ -16,8 +18,9 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "80-retina-spotlight-(ios-7-8)@2x.png",
       "scale" : "2x"
     },
     {
@@ -26,8 +29,9 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "57x57",
+      "idiom" : "iphone",
+      "filename" : "57-home-screen-(ios-5-6)@2x.png",
       "scale" : "1x"
     },
     {
@@ -47,88 +51,6 @@
       "idiom" : "iphone",
       "filename" : "180 Retina HD Home Screen (iOS 7_8).png",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "29x29",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "29x29",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "40x40",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "40x40",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "76x76",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "76x76",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "83.5x83.5",
-      "scale" : "2x"
-    },
-    {
-      "size" : "24x24",
-      "idiom" : "watch",
-      "scale" : "2x",
-      "role" : "notificationCenter",
-      "subtype" : "38mm"
-    },
-    {
-      "size" : "27.5x27.5",
-      "idiom" : "watch",
-      "scale" : "2x",
-      "role" : "notificationCenter",
-      "subtype" : "42mm"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "watch",
-      "role" : "companionSettings",
-      "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "watch",
-      "role" : "companionSettings",
-      "scale" : "3x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "watch",
-      "scale" : "2x",
-      "role" : "appLauncher",
-      "subtype" : "38mm"
-    },
-    {
-      "size" : "86x86",
-      "idiom" : "watch",
-      "scale" : "2x",
-      "role" : "quickLook",
-      "subtype" : "38mm"
-    },
-    {
-      "size" : "98x98",
-      "idiom" : "watch",
-      "scale" : "2x",
-      "role" : "quickLook",
-      "subtype" : "42mm"
     }
   ],
   "info" : {

@@ -42,6 +42,13 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBarTintColor:COLOR_THEME];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -208,7 +215,7 @@
                     
                     NewsDetailModel *detailModel = (NewsDetailModel *)model;
                     
-                    NewsDetailViewController *detail = [[NewsDetailViewController alloc] initWithNewsDetailModel:detailModel webSiteName:unit.webSitName];
+                    NewsDetailViewController *detail = [[NewsDetailViewController alloc] initWithNewsDetailModel:detailModel newsListUnit:unit];
                     
                     [weakSelf pushViewController:detail animated:YES];
                 }
