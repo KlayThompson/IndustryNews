@@ -11,6 +11,12 @@ target 'BusinessNews' do
   pod 'SDWebImage'
   pod 'Masonry'
   pod 'MBProgressHUD'
+  pod 'ShareSDK3'
+  pod 'MOBFoundation'
+  pod 'ShareSDK3/ShareSDKUI'
+  pod 'ShareSDK3/ShareSDKPlatforms/QQ'
+  pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
+  pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
   
   target 'BusinessNewsTests' do
     inherit! :search_paths
