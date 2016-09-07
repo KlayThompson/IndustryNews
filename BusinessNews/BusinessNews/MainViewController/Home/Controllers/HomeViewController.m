@@ -16,7 +16,7 @@
 #import "AppDelegate.h"
 #import "SysTools.h"
 #import "Notification_Definition.h"
-
+#import "BNAPI.h"
 
 #define SaveIndustryCode @"IndustryTree"
 
@@ -47,7 +47,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUpSubViews) name:NOTIFICATION_UpdateIndustryCode object:nil];
     
     [self setUpSubViews];
-    
 }
 
 
@@ -62,7 +61,6 @@
         
         HomeNewsListViewController *view = [[HomeNewsListViewController alloc] initWithIndustryId:cmd.industryCode];
         [vcsArray addObject:view];
-        SLOG(@"--------------------%d%@",index,view);
     }
     
     NSArray *colorArray = @[
@@ -81,6 +79,7 @@
     imageView.frame = CGRectMake(WIDTH_SCREEN - 60, 0, 60, 38);
     [self.slideView addSubview:imageView];
     imageView.userInteractionEnabled = YES;
+    
     //添加一个button展开tag
     self.showMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.showMoreButton.frame = CGRectMake(WIDTH_SCREEN - 30, 15, 12, 12);
@@ -184,6 +183,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:tempSubmitOrderCmd forKey:SaveIndustryCode];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
 #pragma mark - NinaPagerViewDelegate
 - (BOOL)deallocVCsIfUnnecessary {
     return YES;
@@ -191,7 +191,11 @@
 
 - (void)ninaCurrentPageIndex:(NSString *)currentPage {
 
-    
+    IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:currentPage.integerValue];
+    //统计
+    [BNAPI sys_pushTrackEventWithType:@"click_index_industry_tab" name:@"首页所有行业tab点击" value:nil rmtInId:cmd.industryCode websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+        //do nothing
+    }];
 }
 
 - (NSString *)title {

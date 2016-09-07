@@ -24,7 +24,7 @@
 #import "UIParameter.h"
 #import "NinaBaseView.h"
 #import "UIView+ViewController.h"
-#define MaxNums  10
+#define MaxNums  100
 static NSString *const kObserverPage = @"currentPage";
 
 @interface NinaPagerView()<NSCacheDelegate>

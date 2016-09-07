@@ -16,11 +16,11 @@
 #import "SKTagView.h"
 #import "SysTools.h"
 #import "Notification_Definition.h"
-
+#import "BNAPI.h"
 
 #define SaveIndustryCode @"IndustryTree"
 
-@interface IndustrySitesViewController () {
+@interface IndustrySitesViewController ()<NinaPagerViewDelegate> {
     UIScrollView *scroll;
     NSMutableArray *titleArray;
 }
@@ -68,6 +68,7 @@
     self.slideView = [[NinaPagerView alloc] initWithNinaPagerStyle:NinaPagerStyleStateNormal WithTitles:titleArray WithVCs:vcsArray WithColorArrays:colorArray];
     [self.view addSubview:self.slideView];
     self.slideView.pushEnabled = YES;
+    self.slideView.delegate = self;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"covered_bg"]];
     imageView.frame = CGRectMake(WIDTH_SCREEN - 60, 0, 60, 38);
@@ -177,6 +178,20 @@
     NSData *tempSubmitOrderCmd = [NSKeyedArchiver archivedDataWithRootObject:[AppDelegate sysDirector].currentIndstryTree];
     [[NSUserDefaults standardUserDefaults] setObject:tempSubmitOrderCmd forKey:SaveIndustryCode];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+#pragma mark - NinaPagerViewDelegate
+- (BOOL)deallocVCsIfUnnecessary {
+    return YES;
+}
+
+- (void)ninaCurrentPageIndex:(NSString *)currentPage {
+    
+    IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:currentPage.integerValue];
+    //统计
+    [BNAPI sys_pushTrackEventWithType:@"click_industry_websit_tab" name:@"行业站点所有行业tab点击" value:nil rmtInId:cmd.industryCode websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+        //do nothing
+    }];
 }
 
 - (void)dealloc {

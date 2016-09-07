@@ -22,5 +22,5 @@
 @property (nonatomic, strong) NSNumber *isTop;          //是否置顶？
 @property (nonatomic, strong) NSNumber *publishTime;    //发布时间
 @property (nonatomic, strong) NSMutableArray<NewsListUnit*> *newsList;
-
+@property (nonatomic, strong) NSString *websitName;
 @end

@@ -117,12 +117,12 @@
         _topTab.scrollEnabled = YES;
         _topTab.alwaysBounceHorizontal = YES;
         _topTab.showsHorizontalScrollIndicator = NO;
-        _topTab.bounces = NO;
+        _topTab.bounces = YES;
         CGFloat additionCount = 0;
         if (arrayCount > 5) {
             additionCount = (arrayCount - 5.0) / 5.0;
         }
-        _topTab.contentSize = CGSizeMake((1 + additionCount) * FUll_VIEW_WIDTH, PageBtn - TabbarHeight);
+        _topTab.contentSize = CGSizeMake((1.1 + additionCount) * FUll_VIEW_WIDTH, PageBtn - TabbarHeight);
         if (NinaDefaultPageIndex > 2 && NinaDefaultPageIndex < titlesArray.count) {
             if (titlesArray.count >= 5) {
                 _topTab.contentOffset = CGPointMake(1.0 / 5.0 * FUll_VIEW_WIDTH * (NinaDefaultPageIndex - 2), 0);
@@ -334,7 +334,8 @@
         default:
             break;
     }
-    topTabBottomLine.frame = CGRectMake(0, PageBtn - 1, (1 + additionCount) * FUll_VIEW_WIDTH, 1);    
+    topTabBottomLine.frame = CGRectMake(-100, PageBtn - 0.5, (100 + additionCount) * FUll_VIEW_WIDTH, 0.5);
+//    topTabBottomLine.hidden = YES;
 }
 
 @end

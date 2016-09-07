@@ -11,7 +11,7 @@
 @interface IndustryCmd : BaseCmd
 
 @property (nonatomic, strong) NSNumber *industryCode;
-@property (nonatomic, strong) NSNumber *industryName;
+@property (nonatomic, strong) NSString *industryName;
 
 @property (nonatomic, strong) NSMutableArray *websits;
 

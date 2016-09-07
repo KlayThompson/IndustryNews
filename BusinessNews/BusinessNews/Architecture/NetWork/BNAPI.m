@@ -224,7 +224,7 @@
  事件跟踪/统计
  */
 + (void)sys_pushTrackEventWithType:(NSString *)type
-                              name:(NSNumber *)name
+                              name:(NSString *)name
                              value:(NSNumber *)value
                            rmtInId:(NSNumber *)rmtInId
                           websitid:(NSNumber *)websitid
@@ -251,7 +251,7 @@
                                                             if (error) {
                                                                 block(nil, error);
                                                             } else {
-                                                                BaseCmd *cmd = [[self class] modelOfClass:[NewsDetailModel class] fromJSONDictionary:data error:&error];
+                                                                BaseCmd *cmd = [[self class] modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
                                                                 block(cmd, nil);
                                                             }
                                                         }];

@@ -156,7 +156,7 @@
     NSString *htmlString = [ArticleHtmlCodeTranslate getHtmlByStringContact:self.currentNewsDetailUnit.content
                                                                       title:self.currentNewsDetailUnit.articleName
                                                                        time:[NSString stringWithFormat:@"%@",self.currentNewsDetailUnit.publishTime]
-                                                                       from:self.currentNewsListunit.webSitName];
+                                                                       from:self.currentNewsDetailUnit.websitName];
     //    NSString *imageUrlString = @"http://ww3.sinaimg.cn/large/9b61f9b0jw1dtoj5cm0ghj.jpg";
     //    NSString *yourText = article.content;
     //    NSString *htmlString = [NSString stringWithFormat:@"<img style=\"max-width: 310px;height:auto;width:expression(this.width > 310 ? \"310px\" : this.width);\" src='%@' /><br><b>%@</b>", imageUrlString, yourText];
@@ -189,7 +189,7 @@
     [[AppDelegate sysDirector] showToastinCenter:@"收藏成功"];
     
     //统计
-    [BNAPI sys_pushTrackEventWithType:@"click_like" name:nil value:nil rmtInId:nil websitid:self.currentNewsListunit.websitId imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+    [BNAPI sys_pushTrackEventWithType:@"click_like" name:@"收藏的点击" value:nil rmtInId:nil websitid:self.currentNewsListunit.websitId imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
             //do nothing
     }];
 }
@@ -263,6 +263,6 @@
 }
 
 - (NSString *)title {
-    return @"商业头条";
+    return @"头条详情";
 }
 @end
