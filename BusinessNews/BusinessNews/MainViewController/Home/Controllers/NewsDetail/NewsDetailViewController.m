@@ -13,6 +13,9 @@
 #import "UIView+Size.h"
 #import "MWPhotoBrowser.h"
 #import "BNApi.h"
+#import <ShareSDK/ShareSDK.h>
+#import "TTShareHelper.h"
+
 
 #define scrollViewHeight (APP_FRAME.size.height-44)
 #define CollectNewsList @"CollectNewsList"
@@ -248,18 +251,23 @@
 
 #pragma mark - SNS
 - (void)shareToWechatSession {
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformSubTypeWechatSession currentViewController:self];
 }
 
 - (void)shareToWechatTimeLine {
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformSubTypeWechatTimeline currentViewController:self];
 }
 
 - (void)shareToQQFriend {
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformSubTypeQQFriend currentViewController:self];
 }
 
 - (void)shareToQQZone {
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformSubTypeQZone currentViewController:self];
 }
 
 - (void)shareToWeibo {
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformTypeSinaWeibo currentViewController:self];
 }
 
 - (NSString *)title {

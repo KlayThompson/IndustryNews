@@ -133,6 +133,7 @@
 		4890FC131D7DBEAC00B8C123 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4890FC121D7DBEAC00B8C123 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4890FC161D7DC1FD00B8C123 /* ArticleHtmlCodeTranslate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4890FC151D7DC1FD00B8C123 /* ArticleHtmlCodeTranslate.m */; };
 		489942A81D75D26D00E68FF2 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 489942A71D75D26D00E68FF2 /* File */; };
+		489956E21D80660100AA7A5E /* TTShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 489956E11D80660100AA7A5E /* TTShareHelper.m */; };
 		48EDF4A61D76734D001430F3 /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4A11D76734D001430F3 /* CRNavigationBar.m */; };
 		48EDF4A71D76734D001430F3 /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4A31D76734D001430F3 /* CRNavigationController.m */; };
 		48EDF4A81D76734D001430F3 /* CRUIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EDF4A51D76734D001430F3 /* CRUIToolbar.m */; };
@@ -440,6 +441,8 @@
 		4890FC151D7DC1FD00B8C123 /* ArticleHtmlCodeTranslate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleHtmlCodeTranslate.m; sourceTree = "<group>"; };
 		489942A71D75D26D00E68FF2 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		489942AA1D75DBCE00E68FF2 /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
+		489956E01D80660100AA7A5E /* TTShareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTShareHelper.h; sourceTree = "<group>"; };
+		489956E11D80660100AA7A5E /* TTShareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTShareHelper.m; sourceTree = "<group>"; };
 		48EDF4A01D76734D001430F3 /* CRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationBar.h; sourceTree = "<group>"; };
 		48EDF4A11D76734D001430F3 /* CRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationBar.m; sourceTree = "<group>"; };
 		48EDF4A21D76734D001430F3 /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationController.h; sourceTree = "<group>"; };
@@ -1171,6 +1174,8 @@
 			children = (
 				0380A91D1D76DA4E00196C1E /* SysDirector.h */,
 				0380A91E1D76DA4E00196C1E /* SysDirector.m */,
+				489956E01D80660100AA7A5E /* TTShareHelper.h */,
+				489956E11D80660100AA7A5E /* TTShareHelper.m */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -1751,6 +1756,7 @@
 				48EDF4A61D76734D001430F3 /* CRNavigationBar.m in Sources */,
 				031617F01D7965A2003C77DF /* MTLManagedObjectAdapter.m in Sources */,
 				0356C12D1D7E6D3600478837 /* DALabeledCircularProgressView.m in Sources */,
+				489956E21D80660100AA7A5E /* TTShareHelper.m in Sources */,
 				03FF4CA41D797F97004AA63B /* IndustryTreeCmd.m in Sources */,
 				48EDF4A71D76734D001430F3 /* CRNavigationController.m in Sources */,
 				0356C1381D7E6D3600478837 /* MWZoomingScrollView.m in Sources */,
