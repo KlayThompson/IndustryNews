@@ -475,10 +475,6 @@
 		5C483B8D8EB11D7391CDC37C /* Pods-BusinessNewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNewsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNewsUITests/Pods-BusinessNewsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C624109DCC1727EEDF264CD /* libPods-BusinessNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8440D5E377C9E96DE2DBEFE6 /* Pods-BusinessNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessNews/Pods-BusinessNews.release.xcconfig"; sourceTree = "<group>"; };
-		88DEFEA31D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFEA91D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFEAB1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
-		88DEFEAD1D7295F00058DDEE /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		88DEFEB51D7295F00058DDEE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		88DEFEB61D7295F00058DDEE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		88DEFEBB1D7295F00058DDEE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -1119,11 +1115,7 @@
 			isa = PBXGroup;
 			children = (
 				88DEFEB01D7295F00058DDEE /* MainViewController */,
-				88DEFEA21D7295F00058DDEE /* Config */,
 				88DEFEA61D7295F00058DDEE /* Function */,
-				88DEFEA81D7295F00058DDEE /* H5Resources */,
-				88DEFEAA1D7295F00058DDEE /* HRDdb */,
-				88DEFEAC1D7295F00058DDEE /* HRDPay */,
 				4886ED961D72EF5700BD35B7 /* Architecture */,
 				489942A91D75DBCE00E68FF2 /* Common */,
 				4886ED9F1D72F04C00BD35B7 /* PublicTools */,
@@ -1174,14 +1166,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		88DEFEA21D7295F00058DDEE /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				88DEFEA31D7295F00058DDEE /* replace.h */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		88DEFEA61D7295F00058DDEE /* Function */ = {
 			isa = PBXGroup;
 			children = (
@@ -1189,30 +1173,6 @@
 				0380A91E1D76DA4E00196C1E /* SysDirector.m */,
 			);
 			path = Function;
-			sourceTree = "<group>";
-		};
-		88DEFEA81D7295F00058DDEE /* H5Resources */ = {
-			isa = PBXGroup;
-			children = (
-				88DEFEA91D7295F00058DDEE /* replace.h */,
-			);
-			path = H5Resources;
-			sourceTree = "<group>";
-		};
-		88DEFEAA1D7295F00058DDEE /* HRDdb */ = {
-			isa = PBXGroup;
-			children = (
-				88DEFEAB1D7295F00058DDEE /* replace.h */,
-			);
-			path = HRDdb;
-			sourceTree = "<group>";
-		};
-		88DEFEAC1D7295F00058DDEE /* HRDPay */ = {
-			isa = PBXGroup;
-			children = (
-				88DEFEAD1D7295F00058DDEE /* replace.h */,
-			);
-			path = HRDPay;
 			sourceTree = "<group>";
 		};
 		88DEFEB01D7295F00058DDEE /* MainViewController */ = {
@@ -1460,6 +1420,7 @@
 				TargetAttributes = {
 					48F62EFE1D71EACB000F97B2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3BB36MF7NL;
 					};
 					48F62F171D71EACC000F97B2 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1943,7 +1904,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BusinessNews/BN-Prefix.pch";
 				INFOPLIST_FILE = BusinessNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1959,7 +1920,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BusinessNews/BN-Prefix.pch";
 				INFOPLIST_FILE = BusinessNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
