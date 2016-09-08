@@ -451,3 +451,19 @@ _Pragma("clang diagnostic pop")
 #define IMG_PLACEHOLDER_PRODUCT [UIImage imageNamed:@"product_image_default"]
 #define IMG_PLACEHOLDER_PURCHASE_ICON [UIImage imageNamed:@"default_newsimage"]
 
+
+#define UmengAppkey @"50247d7e52701526be000003"
+
+//weibo
+#define WeiboAppKey             @"2352498964"
+//777322123
+#define WeiboAppSecret          @"a584176a6b00027810362be79700842f"
+//50deed0f096821dffab1ce1f8e114449
+#define WeiboAppRedirectURI     @"http://www.9tong.com"
+
+#define WeChatAppId @"wx28cc05aaced1c908"
+
+#define QQAppKey             @"2e85ef2eb9de78180181e1607a4ad73a"
+
+#define QQAppId          @"101007698"
+

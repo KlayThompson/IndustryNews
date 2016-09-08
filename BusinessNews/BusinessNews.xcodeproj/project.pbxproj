@@ -54,6 +54,15 @@
 		0356C1491D7E6D3600478837 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0356C12B1D7E6D3600478837 /* README.md */; };
 		035C2EBA1D810A14007C27F2 /* SecondMainNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 035C2EB81D810A14007C27F2 /* SecondMainNewsCell.m */; };
 		035C2EBB1D810A14007C27F2 /* SecondMainNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035C2EB91D810A14007C27F2 /* SecondMainNewsCell.xib */; };
+		035C2EBD1D815B07007C27F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2EBC1D815B07007C27F2 /* SystemConfiguration.framework */; };
+		035C2EBF1D815B7A007C27F2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2EBE1D815B7A007C27F2 /* ImageIO.framework */; };
+		035C2EC11D815BC2007C27F2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2EC01D815BC2007C27F2 /* Security.framework */; };
+		035C2EC31D815BCE007C27F2 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2EC21D815BCE007C27F2 /* libiconv.tbd */; };
+		035C2EC51D815BDF007C27F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2EC41D815BDF007C27F2 /* CoreGraphics.framework */; };
+		035C2EC71D815BF0007C27F2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2EC61D815BF0007C27F2 /* libsqlite3.tbd */; };
+		035C2EC91D815BFD007C27F2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2EC81D815BFD007C27F2 /* CoreTelephony.framework */; };
+		035C2ECB1D815C08007C27F2 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2ECA1D815C08007C27F2 /* libstdc++.tbd */; };
+		035C2ECD1D815C14007C27F2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2ECC1D815C14007C27F2 /* libz.tbd */; };
 		037024991D7D153800E34B48 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024931D7D153800E34B48 /* NinaBaseView.m */; };
 		0370249A1D7D153800E34B48 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024951D7D153800E34B48 /* NinaPagerView.m */; };
 		0370249B1D7D153800E34B48 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024981D7D153800E34B48 /* UIView+ViewController.m */; };
@@ -273,6 +282,15 @@
 		035C2EB71D810A14007C27F2 /* SecondMainNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondMainNewsCell.h; sourceTree = "<group>"; };
 		035C2EB81D810A14007C27F2 /* SecondMainNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondMainNewsCell.m; sourceTree = "<group>"; };
 		035C2EB91D810A14007C27F2 /* SecondMainNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondMainNewsCell.xib; sourceTree = "<group>"; };
+		035C2EBC1D815B07007C27F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		035C2EBE1D815B7A007C27F2 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		035C2EC01D815BC2007C27F2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		035C2EC21D815BCE007C27F2 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		035C2EC41D815BDF007C27F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		035C2EC61D815BF0007C27F2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		035C2EC81D815BFD007C27F2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		035C2ECA1D815C08007C27F2 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		035C2ECC1D815C14007C27F2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0368CA8C592AAFB9E4C55C99 /* libPods-BusinessNewsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessNewsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		037024921D7D153800E34B48 /* NinaBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaBaseView.h; sourceTree = "<group>"; };
 		037024931D7D153800E34B48 /* NinaBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaBaseView.m; sourceTree = "<group>"; };
@@ -502,6 +520,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035C2ECD1D815C14007C27F2 /* libz.tbd in Frameworks */,
+				035C2ECB1D815C08007C27F2 /* libstdc++.tbd in Frameworks */,
+				035C2EC91D815BFD007C27F2 /* CoreTelephony.framework in Frameworks */,
+				035C2EC71D815BF0007C27F2 /* libsqlite3.tbd in Frameworks */,
+				035C2EC51D815BDF007C27F2 /* CoreGraphics.framework in Frameworks */,
+				035C2EC31D815BCE007C27F2 /* libiconv.tbd in Frameworks */,
+				035C2EC11D815BC2007C27F2 /* Security.framework in Frameworks */,
+				035C2EBF1D815B7A007C27F2 /* ImageIO.framework in Frameworks */,
+				035C2EBD1D815B07007C27F2 /* SystemConfiguration.framework in Frameworks */,
 				073572181251DF34E9F6C09F /* libPods-BusinessNews.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1164,6 +1191,15 @@
 		63AED7DD688D24A966843DD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				035C2ECC1D815C14007C27F2 /* libz.tbd */,
+				035C2ECA1D815C08007C27F2 /* libstdc++.tbd */,
+				035C2EC81D815BFD007C27F2 /* CoreTelephony.framework */,
+				035C2EC61D815BF0007C27F2 /* libsqlite3.tbd */,
+				035C2EC41D815BDF007C27F2 /* CoreGraphics.framework */,
+				035C2EC21D815BCE007C27F2 /* libiconv.tbd */,
+				035C2EC01D815BC2007C27F2 /* Security.framework */,
+				035C2EBE1D815B7A007C27F2 /* ImageIO.framework */,
+				035C2EBC1D815B07007C27F2 /* SystemConfiguration.framework */,
 				B517B69D02ABE2E1A9CFA3C0 /* libPods-BusinessNews.a */,
 				7C624109DCC1727EEDF264CD /* libPods-BusinessNewsTests.a */,
 				0368CA8C592AAFB9E4C55C99 /* libPods-BusinessNewsUITests.a */,
@@ -1428,7 +1464,6 @@
 				TargetAttributes = {
 					48F62EFE1D71EACB000F97B2 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 3BB36MF7NL;
 					};
 					48F62F171D71EACC000F97B2 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1915,6 +1950,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BusinessNews/BN-Prefix.pch";
 				INFOPLIST_FILE = BusinessNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1931,6 +1967,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BusinessNews/BN-Prefix.pch";
 				INFOPLIST_FILE = BusinessNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

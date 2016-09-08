@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ShareSDK/ShareSDK.h>
+#import "UMSocial.h"
 #import "NewsDetailModel.h"
 #import "BaseViewController.h"
 
@@ -17,7 +17,7 @@
 
 - (void)shareArticleWith:(NewsDetailModel *)model
               industryId:(NSNumber *)industryId
-               shareType:(SSDKPlatformType)type
+               shareType:(NSString *)type
    currentViewController:(BaseViewController *)currentVC;
 
 @end

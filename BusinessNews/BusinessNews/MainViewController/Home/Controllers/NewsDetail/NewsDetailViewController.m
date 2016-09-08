@@ -13,7 +13,7 @@
 #import "UIView+Size.h"
 #import "MWPhotoBrowser.h"
 #import "BNApi.h"
-#import <ShareSDK/ShareSDK.h>
+
 #import "TTShareHelper.h"
 
 
@@ -258,23 +258,23 @@
 
 #pragma mark - SNS
 - (void)shareToWechatSession {
-    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformSubTypeWechatSession currentViewController:self];
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:UMShareToWechatSession currentViewController:self];
 }
 
 - (void)shareToWechatTimeLine {
-    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformSubTypeWechatTimeline currentViewController:self];
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:UMShareToWechatTimeline currentViewController:self];
 }
 
 - (void)shareToQQFriend {
-    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformSubTypeQQFriend currentViewController:self];
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:UMShareToQQ currentViewController:self];
 }
 
 - (void)shareToQQZone {
-    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformSubTypeQZone currentViewController:self];
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:UMShareToQzone currentViewController:self];
 }
 
 - (void)shareToWeibo {
-    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:SSDKPlatformTypeSinaWeibo currentViewController:self];
+    [[TTShareHelper shareHelper] shareArticleWith:self.currentNewsDetailUnit industryId:self.currentNewsListunit.industryId shareType:UMShareToSina currentViewController:self];
 }
 
 - (NSString *)title {
