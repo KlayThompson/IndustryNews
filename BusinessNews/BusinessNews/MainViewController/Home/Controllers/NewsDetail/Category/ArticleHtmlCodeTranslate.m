@@ -75,10 +75,10 @@
     NSMutableString *strReturn=[NSMutableString stringWithCapacity:1];
     [strReturn appendString:@"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"];
     [strReturn appendFormat:@"<style type=\"text/css\">\
-     h1 {font-family:Arial;font-size:14px;font-weight:normal;color:#666666;text-align: left;} \
-     p{text-align:justify;text-justify:Distribute-all-lines;line-height:25px; font-size: 16px;word-wrap: break-word; white-space: pre-line; } \
-     h2{font-size: 18px;text-align: left;font-weight:bold;} </style><div style=\"width:%fpx;margin: 0 auto;\">",WIDTH_SCREEN-26];
-    [strReturn appendFormat:@"<h2>%@</h2><h1>%@   来源：%@</h1>",aTitle,time,aFrom];
+     h1 {font-family:Arial;font-size:11px;font-weight:normal;color:#666666;text-align: left;} \
+     p{text-align:justify;text-justify:Distribute-all-lines;line-height:25px; font-size: 14px;word-wrap: break-word; white-space: pre-line; } \
+     h2{font-size: 19px;text-align: left;font-weight:748;color:#403c3c;} </style><div style=\"width:%fpx;margin: 0 auto;\">",WIDTH_SCREEN-26];
+    [strReturn appendFormat:@"<h2>%@</h2><h1>%@ %@   </h1>",aTitle,aFrom,time];
     NSArray  *listItems = [_str componentsMatchedByRegex:@"\\[img src=.*?\\]"];
     NSInteger lastLocation=0;
     

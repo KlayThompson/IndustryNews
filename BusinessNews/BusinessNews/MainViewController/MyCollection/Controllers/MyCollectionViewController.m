@@ -7,7 +7,7 @@
 //
 
 #import "MyCollectionViewController.h"
-#import "MainNewsTableViewCell.h"
+//#import "MainNewsTableViewCell.h"
 #import "SysTools.h"
 #import "Masonry.h"
 #import "BNAPI.h"
@@ -20,13 +20,15 @@
 #import "NewsDetailViewController.h"
 #import "UIImageView+WebCache.h"
 #import "UIView+Size.h"
+#import "SecondMainNewsCell.h"
 
-#define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
+
+#define kCellIdentifyMainNewsCell @"SecondMainNewsCell"
 
 
 @interface MyCollectionViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
-    MainNewsTableViewCell *cellRef;
+    SecondMainNewsCell *cellRef;
 }
 
 
@@ -87,7 +89,7 @@
         _uTableView.delegate = self;
         _uTableView.backgroundColor = COLOR_UI_BG;
         _uTableView.tableFooterView = [UIView new];
-        [_uTableView registerNib:[UINib nibWithNibName:@"MainNewsTableViewCell" bundle:nil] forCellReuseIdentifier:kCellIdentifyMainNewsCell];
+        [_uTableView registerNib:[UINib nibWithNibName:@"SecondMainNewsCell" bundle:nil] forCellReuseIdentifier:kCellIdentifyMainNewsCell];
         
     }
     return _uTableView;
@@ -126,9 +128,9 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    MainNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifyMainNewsCell forIndexPath:indexPath];
+    SecondMainNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifyMainNewsCell forIndexPath:indexPath];
     
-    cell.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105;
+    cell.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 14;
     
     NewsListUnit *unit = [self.currentNewsArray objectAtIndex:indexPath.row];
     
@@ -173,11 +175,15 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(!cellRef){
-        cellRef = [SysTools createViewFromXib:@"MainNewsTableViewCell"];
+        cellRef = [SysTools createViewFromXib:@"SecondMainNewsCell"];
     }
-    cellRef.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105 - 8;
-    
     NewsListUnit *unit = [self.currentNewsArray objectAtIndex:indexPath.row];
+    
+    if (STR_IS_NIL(unit.imagePic)) {
+        cellRef.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 14 - 35;
+    } else {
+        cellRef.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 14 - 120;
+    }
     
     [cellRef configureNewsListCellWithNewsListUnit:unit];
     

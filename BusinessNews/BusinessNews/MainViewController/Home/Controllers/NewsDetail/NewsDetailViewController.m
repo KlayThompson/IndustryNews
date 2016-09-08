@@ -48,7 +48,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [self.navigationController.navigationBar setBarTintColor:COLOR_THEME];
+//    [self.navigationController.navigationBar setBarTintColor:COLOR_THEME];
 }
 
 - (void)viewDidLoad {
@@ -185,6 +185,12 @@
 //收藏
 - (void)collectButtonClick {
 
+    if (STR_IS_NIL(self.currentNewsListunit.articleName)) {
+        self.currentNewsListunit.articleName = self.currentNewsDetailUnit.articleName;
+        self.currentNewsListunit.viewCount = self.currentNewsDetailUnit.viewCount;
+        self.currentNewsListunit.webSitName = self.currentNewsDetailUnit.websitName;
+    }
+    
     [self.currentCollectNewsArray addObject:self.currentNewsListunit];
     [AppDelegate sysDirector].collectNewsArray = self.currentCollectNewsArray;
     [self saveCollectNewsToLocal];
@@ -232,6 +238,7 @@
         browser.displayActionButton = YES;
         //        browser.wantsFullScreenLayout = NO;
         browser.displayActionButton = NO;
+        
         [self.navigationController pushViewController:browser animated:YES];
         return NO;
     }else {

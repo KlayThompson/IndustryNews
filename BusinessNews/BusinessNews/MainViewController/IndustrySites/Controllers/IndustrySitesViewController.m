@@ -11,7 +11,6 @@
 #import "NinaPagerView.h"
 #import "Masonry.h"
 #import "IndustryCollectionViewController.h"
-#import "SelectIndustryTagView.h"
 #import "UIView+Size.h"
 #import "SKTagView.h"
 #import "SysTools.h"
@@ -52,6 +51,10 @@
     
     for (int index = 0; index < [AppDelegate sysDirector].currentIndstryTree.count; index++) {
         IndustryCmd *cmd = [AppDelegate sysDirector].currentIndstryTree[index];
+//        if ([cmd.industryName isEqualToString:@"推荐"]) {
+//            [[AppDelegate sysDirector].currentIndstryTree removeObject:cmd];
+//        } else {
+//        }
         [titleArray addObject:StringObj(cmd.industryName)];
         IndustryCollectionViewController *view = [[IndustryCollectionViewController alloc] initWithIndustryCmd:cmd];
         [vcsArray addObject:view];
@@ -189,7 +192,7 @@
     
     IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:currentPage.integerValue];
     //统计
-    [BNAPI sys_pushTrackEventWithType:@"click_industry_websit_tab" name:@"行业站点所有行业tab点击" value:nil rmtInId:cmd.industryCode websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+    [BNAPI sys_pushTrackEventWithType:@"click_industry_websit_tab" name:@"行业站点所有行业tab点击" value:nil rmtInId:[NSNumber numberWithInteger:cmd.industryCode.integerValue] websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
         //do nothing
     }];
 }

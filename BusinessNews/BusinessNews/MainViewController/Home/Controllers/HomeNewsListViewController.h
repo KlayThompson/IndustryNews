@@ -10,6 +10,6 @@
 
 @interface HomeNewsListViewController : BaseViewController
 
-- (instancetype)initWithIndustryId:(NSNumber *)industryId;
+- (instancetype)initWithIndustryId:(NSString *)industryId;
 
 @end

@@ -14,7 +14,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.websiteImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.websiteImageView.layer.masksToBounds = YES;
 }
 
 - (void)configureCellWithIndustryCmd:(WebsitesUnit *)unit {

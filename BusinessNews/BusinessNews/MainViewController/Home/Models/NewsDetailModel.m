@@ -14,7 +14,8 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey{
     return @{@"newsId": @"id",
              @"imagePic": @"pic",
-             @"sourceUrl":@"url"};
+             @"sourceUrl":@"url",
+             @"viewCount":@"hits"};
 }
 
 @end

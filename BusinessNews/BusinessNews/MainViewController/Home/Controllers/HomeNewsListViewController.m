@@ -7,7 +7,7 @@
 //
 
 #import "HomeNewsListViewController.h"
-#import "MainNewsTableViewCell.h"
+#import "SecondMainNewsCell.h"
 #import "SysTools.h"
 #import "Masonry.h"
 #import "BNAPI.h"
@@ -22,18 +22,18 @@
 #import "NewsADModel.h"
 #import "ImageCycleScrollView.h"
 
-#define kCellIdentifyMainNewsCell @"MainNewsTableViewCell"
+#define kCellIdentifyMainNewsCell @"SecondMainNewsCell"
 #define PageSize 20
 
 @interface HomeNewsListViewController()<UITableViewDelegate,UITableViewDataSource,ImageCycleScrollViewDelegate> {
     
-    MainNewsTableViewCell *cellRef;
+    SecondMainNewsCell *cellRef;
     NSInteger currentPageIndex;
 }
 
 @property (nonatomic, strong) UITableView *uTableView;
 @property (nonatomic, strong) NSMutableArray *newsListArray;
-@property (nonatomic, strong) NSNumber *currentIndustryId;
+@property (nonatomic, strong) NSString *currentIndustryId;
 //@property (nonatomic, strong) ImageCycleScrollView *imgCycleScrollView;
 @property (nonatomic, strong) NSMutableArray *currentAdArray;
 
@@ -41,7 +41,7 @@
 
 @implementation HomeNewsListViewController
 
-- (instancetype)initWithIndustryId:(NSNumber *)industryId
+- (instancetype)initWithIndustryId:(NSString *)industryId
 {
     self = [super init];
     if (self) {
@@ -75,9 +75,9 @@
     [self.uTableView.mj_header beginRefreshing];
     
     self.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataFormServer)];
-    
-    [self loadBannerViewDataFromServer];
-    
+    self.uTableView.mj_footer.hidden = YES;
+    [self performSelector:@selector(loadBannerViewDataFromServer) withObject:nil afterDelay:0.3];
+
 }
 
 #pragma mark - 初始化
@@ -89,7 +89,7 @@
         _uTableView.delegate = self;
         _uTableView.backgroundColor = COLOR_UI_BG;
         _uTableView.tableFooterView = [UIView new];
-        [_uTableView registerNib:[UINib nibWithNibName:@"MainNewsTableViewCell" bundle:nil] forCellReuseIdentifier:kCellIdentifyMainNewsCell];
+        [_uTableView registerNib:[UINib nibWithNibName:@"SecondMainNewsCell" bundle:nil] forCellReuseIdentifier:kCellIdentifyMainNewsCell];
         
     }
     return _uTableView;
@@ -119,7 +119,7 @@
     
     [BNAPI news_loadNewsByRmtIndustryWithPn:@(targetPageIndex)
                                          ps:@(PageSize)
-                                    rmtInId:[NSString stringWithFormat:@"%@",self.currentIndustryId]
+                                    rmtInId:self.currentIndustryId
                                       Block:^(BaseCmd *model, NSError *error) {
                                           
                                           if (error) {
@@ -155,7 +155,7 @@
                                                       } else if(unit.newsList.count == PageSize) {
                                                           
                                                           weakSelf.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataFormServer)];
-                                                          
+                                                          weakSelf.uTableView.mj_footer.hidden = NO;
                                                       } else if (unit.newsList.count == 0){
                                                           
                                                           weakSelf.uTableView.mj_footer = nil;
@@ -188,7 +188,7 @@
 - (void)loadBannerViewDataFromServer {
 
     __weak typeof (self) weakSelf = self;
-    [BNAPI news_loadTopNewsAticlesWithRmtInId:self.currentIndustryId Block:^(BaseCmd *model, NSError *error) {
+    [BNAPI news_loadTopNewsAticlesWithRmtInId:[NSNumber numberWithInteger:self.currentIndustryId.integerValue] Block:^(BaseCmd *model, NSError *error) {
        
         if (error) {
             
@@ -207,58 +207,6 @@
         }
     }];
 }
-
-//- (void)configHeadAdView {
-//
-//    __weak typeof (self) weakSelf = self;
-//    self.headAdView.fetchContentViewAtIndex = ^UIView *(NSInteger aPageIndex){
-//        
-//        
-//        UIView *mContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, 120)];
-//        UIImageView *mImageView = [[UIImageView alloc] initWithFrame:mContentView.bounds];
-////        mImageView.clipsToBounds = YES;
-////        mImageView.contentMode = UIViewContentModeScaleAspectFill;
-//        NSString *urlString;
-//        if(aPageIndex<self.currentAdArray.count){
-//            
-//            NewsADCmd *adItem = [weakSelf.currentAdArray objectAtIndex:aPageIndex];
-//            urlString = adItem.pic?:@"";
-//            
-//        }else{
-//            urlString = @"";
-//        }
-//        [mImageView sd_setImageWithURL:[NSURL URLWithString:urlString]
-//                      placeholderImage:[UIImage imageNamed:@"209-3-1920x1200.jpg"]];
-//        [mContentView addSubview:mImageView];
-//        
-//        [mImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.equalTo(mContentView);
-//        }];
-//        
-//        return mContentView;
-//    };
-//    
-//    self.headAdView.totalPagesCount = ^NSInteger(void){
-//        return weakSelf.currentAdArray.count;
-//    };
-//    self.headAdView.showPageControl = YES;
-//    
-//    self.headAdView.TapActionBlock = ^(NSInteger aPageIndex){
-//
-//        NewsADCmd *adItemClicked = [weakSelf.currentAdArray objectAtIndex:aPageIndex];
-//
-//        if (adItemClicked.type.integerValue == 0) {
-//            //新闻
-//            NewsListUnit *unit = [[NewsListUnit alloc] init];
-//            unit.newsId = adItemClicked.newsId;
-//            unit.websitId = adItemClicked.webSitId;
-//            unit.industryId = adItemClicked.industryId;
-//            [weakSelf jumpToNewsDetailPageWithNewsListUnit:unit];
-//        } else {
-//            //广告
-//        }
-//    };
-//}
 
 #pragma mark - 跳转到新闻详情
 - (void)jumpToNewsDetailPageWithNewsListUnit:(NewsListUnit *)unit {
@@ -306,9 +254,9 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    MainNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifyMainNewsCell forIndexPath:indexPath];
+    SecondMainNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifyMainNewsCell forIndexPath:indexPath];
     
-    cell.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105;
+    cell.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 14;
     
     NewsListUnit *unit = [self.newsListArray objectAtIndex:indexPath.row];
     
@@ -353,11 +301,15 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(!cellRef){
-        cellRef = [SysTools createViewFromXib:@"MainNewsTableViewCell"];
+        cellRef = [SysTools createViewFromXib:@"SecondMainNewsCell"];
     }
-    cellRef.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 105 - 8;
-    
     NewsListUnit *unit = [self.newsListArray objectAtIndex:indexPath.row];
+    
+    if (STR_IS_NIL(unit.imagePic)) {
+        cellRef.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 14 - 35;
+    } else {
+        cellRef.newsTitleLabel.preferredMaxLayoutWidth = WIDTH_SCREEN - 14 - 120;
+    }
     
     [cellRef configureNewsListCellWithNewsListUnit:unit];
     
@@ -393,6 +345,7 @@
         unit.newsId = adItemClicked.newsId;
         unit.websitId = adItemClicked.webSitId;
         unit.industryId = adItemClicked.industryId;
+        unit.imagePic = adItemClicked.pic;
         [self jumpToNewsDetailPageWithNewsListUnit:unit];
     } else {
         //广告

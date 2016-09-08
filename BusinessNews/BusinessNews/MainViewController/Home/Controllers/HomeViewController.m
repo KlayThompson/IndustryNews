@@ -10,7 +10,6 @@
 #import "NinaPagerView.h"
 #import "Masonry.h"
 #import "HomeNewsListViewController.h"
-#import "SelectIndustryTagView.h"
 #import "UIView+Size.h"
 #import "SKTagView.h"
 #import "AppDelegate.h"
@@ -26,7 +25,6 @@
     UIScrollView *scroll;
 }
 
-@property (nonatomic, strong) SelectIndustryTagView *tagBgView;
 @property (nonatomic, strong) UIButton *showMoreButton;
 @property (nonatomic, strong) NinaPagerView *slideView;
 @property (nonatomic, strong) SKTagView *tagView;
@@ -52,11 +50,21 @@
 
 - (void)setUpSubViews {
 
+    NSMutableArray *currentIndstryArray = [NSMutableArray new];
     titleArray = [NSMutableArray new];
     NSMutableArray *vcsArray = [NSMutableArray new];
     
-    for (int index = 0; index < [AppDelegate sysDirector].currentIndstryTree.count; index++) {
-        IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:index];
+    //首页行业需要插入一个@"推荐"
+    currentIndstryArray = [AppDelegate sysDirector].currentIndstryTree;
+    IndustryCmd *commend = [[IndustryCmd alloc] init];
+    commend.industryCode = @"0000";
+    commend.industryName = @"推荐";
+    if (!ARRAY_IS_NIL(currentIndstryArray)) {
+        [currentIndstryArray insertObject:commend atIndex:0];
+    }
+    
+    for (int index = 0; index < currentIndstryArray.count; index++) {
+        IndustryCmd *cmd = [currentIndstryArray objectAtIndex:index];
         [titleArray addObject:StringObj(cmd.industryName)];
         
         HomeNewsListViewController *view = [[HomeNewsListViewController alloc] initWithIndustryId:cmd.industryCode];
@@ -90,6 +98,14 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showTagViewButtonClick)];
     [imageView addGestureRecognizer:tap];
+    
+    for (int index = 0; index < [AppDelegate sysDirector].currentIndstryTree.count; index++) {
+        IndustryCmd *cmd = [AppDelegate sysDirector].currentIndstryTree[index];
+        if ([cmd.industryName isEqualToString:@"推荐"]) {
+            [[AppDelegate sysDirector].currentIndstryTree removeObject:cmd];
+        } else {
+        }
+    }
 }
 
 - (void)setupTagView {
@@ -193,7 +209,7 @@
 
     IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:currentPage.integerValue];
     //统计
-    [BNAPI sys_pushTrackEventWithType:@"click_index_industry_tab" name:@"首页所有行业tab点击" value:nil rmtInId:cmd.industryCode websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+    [BNAPI sys_pushTrackEventWithType:@"click_index_industry_tab" name:@"首页所有行业tab点击" value:nil rmtInId:[NSNumber numberWithInteger:cmd.industryCode.integerValue] websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
         //do nothing
     }];
 }

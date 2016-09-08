@@ -48,7 +48,7 @@
         default:
             break;
     }
-    NSString *contentUrl = [NSString stringWithFormat:@"%@h5/share.do?method=product&newsId=%@&inId=%@", SERVER_PATH, model.newsId,industryId];
+    NSString *contentUrl = [NSString stringWithFormat:@"%@h5/showNews&newsid=%@&inid=%@", SERVER_PATH, model.newsId,industryId];
     __weak typeof (self) weakSelf = self;
     
     __block UIImage *img = [UIImage imageNamed:@"rmtShareIntroduce.png"];
