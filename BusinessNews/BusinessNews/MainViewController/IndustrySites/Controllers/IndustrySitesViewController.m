@@ -22,6 +22,7 @@
 @interface IndustrySitesViewController ()<NinaPagerViewDelegate> {
     UIScrollView *scroll;
     NSMutableArray *titleArray;
+    NSInteger currentIndex;
 }
 
 @property (nonatomic, strong) UIButton *showMoreButton;
@@ -38,6 +39,8 @@
     self.navigationController.navigationBar.translucent = NO;
 
     self.view.backgroundColor = COLOR_UI_BG;
+    
+    currentIndex = 0;
     
     [self setUpSubViews];
     
@@ -131,8 +134,13 @@
     //Add Tags
     [titleArray enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
         SKTag *tag = [SKTag tagWithText:text];
-        tag.textColor = kColorWithHex(0x5f5a5a);
-        tag.bgColor = kColorWithHex(0xececec);
+        if (idx == currentIndex) {
+            tag.textColor = kColorWithHex(0xffffff);
+            tag.bgColor = kColorWithHex(0xd41e12);
+        } else {
+            tag.textColor = kColorWithHex(0x5f5a5a);
+            tag.bgColor = kColorWithHex(0xececec);
+        }
         tag.cornerRadius = 3;
         tag.fontSize = FS(10, 12, 14);
 //        tag.padding = UIEdgeInsetsMake(13.5, 12.5, 13.5, 12.5);
@@ -189,6 +197,12 @@
 }
 
 - (void)ninaCurrentPageIndex:(NSString *)currentPage {
+    
+    currentIndex = currentPage.integerValue;
+    
+    if (self.showMoreButton.selected) {
+        [self setupTagView];
+    }
     
     IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:currentPage.integerValue];
     //统计

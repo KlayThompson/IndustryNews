@@ -23,6 +23,7 @@
 
     NSMutableArray *titleArray;
     UIScrollView *scroll;
+    NSInteger currentIndex;
 }
 
 @property (nonatomic, strong) UIButton *showMoreButton;
@@ -43,6 +44,8 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUpSubViews) name:NOTIFICATION_UpdateIndustryCode object:nil];
+    
+    currentIndex = 0;
     
     [self setUpSubViews];
 }
@@ -127,7 +130,7 @@
     //添加一个baseScrollView
     if (!scroll) {
         
-        scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 41, WIDTH_SCREEN, HEIGHT_SCREEN)];
+        scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40, WIDTH_SCREEN, HEIGHT_SCREEN)];
         if (HEIGHT_SCREEN > 480) {
             scroll.contentSize = CGSizeMake(WIDTH_SCREEN, HEIGHT_SCREEN*FS(1.2, 0, 0));
         } else {
@@ -150,8 +153,13 @@
     //Add Tags
     [titleArray enumerateObjectsUsingBlock:^(NSString *text, NSUInteger idx, BOOL *stop) {
         SKTag *tag = [SKTag tagWithText:text];
-        tag.textColor = kColorWithHex(0x5f5a5a);
-        tag.bgColor = kColorWithHex(0xececec);
+        if (idx == currentIndex) {
+            tag.textColor = kColorWithHex(0xffffff);
+            tag.bgColor = kColorWithHex(0xd41e12);
+        } else {
+            tag.textColor = kColorWithHex(0x5f5a5a);
+            tag.bgColor = kColorWithHex(0xececec);
+        }
         tag.cornerRadius = 3;
         tag.fontSize = FS(10, 12, 14);
         tag.padding = UIEdgeInsetsZero;
@@ -207,6 +215,12 @@
 
 - (void)ninaCurrentPageIndex:(NSString *)currentPage {
 
+    currentIndex = currentPage.integerValue;
+    
+    if (self.showMoreButton.selected) {
+        [self setupTagView];
+    }
+    
     IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:currentPage.integerValue];
     //统计
     [BNAPI sys_pushTrackEventWithType:@"click_index_industry_tab" name:@"首页所有行业tab点击" value:nil rmtInId:[NSNumber numberWithInteger:cmd.industryCode.integerValue] websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
