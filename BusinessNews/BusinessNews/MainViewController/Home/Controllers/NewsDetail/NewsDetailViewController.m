@@ -51,6 +51,14 @@
 //    [self.navigationController.navigationBar setBarTintColor:COLOR_THEME];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:kColorWithHex(0x403c3c)}];
+    //设置状态栏
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [self.navigationController.navigationBar setBarTintColor:kColorWithRGBA(255, 255, 255, 0.9)];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

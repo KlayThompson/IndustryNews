@@ -39,21 +39,24 @@
     self.currentBaseViewController = currentVC;
     self.currentDetailModel = model;
 
-    NSString *contentUrl = [NSString stringWithFormat:@"%@h5/showNews&newsid=%@&inid=%@", SERVER_PATH, model.newsId,industryId];
+    NSString *contentUrl = [NSString stringWithFormat:@"%@h5/showNews?newsid=%@&inid=%@", SERVER_PATH, model.newsId,industryId];
     __weak typeof (self) weakSelf = self;
     
-    __block UIImage *img = [UIImage imageNamed:@"180 Retina HD Home Screen (iOS 7_8).png"];
-    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:model.imagePic] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        
-        if (image) {
-            img = [image imageByScalingProportionallyToSize:CGSizeMake(100, 100)];
-        }
-        if (!img) {
-            
-        }
-        [weakSelf doSnsShareWorkWithImage:img shareUrl:contentUrl shareType:type];
-        
-    }];
+    __block UIImage *img = [UIImage imageNamed:@"default-shareImage.png"];
+    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:model.imagePic]
+                                                    options:0
+                                                   progress:nil
+                                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                      
+                                                      if (image) {
+                                                          img = [image imageByScalingProportionallyToSize:CGSizeMake(100, 100)];
+                                                      }
+                                                      if (!img) {
+                                                          
+                                                      }
+                                                      [weakSelf doSnsShareWorkWithImage:img shareUrl:contentUrl shareType:type];
+                                                      
+                                                  }];
    
 
     
@@ -117,7 +120,7 @@
                                             presentedController:self.currentBaseViewController
                                                      completion:^(UMSocialResponseEntity *shareResponse){
                                                          if (shareResponse.responseCode == UMSResponseCodeSuccess) {
-                                                             NSLog(@"分享成功！");
+                                                             SLOG(@"分享成功");
                                                          }
                                                      }];
 }

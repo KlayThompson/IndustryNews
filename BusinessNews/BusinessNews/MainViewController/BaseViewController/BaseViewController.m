@@ -18,7 +18,7 @@
 #import "FontDefinition.h"
 #import "SysInfo.h"
 #import "SysTools.h"
-//#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 
 //#import "QXPLoginBtn.h"
 //#import "MyViewController.h"
@@ -102,7 +102,7 @@
     [super viewDidLoad];
     
 //    [CustomNavigationBar replaceNavigationController:self.navigationController];
-//    [self setFd_interactivePopMaxAllowedInitialDistanceToLeftEdge:100];
+    [self setFd_interactivePopMaxAllowedInitialDistanceToLeftEdge:100];
     if(self.navigationController.viewControllers.count>1){
         [self setBackBarButton];
     }
@@ -136,7 +136,7 @@
     [super viewWillAppear:animated];
     //设置代理
 //    self.navigationController.interactivePopGestureRecognizer.delegate =(id)self;
-//    
+//
 //    //启用系统自带的滑动手势
 //    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     

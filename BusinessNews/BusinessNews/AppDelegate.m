@@ -144,6 +144,13 @@
     self.sysTabBarController = tabbarController;
     self.sysTabBarController.delegate = self;
     
+    for (UIBarItem *item in tabbarController.tabBar.items) {
+        [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                      [UIFont fontWithName:@"Helvetica" size:12.0], NSFontAttributeName, nil]
+                            forState:UIControlStateNormal];
+        
+    }
+    
 }
 
 + (SysDirector*)sysDirector {

@@ -63,6 +63,7 @@
 		035C2EC91D815BFD007C27F2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2EC81D815BFD007C27F2 /* CoreTelephony.framework */; };
 		035C2ECB1D815C08007C27F2 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2ECA1D815C08007C27F2 /* libstdc++.tbd */; };
 		035C2ECD1D815C14007C27F2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2ECC1D815C14007C27F2 /* libz.tbd */; };
+		036F55F51D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F55F41D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		037024991D7D153800E34B48 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024931D7D153800E34B48 /* NinaBaseView.m */; };
 		0370249A1D7D153800E34B48 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024951D7D153800E34B48 /* NinaPagerView.m */; };
 		0370249B1D7D153800E34B48 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024981D7D153800E34B48 /* UIView+ViewController.m */; };
@@ -292,6 +293,8 @@
 		035C2ECA1D815C08007C27F2 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		035C2ECC1D815C14007C27F2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0368CA8C592AAFB9E4C55C99 /* libPods-BusinessNewsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessNewsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		036F55F31D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		036F55F41D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		037024921D7D153800E34B48 /* NinaBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaBaseView.h; sourceTree = "<group>"; };
 		037024931D7D153800E34B48 /* NinaBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaBaseView.m; sourceTree = "<group>"; };
 		037024941D7D153800E34B48 /* NinaPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaPagerView.h; sourceTree = "<group>"; };
@@ -729,6 +732,15 @@
 			path = PSTCollectionView;
 			sourceTree = "<group>";
 		};
+		036F55F21D82558800FDA9C1 /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				036F55F31D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.h */,
+				036F55F41D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
 		037024911D7D153800E34B48 /* NinaPagerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,6 +1014,7 @@
 		4886EE2A1D72F77300BD35B7 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				036F55F21D82558800FDA9C1 /* FDFullscreenPopGesture */,
 				0356C0EA1D7E6D3600478837 /* MWPhoto */,
 				037024911D7D153800E34B48 /* NinaPagerView */,
 				031617C81D7965A2003C77DF /* Mantle */,
@@ -1696,6 +1709,7 @@
 				4886EDF91D72F04C00BD35B7 /* NSDate+Helper.m in Sources */,
 				0356C1451D7E6D3600478837 /* PSTGridLayoutInfo.m in Sources */,
 				031617ED1D7965A2003C77DF /* EXTScope.m in Sources */,
+				036F55F51D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				031617EC1D7965A2003C77DF /* EXTRuntimeExtensions.m in Sources */,
 				03B664001D7927CD00BAB19F /* NewsListModel.m in Sources */,
 				88DEFEE11D7295F00058DDEE /* MainNavigationController.m in Sources */,

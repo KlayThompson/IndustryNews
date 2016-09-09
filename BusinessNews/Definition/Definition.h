@@ -461,7 +461,7 @@ _Pragma("clang diagnostic pop")
 //50deed0f096821dffab1ce1f8e114449
 #define WeiboAppRedirectURI     @"http://www.9tong.com"
 
-#define WeChatAppId @"wx28cc05aaced1c908"
+#define WeChatAppId @"wxef3a1f33902c621e"
 
 #define QQAppKey             @"2e85ef2eb9de78180181e1607a4ad73a"
 
