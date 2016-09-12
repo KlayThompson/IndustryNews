@@ -15,6 +15,7 @@
 #import "MJRefresh.h"
 #import "NewsListModel.h"
 #import "NewsDetailViewController.h"
+#import "UIView+Size.h"
 
 #define kCellIdentifyMainNewsCell @"SecondMainNewsCell"
 #define PageSize 20
@@ -53,11 +54,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.view.backgroundColor = COLOR_UI_BG;
     
     [self.view addSubview:self.uTableView];
-    
+
     currentPageIndex = 0;
     
     [self.uTableView mas_makeConstraints:^(MASConstraintMaker *make) {

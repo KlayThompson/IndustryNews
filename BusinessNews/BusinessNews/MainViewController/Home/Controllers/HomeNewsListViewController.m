@@ -179,10 +179,10 @@
 }
 
 - (void)reloadTableView {
+    [self.uTableView reloadData];
     [self.uTableView.mj_header endRefreshing];
     [self.uTableView.mj_footer endRefreshing];
     
-    [self.uTableView reloadData];
 }
 
 - (void)loadBannerViewDataFromServer {

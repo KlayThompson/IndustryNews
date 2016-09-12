@@ -89,7 +89,7 @@
     webViewCurrent.alpha = 0;
     
     [self.view addSubview:webViewCurrent];
-    
+     
     [self performSelector:@selector(func_ShowCurrentWebView) withObject:nil afterDelay:0.3];
     
     [self paintSnsIcons];

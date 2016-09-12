@@ -11,7 +11,7 @@
 #import "IndustryWebsiteCollectionViewCell.h"
 #import "BNAPI.h"
 #import "AppDelegate.h"
-#import "IndustryWebsiteNewsListViewController.h"
+#import "IndustryWebsiteNewsListRootViewController.h"
 #import "SysTools.h"
 
 @interface IndustryCollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -128,9 +128,9 @@
     
     WebsitesUnit *unit = [self.websiteArray objectAtIndex:indexPath.row];
     
-    IndustryWebsiteNewsListViewController *list = [[IndustryWebsiteNewsListViewController alloc] initWithIndustryId:NumberObj(unit.industryId) websiteId:NumberObj(unit.websiteId)];
-    
-    [self pushViewController:list animated:YES];
+    IndustryWebsiteNewsListRootViewController *list = [[IndustryWebsiteNewsListRootViewController alloc] initWithWebsiteArray:self.websiteArray];
+    list.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:list animated:YES];
     
     
     //统计

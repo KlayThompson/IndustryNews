@@ -63,6 +63,7 @@
 		035C2EC91D815BFD007C27F2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2EC81D815BFD007C27F2 /* CoreTelephony.framework */; };
 		035C2ECB1D815C08007C27F2 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2ECA1D815C08007C27F2 /* libstdc++.tbd */; };
 		035C2ECD1D815C14007C27F2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 035C2ECC1D815C14007C27F2 /* libz.tbd */; };
+		036F35231D86A30600156231 /* IndustryWebsiteNewsListRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F35221D86A30600156231 /* IndustryWebsiteNewsListRootViewController.m */; };
 		036F55F51D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F55F41D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		037024991D7D153800E34B48 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024931D7D153800E34B48 /* NinaBaseView.m */; };
 		0370249A1D7D153800E34B48 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037024951D7D153800E34B48 /* NinaPagerView.m */; };
@@ -293,6 +294,8 @@
 		035C2ECA1D815C08007C27F2 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		035C2ECC1D815C14007C27F2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0368CA8C592AAFB9E4C55C99 /* libPods-BusinessNewsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessNewsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		036F35211D86A30600156231 /* IndustryWebsiteNewsListRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustryWebsiteNewsListRootViewController.h; sourceTree = "<group>"; };
+		036F35221D86A30600156231 /* IndustryWebsiteNewsListRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustryWebsiteNewsListRootViewController.m; sourceTree = "<group>"; };
 		036F55F31D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		036F55F41D82558800FDA9C1 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		037024921D7D153800E34B48 /* NinaBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaBaseView.h; sourceTree = "<group>"; };
@@ -1318,6 +1321,8 @@
 				039F94561D77E60D00DF5B42 /* IndustryCollectionViewController.m */,
 				03FF4CA81D798ACC004AA63B /* IndustryWebsiteNewsListViewController.h */,
 				03FF4CA91D798ACD004AA63B /* IndustryWebsiteNewsListViewController.m */,
+				036F35211D86A30600156231 /* IndustryWebsiteNewsListRootViewController.h */,
+				036F35221D86A30600156231 /* IndustryWebsiteNewsListRootViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1725,6 +1730,7 @@
 				4886EE211D72F4A800BD35B7 /* NSNumber+CustomDate.m in Sources */,
 				4886EE5A1D72F94C00BD35B7 /* NSString+EmojiExtension.m in Sources */,
 				4886EDFE1D72F04C00BD35B7 /* DTTimePeriodChain.m in Sources */,
+				036F35231D86A30600156231 /* IndustryWebsiteNewsListRootViewController.m in Sources */,
 				039F94541D77D90900DF5B42 /* SKTagButton.m in Sources */,
 				0380A9061D76BD5D00196C1E /* BaseCmd.m in Sources */,
 				4886EE131D72F04C00BD35B7 /* StringTools.m in Sources */,
