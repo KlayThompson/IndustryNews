@@ -50,6 +50,9 @@
     
     //将保存的收藏列表copy到当前页面
     self.currentNewsArray = [AppDelegate sysDirector].collectNewsArray;
+    //逆向遍历
+    NSEnumerator *enumerator = [self.currentNewsArray reverseObjectEnumerator];
+    self.currentNewsArray = (NSMutableArray*)[enumerator allObjects];
     [self reloadTableView];
 }
 

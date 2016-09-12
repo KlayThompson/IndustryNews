@@ -61,15 +61,10 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = COLOR_UI_BG;
-    self.view.backgroundColor = [UIColor redColor];
     
     [self.view addSubview:self.uTableView];
     
     currentPageIndex = 0;
-    
-    [self.uTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
     
     self.uTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshDataFormServer)];
     [self.uTableView.mj_header beginRefreshing];
@@ -84,7 +79,7 @@
 - (UITableView *) uTableView {
     
     if (!_uTableView) {
-        _uTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _uTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, HEIGHT_SCREEN - 64 - 90) style:UITableViewStyleGrouped];
         _uTableView.dataSource = self;
         _uTableView.delegate = self;
         _uTableView.backgroundColor = COLOR_UI_BG;

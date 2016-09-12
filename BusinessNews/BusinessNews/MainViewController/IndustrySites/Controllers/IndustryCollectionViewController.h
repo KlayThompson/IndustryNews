@@ -12,6 +12,6 @@
 @interface IndustryCollectionViewController : BaseViewController
 
 
-- (instancetype)initWithIndustryCmd:(IndustryCmd *)industryCmd;
+- (instancetype)initWithIndustryCmd:(IndustryCmd *)industryCmd industryName:(NSString *)name;
 
 @end

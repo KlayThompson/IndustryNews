@@ -19,15 +19,17 @@
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *websiteArray;
 @property (nonatomic, strong) IndustryCmd *industryCmd;
+@property (nonatomic, strong) NSString *industryName;
 @end
 
 @implementation IndustryCollectionViewController
 
-- (instancetype)initWithIndustryCmd:(IndustryCmd *)industryCmd;
+- (instancetype)initWithIndustryCmd:(IndustryCmd *)industryCmd industryName:(NSString *)name
 {
     self = [super init];
     if (self) {
         _industryCmd = industryCmd;
+        _industryName = name;
     }
     return self;
 }
@@ -41,7 +43,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [self initSubViews];
     
     self.websiteArray = self.industryCmd.websits;
@@ -54,7 +55,7 @@
         flowLayout.minimumLineSpacing = 2.0f;
         flowLayout.minimumInteritemSpacing = 0.0f;
         flowLayout.itemSize = CGSizeMake(FS(106, 124, 137), FS(106, 124, 137));
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:(UICollectionViewFlowLayout *)flowLayout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, HEIGHT_SCREEN - 64 - 90) collectionViewLayout:(UICollectionViewFlowLayout *)flowLayout];
         
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
@@ -74,10 +75,6 @@
 - (void)initSubViews {
 
     [self.view addSubview:self.collectionView];
-    
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
 }
 
 - (NSArray *)websiteArray {
@@ -112,7 +109,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
     IndustryWebsiteCollectionViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"IndustryWebsiteCollectionViewCell" forIndexPath:indexPath];
     
     WebsitesUnit *unit = [self.websiteArray objectAtIndex:indexPath.row];
@@ -128,7 +124,7 @@
     
     WebsitesUnit *unit = [self.websiteArray objectAtIndex:indexPath.row];
     
-    IndustryWebsiteNewsListRootViewController *list = [[IndustryWebsiteNewsListRootViewController alloc] initWithWebsiteArray:self.websiteArray];
+    IndustryWebsiteNewsListRootViewController *list = [[IndustryWebsiteNewsListRootViewController alloc] initWithWebsiteArray:self.websiteArray industryName:self.industryName];
     list.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:list animated:YES];
     

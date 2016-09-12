@@ -25,16 +25,18 @@
 @property (nonatomic, strong) UIButton *showMoreButton;
 @property (nonatomic, strong) NinaPagerView *slideView;
 @property (nonatomic, strong) SKTagView *tagView;
+@property (nonatomic, strong) NSString *industryName;
 
 @end
 
 @implementation IndustryWebsiteNewsListRootViewController
 
-- (instancetype)initWithWebsiteArray:(NSArray *)array
+- (instancetype)initWithWebsiteArray:(NSArray *)array industryName:(NSString *)name
 {
     self = [super init];
     if (self) {
         currentWebsiteArray = array;
+        _industryName = name;
     }
     return self;
 }
@@ -198,4 +200,8 @@
     }
 }
 
+- (NSString *)title {
+
+    return self.industryName;
+}
 @end

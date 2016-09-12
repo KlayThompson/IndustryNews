@@ -59,7 +59,7 @@
 //        } else {
 //        }
         [titleArray addObject:StringObj(cmd.industryName)];
-        IndustryCollectionViewController *view = [[IndustryCollectionViewController alloc] initWithIndustryCmd:cmd];
+        IndustryCollectionViewController *view = [[IndustryCollectionViewController alloc] initWithIndustryCmd:cmd industryName:StringObj(cmd.industryName)];
         [vcsArray addObject:view];
     }
     

@@ -250,7 +250,4 @@
     return height;
 }
 
-- (NSString *)title {
-    return @"新闻列表";
-}
 @end
