@@ -24,7 +24,7 @@
 
     UIWebView *webViewCurrent;
     UIView *shareIconContainerView;
-
+    UIActivityIndicatorView *activityIndicator;
 }
 
 @property (nonatomic, strong) NewsDetailModel *currentNewsDetailUnit;
@@ -77,6 +77,11 @@
 
 - (void)setUpSubVews {
 
+    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [activityIndicator setCenter:CGPointMake(WIDTH_SCREEN/2, 280)];
+    [self.view addSubview:activityIndicator];
+    [activityIndicator startAnimating];
+    
     webViewCurrent = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, scrollViewHeight-44)];
     webViewCurrent.dataDetectorTypes=!UIDataDetectorTypePhoneNumber;
     webViewCurrent.backgroundColor = [UIColor whiteColor];
@@ -162,7 +167,7 @@
 -(void)func_ShowCurrentWebView {
     
 
-    webViewCurrent.frame=CGRectMake(0, 0, WIDTH_SCREEN, scrollViewHeight-44);
+    webViewCurrent.frame = CGRectMake(0, 0, WIDTH_SCREEN, scrollViewHeight-44);
     
     NSString *htmlString = [ArticleHtmlCodeTranslate getHtmlByStringContact:self.currentNewsDetailUnit.content
                                                                       title:self.currentNewsDetailUnit.articleName
@@ -175,7 +180,7 @@
     [webViewCurrent loadHTMLString:htmlString baseURL:nil];
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1.0];
-    webViewCurrent.alpha=1.0;
+    webViewCurrent.alpha = 1.0;
     [UIView commitAnimations];
 }
 
@@ -287,5 +292,11 @@
 
 - (NSString *)title {
     return @"头条详情";
+}
+
+- (void)dealloc {
+    webViewCurrent.delegate = nil;
+    [webViewCurrent stopLoading];
+    [activityIndicator stopAnimating];
 }
 @end
