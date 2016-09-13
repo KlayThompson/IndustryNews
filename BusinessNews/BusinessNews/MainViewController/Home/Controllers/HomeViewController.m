@@ -220,8 +220,11 @@
     if (self.showMoreButton.selected) {
         [self setupTagView];
     }
-    
-    IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:currentPage.integerValue];
+    NSInteger index = currentPage.integerValue;
+    if (index != 0) {
+        index = index - 1;
+    }
+    IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:index];
     //统计
     [BNAPI sys_pushTrackEventWithType:@"click_index_industry_tab" name:@"首页所有行业tab点击" value:nil rmtInId:[NSNumber numberWithInteger:cmd.industryCode.integerValue] websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
         //do nothing
