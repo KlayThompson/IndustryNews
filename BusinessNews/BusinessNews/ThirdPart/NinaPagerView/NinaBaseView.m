@@ -178,6 +178,8 @@
                 }
             }
         }
+        _topTab.contentSize = CGSizeMake(0.5 * FUll_VIEW_WIDTH+[[self.widthArray lastObject] floatValue], PageBtn - TabbarHeight);
+
         //Create Toptab underline.
         topTabBottomLine = [UIView new];
         topTabBottomLine.backgroundColor = UIColorFromRGB(0xcecece);
