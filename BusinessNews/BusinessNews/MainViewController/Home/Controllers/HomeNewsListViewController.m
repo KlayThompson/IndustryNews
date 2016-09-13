@@ -208,7 +208,7 @@
 
 #pragma mark - 跳转到新闻详情
 - (void)jumpToNewsDetailPageWithNewsListUnit:(NewsListUnit *)unit {
-
+    
     __weak typeof (self) weakSelf = self;
     [BNAPI news_loadNewsContentWithNewsId:unit.newsId industryID:unit.industryId websitId:unit.websitId Block:^(BaseCmd *model, NSError *error) {
         

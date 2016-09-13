@@ -10,6 +10,6 @@
 
 @interface IndustryWebsiteNewsListRootViewController : BaseViewController
 
-- (instancetype)initWithWebsiteArray:(NSArray *)array industryName:(NSString *)name;
+- (instancetype)initWithWebsiteArray:(NSArray *)array industryName:(NSString *)name selectIndex:(NSInteger)index;
 
 @end

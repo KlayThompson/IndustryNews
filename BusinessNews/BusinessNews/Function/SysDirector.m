@@ -43,7 +43,7 @@ static SysDirector *instance;
 
 #pragma mark - IDFA
 + (NSString*)getIDFA{
-    // V1.680审核被拒
+    
     NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     
     return idfa ? idfa : @"";

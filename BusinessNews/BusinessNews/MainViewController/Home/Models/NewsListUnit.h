@@ -34,4 +34,6 @@
  "publishTime": "20160830",
  "webSitId": 8
  */
+- (NSString *)getSmallImagePicString;
+
 @end

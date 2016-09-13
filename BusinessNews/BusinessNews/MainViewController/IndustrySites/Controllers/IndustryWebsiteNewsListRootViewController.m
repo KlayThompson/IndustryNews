@@ -20,6 +20,7 @@
     NSMutableArray *titleArray;
     NSInteger currentIndex;
     NSArray *currentWebsiteArray;
+    NSInteger currentSelectIndex;//用户点击第几个行业站点
 }
 
 @property (nonatomic, strong) UIButton *showMoreButton;
@@ -31,12 +32,13 @@
 
 @implementation IndustryWebsiteNewsListRootViewController
 
-- (instancetype)initWithWebsiteArray:(NSArray *)array industryName:(NSString *)name
+- (instancetype)initWithWebsiteArray:(NSArray *)array industryName:(NSString *)name selectIndex:(NSInteger)index
 {
     self = [super init];
     if (self) {
         currentWebsiteArray = array;
         _industryName = name;
+        currentSelectIndex = index;
     }
     return self;
 }
@@ -78,6 +80,8 @@
     [self.view addSubview:self.slideView];
     self.slideView.pushEnabled = YES;
     self.slideView.delegate = self;
+    
+    [self.slideView selectPageIndex:currentSelectIndex];
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"covered_bg"]];
     imageView.frame = CGRectMake(WIDTH_SCREEN - 60, 0, 60, 38);

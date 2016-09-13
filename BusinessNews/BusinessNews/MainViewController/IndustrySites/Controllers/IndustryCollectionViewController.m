@@ -124,9 +124,9 @@
     
     WebsitesUnit *unit = [self.websiteArray objectAtIndex:indexPath.row];
     
-    IndustryWebsiteNewsListRootViewController *list = [[IndustryWebsiteNewsListRootViewController alloc] initWithWebsiteArray:self.websiteArray industryName:self.industryName];
-    list.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:list animated:YES];
+    IndustryWebsiteNewsListRootViewController *list = [[IndustryWebsiteNewsListRootViewController alloc] initWithWebsiteArray:self.websiteArray industryName:self.industryName selectIndex:indexPath.row];
+    
+    [self pushViewController:list animated:YES];
     
     
     //统计

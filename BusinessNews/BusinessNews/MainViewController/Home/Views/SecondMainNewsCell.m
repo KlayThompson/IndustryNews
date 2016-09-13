@@ -30,7 +30,7 @@
         self.newsTitleToRightConstraints.constant = 35;
     } else {
         self.newsImageView.hidden = NO;
-        [self.newsImageView sd_setImageWithURL:[NSURL URLWithString:StringObj(unit.imagePic)] placeholderImage:IMG_PLACEHOLDER_PURCHASE_ICON];
+        [self.newsImageView sd_setImageWithURL:[NSURL URLWithString:StringObj([unit getSmallImagePicString])] placeholderImage:IMG_PLACEHOLDER_PURCHASE_ICON];
         self.newsTitleToRightConstraints.constant = 120;
     }
     self.newsTitleLabel.text = StringObj(unit.articleName);

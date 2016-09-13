@@ -19,4 +19,11 @@
              @"industryId":@"inId"};
 }
 
+- (NSString *)getSmallImagePicString {
+    if (!STR_IS_NIL(self.imagePic)) {
+        NSString *newString = [NSString stringWithFormat:@"%@?imageView2/1/w/125/h/105",self.imagePic];
+        return newString;
+    }
+    return @"";
+}
 @end

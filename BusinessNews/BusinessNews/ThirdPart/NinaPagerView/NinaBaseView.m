@@ -148,12 +148,13 @@
 
             [_topTab addSubview:button];
             CGSize textSize = [button.titleLabel.text boundingRectWithSize:CGSizeMake(0,PageBtn) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+            textSize.width = textSize.width + 23;//23为两个item之间的间隙
             if (titlesArray.count > 5) {
                 UIButton *buttonHH = [_topTab viewWithTag:i-1];
                 if (buttonHH == nil) {
-                    button.frame = CGRectMake(0, 0, textSize.width+10, PageBtn);
+                    button.frame = CGRectMake(0, 0, textSize.width, PageBtn);
                 }else{
-                    button.frame = CGRectMake(buttonHH.frame.origin.x+buttonHH.frame.size.width, 0, textSize.width+10, PageBtn);
+                    button.frame = CGRectMake(buttonHH.frame.origin.x+buttonHH.frame.size.width, 0, textSize.width, PageBtn);
                 }
                 CGFloat width = button.frame.origin.x+button.frame.size.width;
                 
@@ -178,7 +179,7 @@
                 }
             }
         }
-        _topTab.contentSize = CGSizeMake(0.5 * FUll_VIEW_WIDTH+[[self.widthArray lastObject] floatValue], PageBtn - TabbarHeight);
+        _topTab.contentSize = CGSizeMake(0.1 * FUll_VIEW_WIDTH+[[self.widthArray lastObject] floatValue], PageBtn - TabbarHeight);
 
         //Create Toptab underline.
         topTabBottomLine = [UIView new];
