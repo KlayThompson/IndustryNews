@@ -135,6 +135,8 @@
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.tag = i;
             button.titleLabel.font = [UIFont systemFontOfSize:14];
+            
+
             if ([titlesArray[i] isKindOfClass:[NSString class]]) {
                  [button setTitle:titlesArray[i] forState:UIControlStateNormal];
                 button.titleLabel.numberOfLines = 0;
@@ -142,12 +144,21 @@
             }else {
                 NSLog(@"Your title%li not fit for topTab,please correct it to NSString!",(long)i + 1);
             }
+            NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
+
+            [_topTab addSubview:button];
+            CGSize textSize = [button.titleLabel.text boundingRectWithSize:CGSizeMake(0,PageBtn) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
             if (titlesArray.count > 5) {
-                button.frame = CGRectMake(More5LineWidth * i, 0, More5LineWidth, PageBtn);
+                UIButton *buttonHH = [_topTab viewWithTag:i-1];
+                if (buttonHH == nil) {
+                    button.frame = CGRectMake(0, 0, textSize.width+10, PageBtn);
+                }else{
+                    button.frame = CGRectMake(buttonHH.frame.origin.x+buttonHH.frame.size.width, 0, textSize.width+10, PageBtn);
+
+                }
             }else {
                 button.frame = CGRectMake(FUll_VIEW_WIDTH / titlesArray.count * i, 0, FUll_VIEW_WIDTH / titlesArray.count, PageBtn);
             }
-            [_topTab addSubview:button];
             [button addTarget:self action:@selector(touchAction:) forControlEvents:UIControlEventTouchUpInside];
             [btnArray addObject:button];
             if (i == 0 && (topTabType == 0 || topTabType == 2)) {
