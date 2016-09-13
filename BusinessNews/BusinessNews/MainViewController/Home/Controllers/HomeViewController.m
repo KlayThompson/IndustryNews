@@ -200,6 +200,9 @@
     [self.slideView selectPageIndex:index];
     [self showTagViewButtonClick];
     
+    if (index != 0) {
+        index = index - 1;
+    }
     IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:index];
     cmd.selectCount++;
     //每次点击都要更新本地的行业分类数据
