@@ -33,6 +33,14 @@
 
 @implementation IndustrySitesViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBarTintColor:COLOR_THEME];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

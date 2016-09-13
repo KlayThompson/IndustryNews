@@ -95,17 +95,28 @@ static SysDirector *instance;
     
     __weak typeof (self) weakSelf = self;
     [BNAPI news_rmtInidListBlock:^(BaseCmd *model, NSError *error) {
-        [model errorCheckSuccess:^{
+        if (error) {
+            [weakSelf showToastInBottom:TIP_NETWORK_ERROR];
+            //取出本地缓存使用
+            NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:SaveIndustryCode];
+            weakSelf.currentIndstryTree = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UpdateIndustryCode object:nil];
             
-            if ([model isKindOfClass:[IndustryTreeCmd class]]) {
+            NSData *dataCollect = [[NSUserDefaults standardUserDefaults] objectForKey:CollectNewsList];
+            weakSelf.collectNewsArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataCollect];
+        } else {
+            [model errorCheckSuccess:^{
                 
-                IndustryTreeCmd *cmd = (IndustryTreeCmd *)model;
-                [weakSelf compareIndustryCodeAndPostToUpdateIndustryCode:cmd.industryTree];
-            }
-            
-        } failed:^(NSInteger errCode) {
-            [[AppDelegate sysDirector] showToastInBottom:[model errorMsg]];
-        }];
+                if ([model isKindOfClass:[IndustryTreeCmd class]]) {
+                    
+                    IndustryTreeCmd *cmd = (IndustryTreeCmd *)model;
+                    [weakSelf compareIndustryCodeAndPostToUpdateIndustryCode:cmd.industryTree];
+                }
+                
+            } failed:^(NSInteger errCode) {
+                [[AppDelegate sysDirector] showToastInBottom:[model errorMsg]];
+            }];
+        }
     }];
 }
 
@@ -166,7 +177,11 @@ static SysDirector *instance;
         [[NSUserDefaults standardUserDefaults] setObject:tempSubmitOrderCmd forKey:SaveIndustryCode];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    self.currentIndstryTree = industryTree;
+    if (ARRAY_IS_NIL(industryTree)) {
+        self.currentIndstryTree = self.oldIndstryTree;
+    } else {
+        self.currentIndstryTree = industryTree;
+    }
 
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UpdateIndustryCode object:nil];

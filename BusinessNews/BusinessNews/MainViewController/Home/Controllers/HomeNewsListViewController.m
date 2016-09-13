@@ -131,6 +131,9 @@
                                                           [weakSelf.newsListArray removeAllObjects];
                                                           weakSelf.newsListArray = [unit.newsList mutableCopy];
                                                           currentPageIndex = 1;
+                                                          if (!ARRAY_IS_NIL(weakSelf.newsListArray)) {
+                                                              [weakSelf.uTableView.mj_header endRefreshing];
+                                                          }
                                                       }else{
                                                           if(unit.newsList){
                                                               
@@ -175,7 +178,7 @@
 
 - (void)reloadTableView {
     [self.uTableView reloadData];
-    [self.uTableView.mj_header endRefreshing];
+    
     [self.uTableView.mj_footer endRefreshing];
     
 }
