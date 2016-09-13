@@ -169,9 +169,13 @@ static NSString *const kObserverPage = @"currentPage";
                 }
                 else {
                     if (page == myArray.count - 2) {
-                        topTabOffsetX = (page - 3) * More5LineWidth;
+//                        topTabOffsetX = (page - 3) * More5LineWidth;
+                        topTabOffsetX = [self.widthArray[page-3] floatValue];
+
                     }else {
-                        topTabOffsetX = (page - 4) * More5LineWidth;
+//                        topTabOffsetX = (page - 4) * More5LineWidth;
+                        topTabOffsetX = [self.widthArray[page-4] floatValue];
+
                     }
                 }
             }
