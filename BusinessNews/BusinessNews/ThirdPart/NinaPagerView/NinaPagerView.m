@@ -124,6 +124,7 @@ static NSString *const kObserverPage = @"currentPage";
     if (titles.count > 0 && childVCs.count > 0) {
         pagerView = [[NinaBaseView alloc] initWithFrame:CGRectMake(0, 0, FUll_VIEW_WIDTH, FUll_CONTENT_HEIGHT) WithSelectColor:_selectColor WithUnselectorColor:_unselectColor WithUnderLineColor:_underlineColor WithtopTabColor:_topTabColor WithTopTabType:pagerStyle];
         pagerView.titleArray = myArray;
+        self.widthArray = pagerView.widthArray;
         [pagerView addObserver:self forKeyPath:@"currentPage" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
         if (defaultPage > 0) {
             pagerView.scrollView.contentOffset = CGPointMake(FUll_VIEW_WIDTH * defaultPage, 0);
@@ -163,7 +164,8 @@ static NSString *const kObserverPage = @"currentPage";
             CGFloat topTabOffsetX = 0;
             if (page >= 2) {
                 if (page <= myArray.count - 3) {
-                    topTabOffsetX = (page - 2) * More5LineWidth;
+//                    topTabOffsetX = (page - 2) * More5LineWidth;
+                    topTabOffsetX = [self.widthArray[page-2] floatValue];
                 }
                 else {
                     if (page == myArray.count - 2) {

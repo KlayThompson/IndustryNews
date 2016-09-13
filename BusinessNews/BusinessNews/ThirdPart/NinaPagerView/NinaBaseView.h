@@ -29,6 +29,8 @@
 @property (strong, nonatomic) UIScrollView *topTab; /**<  顶部tab   **/
 @property (strong, nonatomic) NSArray *titleArray; /**<  标题   **/
 @property (assign, nonatomic) CGFloat titleScale; /**< 标题缩放比例 **/
+@property (strong, nonatomic) NSMutableArray *widthArray; /**< 标题的宽度 **/
+
 /**
  *  Init Method.
  *

@@ -154,8 +154,10 @@
                     button.frame = CGRectMake(0, 0, textSize.width+10, PageBtn);
                 }else{
                     button.frame = CGRectMake(buttonHH.frame.origin.x+buttonHH.frame.size.width, 0, textSize.width+10, PageBtn);
-
                 }
+                CGFloat width = button.frame.origin.x+button.frame.size.width;
+                
+                [self.widthArray addObject:[NSNumber numberWithFloat:width]];
             }else {
                 button.frame = CGRectMake(FUll_VIEW_WIDTH / titlesArray.count * i, 0, FUll_VIEW_WIDTH / titlesArray.count, PageBtn);
             }
@@ -196,7 +198,15 @@
         for (NSInteger j = 0; j < titlesArray.count; j++) {
             UILabel *maskLabel = [UILabel new];
             if (titlesArray.count > 5) {
-                maskLabel.frame = CGRectMake(More5LineWidth * j - More5LineWidth * (1 - SelectBottomLinePer) / 2, 0, More5LineWidth, SliderHeight);
+                
+                UIButton *buttonHH = [_topTab viewWithTag:j-1];
+                CGFloat width = [self.widthArray[j] floatValue];
+                if (buttonHH == nil) {
+                    maskLabel.frame = CGRectMake(0, 0, width, SliderHeight);
+                }else{
+                     maskLabel.frame = CGRectMake(width - More5LineWidth * (1 - SelectBottomLinePer) / 2, 0, buttonHH.frame.size.width, SliderHeight);
+                }
+//                maskLabel.frame = CGRectMake(More5LineWidth * j - More5LineWidth * (1 - SelectBottomLinePer) / 2, 0, More5LineWidth, SliderHeight);
             }else {
                 maskLabel.frame = CGRectMake(FUll_VIEW_WIDTH / titlesArray.count * j - FUll_VIEW_WIDTH / titlesArray.count * (1 - SelectBottomLinePer) / 2, 0, FUll_VIEW_WIDTH / titlesArray.count, SliderHeight);
             }
@@ -216,6 +226,7 @@
 }
 
 - (void)selectPageIndex:(NSInteger)pageIndex {
+  
 
     [_scrollView setContentOffset:CGPointMake(FUll_VIEW_WIDTH * pageIndex, 0) animated:YES];
     self.currentPage = (FUll_VIEW_WIDTH * pageIndex + FUll_VIEW_WIDTH / 2) / FUll_VIEW_WIDTH;
@@ -223,8 +234,10 @@
 
 #pragma mark - BtnMethod
 - (void)touchAction:(UIButton *)button {
+   
+
     [_scrollView setContentOffset:CGPointMake(FUll_VIEW_WIDTH * button.tag, 0) animated:YES];
-    self.currentPage = (FUll_VIEW_WIDTH * button.tag + FUll_VIEW_WIDTH / 2) / FUll_VIEW_WIDTH;    
+    self.currentPage = (FUll_VIEW_WIDTH * button.tag + FUll_VIEW_WIDTH / 2) / FUll_VIEW_WIDTH;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -348,5 +361,10 @@
     topTabBottomLine.frame = CGRectMake(-100, PageBtn - 0.5, (100 + additionCount) * FUll_VIEW_WIDTH, 0.5);
 //    topTabBottomLine.hidden = YES;
 }
-
+- (NSMutableArray *)widthArray{
+    if (_widthArray == nil) {
+        _widthArray = [NSMutableArray array];
+    }
+    return _widthArray;
+}
 @end

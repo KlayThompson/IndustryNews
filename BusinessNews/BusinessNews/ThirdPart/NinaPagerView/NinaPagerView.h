@@ -68,5 +68,7 @@ typedef NS_ENUM(NSInteger, NinaPagerStyle) {
 @property (assign, nonatomic) CGFloat titleScale; /**<  标题缩放比例   **/
 @property (assign, nonatomic) BOOL nina_navigationBarHidden; /**<  是否隐藏了导航栏   **/
 @property (weak, nonatomic) id<NinaPagerViewDelegate>delegate; /**< NinaPagerView代理 **/
+@property (strong, nonatomic) NSMutableArray *widthArray; /**< 标题的宽度 **/
+
 - (void)selectPageIndex:(NSInteger)pageIndex;
 @end
