@@ -19,4 +19,10 @@
 @property (nonatomic, strong) NSNumber *bannerId;
 @property (nonatomic, strong) NSString *targetUrl;
 
+@property (nonatomic, strong) NSNumber *picWidth;
+@property (nonatomic, strong) NSNumber *picHeight;
+
+
+- (CGSize)screenSize;
+
 @end

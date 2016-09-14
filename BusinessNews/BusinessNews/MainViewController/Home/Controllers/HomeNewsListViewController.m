@@ -282,7 +282,10 @@
             [photoArray addObject:[imgArray objectAtIndex:i]?:@""];
         }
         
-        ZYBannerView *bannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, Height_ADBanner)];
+        NewsADCmd *adItemClicked = [self.currentAdArray objectAtIndex:0];
+        
+        
+        ZYBannerView *bannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, [adItemClicked screenSize].height)];
         bannerView.dataSource = self;
         bannerView.delegate = self;
         bannerView.autoScroll = YES;
@@ -333,7 +336,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
     if (self.currentAdArray.count > 0) {
-        return Height_ADBanner;
+        NewsADCmd *adItemClicked = [self.currentAdArray objectAtIndex:0];
+        return [adItemClicked screenSize].height;
     }
     return 0.1f;
 }
