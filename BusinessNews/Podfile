@@ -12,6 +12,8 @@ target 'BusinessNews' do
   pod 'Masonry'
   pod 'MBProgressHUD'
   pod 'UMengSocialCOM'
+  pod 'SVWebViewController'
+  
   
   target 'BusinessNewsTests' do
     inherit! :search_paths

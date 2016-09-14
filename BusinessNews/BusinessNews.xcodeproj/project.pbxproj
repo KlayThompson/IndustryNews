@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0301BB461D89242A00A7C38A /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0301BB401D89242A00A7C38A /* ZYBannerCell.m */; };
+		0301BB471D89242A00A7C38A /* ZYBannerFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0301BB421D89242A00A7C38A /* ZYBannerFooter.m */; };
+		0301BB481D89242A00A7C38A /* ZYBannerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0301BB431D89242A00A7C38A /* ZYBannerView.bundle */; };
+		0301BB491D89242A00A7C38A /* ZYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0301BB451D89242A00A7C38A /* ZYBannerView.m */; };
 		031617EC1D7965A2003C77DF /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617CC1D7965A2003C77DF /* EXTRuntimeExtensions.m */; };
 		031617ED1D7965A2003C77DF /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617CE1D7965A2003C77DF /* EXTScope.m */; };
 		031617EE1D7965A2003C77DF /* NSValueTransformer+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 031617D21D7965A2003C77DF /* NSValueTransformer+NSString.m */; };
@@ -88,12 +92,8 @@
 		039F946B1D7831DE00DF5B42 /* NoDataTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F94691D7831DE00DF5B42 /* NoDataTipView.m */; };
 		039F946C1D7831DE00DF5B42 /* NoDataTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039F946A1D7831DE00DF5B42 /* NoDataTipView.xib */; };
 		039F946F1D783A8600DF5B42 /* NewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F946E1D783A8600DF5B42 /* NewsDetailModel.m */; };
-		03A926201D7EBBF10051B480 /* ADBannerCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A9261B1D7EBBF10051B480 /* ADBannerCycleScrollView.m */; };
-		03A926211D7EBBF10051B480 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A9261D1D7EBBF10051B480 /* CycleScrollView.m */; };
-		03A926221D7EBBF10051B480 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A9261F1D7EBBF10051B480 /* NSTimer+Addition.m */; };
 		03A926251D7EC6100051B480 /* NewsADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A926241D7EC6100051B480 /* NewsADModel.m */; };
 		03A926281D7EC6610051B480 /* NewsADCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A926271D7EC6610051B480 /* NewsADCmd.m */; };
-		03A9262C1D7ED2140051B480 /* ImageCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A9262B1D7ED2140051B480 /* ImageCycleScrollView.m */; };
 		03A9CF991D7930F200C5A7D6 /* NewsListUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A9CF981D7930F200C5A7D6 /* NewsListUnit.m */; };
 		03B664001D7927CD00BAB19F /* NewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B663FF1D7927CD00BAB19F /* NewsListModel.m */; };
 		03CC97371D79686500173D53 /* HomeNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC97361D79686500173D53 /* HomeNewsListViewController.m */; };
@@ -190,6 +190,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0301BB3F1D89242A00A7C38A /* ZYBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerCell.h; sourceTree = "<group>"; };
+		0301BB401D89242A00A7C38A /* ZYBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerCell.m; sourceTree = "<group>"; };
+		0301BB411D89242A00A7C38A /* ZYBannerFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerFooter.h; sourceTree = "<group>"; };
+		0301BB421D89242A00A7C38A /* ZYBannerFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerFooter.m; sourceTree = "<group>"; };
+		0301BB431D89242A00A7C38A /* ZYBannerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYBannerView.bundle; sourceTree = "<group>"; };
+		0301BB441D89242A00A7C38A /* ZYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerView.h; sourceTree = "<group>"; };
+		0301BB451D89242A00A7C38A /* ZYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerView.m; sourceTree = "<group>"; };
 		031617CA1D7965A2003C77DF /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTKeyPathCoding.h; sourceTree = "<group>"; };
 		031617CB1D7965A2003C77DF /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTRuntimeExtensions.h; sourceTree = "<group>"; };
 		031617CC1D7965A2003C77DF /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTRuntimeExtensions.m; sourceTree = "<group>"; };
@@ -343,18 +350,10 @@
 		039F946A1D7831DE00DF5B42 /* NoDataTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataTipView.xib; sourceTree = "<group>"; };
 		039F946D1D783A8600DF5B42 /* NewsDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailModel.h; sourceTree = "<group>"; };
 		039F946E1D783A8600DF5B42 /* NewsDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailModel.m; sourceTree = "<group>"; };
-		03A9261A1D7EBBF10051B480 /* ADBannerCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBannerCycleScrollView.h; sourceTree = "<group>"; };
-		03A9261B1D7EBBF10051B480 /* ADBannerCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBannerCycleScrollView.m; sourceTree = "<group>"; };
-		03A9261C1D7EBBF10051B480 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
-		03A9261D1D7EBBF10051B480 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
-		03A9261E1D7EBBF10051B480 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
-		03A9261F1D7EBBF10051B480 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		03A926231D7EC6100051B480 /* NewsADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsADModel.h; sourceTree = "<group>"; };
 		03A926241D7EC6100051B480 /* NewsADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsADModel.m; sourceTree = "<group>"; };
 		03A926261D7EC6610051B480 /* NewsADCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsADCmd.h; sourceTree = "<group>"; };
 		03A926271D7EC6610051B480 /* NewsADCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsADCmd.m; sourceTree = "<group>"; };
-		03A9262A1D7ED2140051B480 /* ImageCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCycleScrollView.h; sourceTree = "<group>"; };
-		03A9262B1D7ED2140051B480 /* ImageCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCycleScrollView.m; sourceTree = "<group>"; };
 		03A9CF971D7930F200C5A7D6 /* NewsListUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListUnit.h; sourceTree = "<group>"; };
 		03A9CF981D7930F200C5A7D6 /* NewsListUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListUnit.m; sourceTree = "<group>"; };
 		03B663FE1D7927CD00BAB19F /* NewsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListModel.h; sourceTree = "<group>"; };
@@ -468,7 +467,6 @@
 		4890FC141D7DC1FD00B8C123 /* ArticleHtmlCodeTranslate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleHtmlCodeTranslate.h; sourceTree = "<group>"; };
 		4890FC151D7DC1FD00B8C123 /* ArticleHtmlCodeTranslate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleHtmlCodeTranslate.m; sourceTree = "<group>"; };
 		489942A71D75D26D00E68FF2 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
-		489942AA1D75DBCE00E68FF2 /* replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replace.h; sourceTree = "<group>"; };
 		489956E01D80660100AA7A5E /* TTShareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTShareHelper.h; sourceTree = "<group>"; };
 		489956E11D80660100AA7A5E /* TTShareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTShareHelper.m; sourceTree = "<group>"; };
 		48EDF4A01D76734D001430F3 /* CRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationBar.h; sourceTree = "<group>"; };
@@ -558,6 +556,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0301BB3E1D89242A00A7C38A /* ZYBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				0301BB3F1D89242A00A7C38A /* ZYBannerCell.h */,
+				0301BB401D89242A00A7C38A /* ZYBannerCell.m */,
+				0301BB411D89242A00A7C38A /* ZYBannerFooter.h */,
+				0301BB421D89242A00A7C38A /* ZYBannerFooter.m */,
+				0301BB431D89242A00A7C38A /* ZYBannerView.bundle */,
+				0301BB441D89242A00A7C38A /* ZYBannerView.h */,
+				0301BB451D89242A00A7C38A /* ZYBannerView.m */,
+			);
+			path = ZYBannerView;
+			sourceTree = "<group>";
+		};
 		031617C81D7965A2003C77DF /* Mantle */ = {
 			isa = PBXGroup;
 			children = (
@@ -849,28 +861,6 @@
 			path = NoDataTipView;
 			sourceTree = "<group>";
 		};
-		03A926191D7EBBF10051B480 /* CycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				03A9261A1D7EBBF10051B480 /* ADBannerCycleScrollView.h */,
-				03A9261B1D7EBBF10051B480 /* ADBannerCycleScrollView.m */,
-				03A9261C1D7EBBF10051B480 /* CycleScrollView.h */,
-				03A9261D1D7EBBF10051B480 /* CycleScrollView.m */,
-				03A9261E1D7EBBF10051B480 /* NSTimer+Addition.h */,
-				03A9261F1D7EBBF10051B480 /* NSTimer+Addition.m */,
-			);
-			path = CycleScrollView;
-			sourceTree = "<group>";
-		};
-		03A926291D7ED2140051B480 /* ImageCycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				03A9262A1D7ED2140051B480 /* ImageCycleScrollView.h */,
-				03A9262B1D7ED2140051B480 /* ImageCycleScrollView.m */,
-			);
-			path = ImageCycleScrollView;
-			sourceTree = "<group>";
-		};
 		4886ECEE1D729FC500BD35B7 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
@@ -1017,6 +1007,7 @@
 		4886EE2A1D72F77300BD35B7 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				0301BB3E1D89242A00A7C38A /* ZYBannerView */,
 				036F55F21D82558800FDA9C1 /* FDFullscreenPopGesture */,
 				0356C0EA1D7E6D3600478837 /* MWPhoto */,
 				037024911D7D153800E34B48 /* NinaPagerView */,
@@ -1090,10 +1081,7 @@
 		489942A91D75DBCE00E68FF2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				03A926291D7ED2140051B480 /* ImageCycleScrollView */,
-				03A926191D7EBBF10051B480 /* CycleScrollView */,
 				48EDF49F1D76734D001430F3 /* CRNavigationController */,
-				489942AA1D75DBCE00E68FF2 /* replace.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1521,6 +1509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0301BB481D89242A00A7C38A /* ZYBannerView.bundle in Resources */,
 				0356C1301D7E6D3600478837 /* LICENCE.txt in Resources */,
 				039F946C1D7831DE00DF5B42 /* NoDataTipView.xib in Resources */,
 				48F62F0F1D71EACB000F97B2 /* Assets.xcassets in Resources */,
@@ -1707,6 +1696,7 @@
 				0356C1441D7E6D3600478837 /* PSTCollectionViewUpdateItem.m in Sources */,
 				48EDF4C11D772DED001430F3 /* UIImage+ImageNamed.m in Sources */,
 				4886EE001D72F04C00BD35B7 /* DTTimePeriodGroup.m in Sources */,
+				0301BB461D89242A00A7C38A /* ZYBannerCell.m in Sources */,
 				031617F41D7965A2003C77DF /* MTLValueTransformer.m in Sources */,
 				48F62F071D71EACB000F97B2 /* AppDelegate.m in Sources */,
 				4886ED9D1D72EFA500BD35B7 /* NSData+Base64.m in Sources */,
@@ -1721,6 +1711,7 @@
 				88DEFEE11D7295F00058DDEE /* MainNavigationController.m in Sources */,
 				4886EDFC1D72F04C00BD35B7 /* DTError.m in Sources */,
 				4886EE591D72F94C00BD35B7 /* NSString+Check.m in Sources */,
+				0301BB491D89242A00A7C38A /* ZYBannerView.m in Sources */,
 				03FF4CAA1D798ACD004AA63B /* IndustryWebsiteNewsListViewController.m in Sources */,
 				0356C1491D7E6D3600478837 /* README.md in Sources */,
 				037024991D7D153800E34B48 /* NinaBaseView.m in Sources */,
@@ -1737,7 +1728,6 @@
 				0356C1401D7E6D3600478837 /* PSTCollectionViewData.m in Sources */,
 				48F62F041D71EACB000F97B2 /* main.m in Sources */,
 				48EDF4CA1D772E19001430F3 /* UIView+Size.m in Sources */,
-				03A926211D7EBBF10051B480 /* CycleScrollView.m in Sources */,
 				0356C1411D7E6D3600478837 /* PSTCollectionViewFlowLayout.m in Sources */,
 				88DEFEE01D7295F00058DDEE /* MainViewController.m in Sources */,
 				039F946F1D783A8600DF5B42 /* NewsDetailModel.m in Sources */,
@@ -1753,6 +1743,7 @@
 				0380A9031D76B96600196C1E /* BNAPI.m in Sources */,
 				4886EDF71D72F04C00BD35B7 /* LunarHelper.m in Sources */,
 				039F94601D77FDF800DF5B42 /* CHTCollectionViewWaterfallHeader.m in Sources */,
+				0301BB471D89242A00A7C38A /* ZYBannerFooter.m in Sources */,
 				0356C12F1D7E6D3600478837 /* README.md in Sources */,
 				4886EDFF1D72F04C00BD35B7 /* DTTimePeriodCollection.m in Sources */,
 				4886EDF81D72F04C00BD35B7 /* NSDate+convenience.m in Sources */,
@@ -1782,7 +1773,6 @@
 				48EDF4B31D767EB2001430F3 /* MainNewsTableViewCell.m in Sources */,
 				88DEFEE41D7295F00058DDEE /* IndustrySitesViewController.m in Sources */,
 				039F94611D77FDF800DF5B42 /* CHTCollectionViewWaterfallLayout.m in Sources */,
-				03A9262C1D7ED2140051B480 /* ImageCycleScrollView.m in Sources */,
 				03A9CF991D7930F200C5A7D6 /* NewsListUnit.m in Sources */,
 				4886EE641D72FAC700BD35B7 /* NSObject+JSON.m in Sources */,
 				4886EE011D72F04C00BD35B7 /* NSDate+DateTools.m in Sources */,
@@ -1808,7 +1798,6 @@
 				88DEFEDF1D7295F00058DDEE /* HomeViewController.m in Sources */,
 				0380A90E1D76CEA700196C1E /* BaseViewController.m in Sources */,
 				0356C12E1D7E6D3600478837 /* LICENSE.md in Sources */,
-				03A926201D7EBBF10051B480 /* ADBannerCycleScrollView.m in Sources */,
 				4886EE3F1D72F77300BD35B7 /* DDAbstractDatabaseLogger.m in Sources */,
 				031617EF1D7965A2003C77DF /* MTLJSONAdapter.m in Sources */,
 				0370249A1D7D153800E34B48 /* NinaPagerView.m in Sources */,
@@ -1829,7 +1818,6 @@
 				03CC97371D79686500173D53 /* HomeNewsListViewController.m in Sources */,
 				0356C1371D7E6D3600478837 /* MWTapDetectingView.m in Sources */,
 				48EDF4C21D772DED001430F3 /* UIImage+imageWithColor.m in Sources */,
-				03A926221D7EBBF10051B480 /* NSTimer+Addition.m in Sources */,
 				4886EE601D72FA3300BD35B7 /* SysInfo.m in Sources */,
 				48EDF4A81D76734D001430F3 /* CRUIToolbar.m in Sources */,
 			);

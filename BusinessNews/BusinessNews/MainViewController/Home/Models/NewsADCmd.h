@@ -17,6 +17,6 @@
 @property (nonatomic, strong) NSNumber *type;          //type = 0 为新闻  type = 1 为广告
 @property (nonatomic, strong) NSNumber *rmtInid;
 @property (nonatomic, strong) NSNumber *bannerId;
-
+@property (nonatomic, strong) NSString *targetUrl;
 
 @end

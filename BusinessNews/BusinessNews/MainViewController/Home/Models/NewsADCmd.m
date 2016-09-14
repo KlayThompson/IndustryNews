@@ -11,6 +11,6 @@
 @implementation NewsADCmd
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey{
-    return @{@"industryId": @"inid",@"bannerId":@"id"};
+    return @{@"industryId": @"inid",@"bannerId":@"id",@"targetUrl":@"url"};
 }
 @end

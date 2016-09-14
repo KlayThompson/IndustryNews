@@ -59,7 +59,7 @@
  banner查询-按人脉通行业查询
  banner查询-按人脉通行业查询
  */
-+ (void)news_loadTopNewsAticlesWithRmtInId:(NSNumber *)rmtInId
++ (void)news_loadTopNewsAticlesWithRmtInId:(NSString *)rmtInId
                                      Block:(void(^)(BaseCmd *model, NSError *error))block;
 
 

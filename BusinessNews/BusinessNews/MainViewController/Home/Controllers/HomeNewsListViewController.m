@@ -16,25 +16,26 @@
 #import "NewsListModel.h"
 #import "NewsDetailViewController.h"
 
-#import "CycleScrollView.h"
 #import "UIImageView+WebCache.h"
 #import "UIView+Size.h"
 #import "NewsADModel.h"
-#import "ImageCycleScrollView.h"
+#import "SVWebViewController.h"
+#import "ZYBannerView.h"
 
 #define kCellIdentifyMainNewsCell @"SecondMainNewsCell"
 #define PageSize 20
+#define Height_ADBanner FS(85.33f, 100, 110.4)
 
-@interface HomeNewsListViewController()<UITableViewDelegate,UITableViewDataSource,ImageCycleScrollViewDelegate> {
+@interface HomeNewsListViewController()<UITableViewDelegate,UITableViewDataSource,ZYBannerViewDataSource,ZYBannerViewDelegate> {
     
     SecondMainNewsCell *cellRef;
     NSInteger currentPageIndex;
+    NSMutableArray *photoArray;
 }
 
 @property (nonatomic, strong) UITableView *uTableView;
 @property (nonatomic, strong) NSMutableArray *newsListArray;
 @property (nonatomic, strong) NSString *currentIndustryId;
-//@property (nonatomic, strong) ImageCycleScrollView *imgCycleScrollView;
 @property (nonatomic, strong) NSMutableArray *currentAdArray;
 
 @end
@@ -71,7 +72,6 @@
     
     self.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataFormServer)];
     self.uTableView.mj_footer.hidden = YES;
-    [self performSelector:@selector(loadBannerViewDataFromServer) withObject:nil afterDelay:0.3];
 
 }
 
@@ -101,6 +101,9 @@
 #pragma mark - 网络
 - (void)refreshDataFormServer {
     [self loadDataFromServer:1];
+    
+    //第一页获取广告推荐新闻banner
+    [self loadBannerViewDataFromServer];
 }
 
 - (void)loadMoreDataFormServer {
@@ -186,7 +189,7 @@
 - (void)loadBannerViewDataFromServer {
 
     __weak typeof (self) weakSelf = self;
-    [BNAPI news_loadTopNewsAticlesWithRmtInId:[NSNumber numberWithInteger:self.currentIndustryId.integerValue] Block:^(BaseCmd *model, NSError *error) {
+    [BNAPI news_loadTopNewsAticlesWithRmtInId:self.currentIndustryId Block:^(BaseCmd *model, NSError *error) {
        
         if (error) {
             
@@ -274,19 +277,27 @@
             NewsADCmd *cmd = [self.currentAdArray objectAtIndex:i];
             [imgArray addObject:cmd.pic];
         }
-        NSMutableArray *photoArray = [NSMutableArray new];
+        photoArray = [NSMutableArray new];
         for(int i=0;i<imgArray.count;i++){
             [photoArray addObject:[imgArray objectAtIndex:i]?:@""];
         }
-        ImageCycleScrollView *imgCycleScrollView = [[ImageCycleScrollView alloc] initWithFrameRect:CGRectMake(0, 0, WIDTH_SCREEN, 120) ImageArray:photoArray TitleArray:nil IsShowPageControl:YES];
-        imgCycleScrollView.delegate = self;
         
-        return imgCycleScrollView;
+        ZYBannerView *bannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, Height_ADBanner)];
+        bannerView.dataSource = self;
+        bannerView.delegate = self;
+        bannerView.autoScroll = YES;
+        bannerView.shouldLoop = YES;
+        if (photoArray && photoArray.count == 1) {
+            bannerView.pageControl.hidden = YES;
+        } else {
+            bannerView.pageControl.hidden = NO;
+        }
+        
+        return bannerView;
     } else {
         return nil;
     }
 }
-
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -322,7 +333,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
     if (self.currentAdArray.count > 0) {
-        return 120;
+        return Height_ADBanner;
     }
     return 0.1f;
 }
@@ -332,10 +343,22 @@
     return 0.1f;
 }
 
-#pragma mark - ImageCycleScrollViewDelegate
--(void)ImageCycleScrollViewDidClicked:(NSUInteger)index {
+#pragma mark - ZYBannerViewDataSource
+- (NSInteger)numberOfItemsInBanner:(ZYBannerView *)banner {
 
-    NewsADCmd *adItemClicked = [self.currentAdArray objectAtIndex:index -1];
+    return photoArray.count;
+}
+
+- (UIView *)banner:(ZYBannerView *)banner viewForItemAtIndex:(NSInteger)index {
+
+    UIImageView *imageView = [[UIImageView alloc] init];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:photoArray[index]] placeholderImage:[UIImage imageNamed:@"cycle_scroll_image_default"]];
+    return imageView;
+}
+
+- (void)banner:(ZYBannerView *)banner didSelectItemAtIndex:(NSInteger)index {
+
+    NewsADCmd *adItemClicked = [self.currentAdArray objectAtIndex:index];
     
     if (adItemClicked.type.integerValue == 0) {
         //新闻
@@ -346,7 +369,9 @@
         unit.imagePic = adItemClicked.pic;
         [self jumpToNewsDetailPageWithNewsListUnit:unit];
     } else {
-        //广告
+        //广告  直接跳转链接
+        SVWebViewController *adViewController = [[SVWebViewController alloc] initWithURL:[NSURL URLWithString:StringObj(adItemClicked.targetUrl)]];
+        [self pushViewController:adViewController animated:YES];
     }
     
     //统计
@@ -354,4 +379,5 @@
         //do nothing
     }];
 }
+
 @end

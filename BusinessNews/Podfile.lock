@@ -20,6 +20,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SVWebViewController (1.0)
   - UMengSocialCOM (5.2.1)
 
 DEPENDENCIES:
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh
   - SDWebImage
+  - SVWebViewController
   - UMengSocialCOM
 
 SPEC CHECKSUMS:
@@ -36,8 +38,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SVWebViewController: c36dda7326e81fcae0abf5d02bf7bbf7e41be901
   UMengSocialCOM: 074c135ce349aa4c8848d3fb8458757bcb6ffb67
 
-PODFILE CHECKSUM: 8925aca2d37d9526f19ad479a30adcc00c7d324d
+PODFILE CHECKSUM: d9f4f6165f43a980237131ef0543ecc92f082548
 
 COCOAPODS: 1.0.1
