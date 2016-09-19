@@ -72,7 +72,7 @@
 + (void)sys_pushTrackEventWithType:(NSString *)type
                               name:(NSString *)name
                              value:(NSNumber *)value
-                           rmtInId:(NSNumber *)rmtInId
+                           rmtInId:(NSString *)rmtInId
                           websitid:(NSNumber *)websitid
                               imei:(NSNumber *)imei
                           bannerId:(NSNumber *)bannerId

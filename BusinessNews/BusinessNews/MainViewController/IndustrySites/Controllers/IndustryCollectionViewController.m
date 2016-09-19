@@ -130,7 +130,7 @@
     
     
     //统计
-    [BNAPI sys_pushTrackEventWithType:@"click_industry_websit" name:@"行业站点各网站的点击" value:nil rmtInId:[NSNumber numberWithInteger:self.industryCmd.industryCode.integerValue] websitid:unit.websiteId imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+    [BNAPI sys_pushTrackEventWithType:@"click_industry_websit" name:@"行业站点各网站的点击" value:nil rmtInId:self.industryCmd.industryCode websitid:unit.websiteId imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
         //do nothing
     }];
 }

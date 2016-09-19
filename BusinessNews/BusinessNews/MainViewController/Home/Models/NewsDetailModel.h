@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *content;        //新闻内容
 @property (nonatomic, strong) NSNumber *isTop;          //是否置顶？
 @property (nonatomic, strong) NSNumber *publishTime;    //发布时间
+@property (nonatomic, strong) NSNumber *crawleTime;     //发布时间new
 
 @property (nonatomic, strong) NSString *websitName;
 @property (nonatomic, strong) NSNumber *viewCount;

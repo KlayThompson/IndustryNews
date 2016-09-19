@@ -171,7 +171,7 @@
     
     NSString *htmlString = [ArticleHtmlCodeTranslate getHtmlByStringContact:self.currentNewsDetailUnit.content
                                                                       title:self.currentNewsDetailUnit.articleName
-                                                                       time:[NSString stringWithFormat:@"%@",self.currentNewsDetailUnit.publishTime]
+                                                                       time:[NSString stringWithFormat:@"%@",self.currentNewsDetailUnit.crawleTime]
                                                                        from:self.currentNewsDetailUnit.websitName];
     //    NSString *imageUrlString = @"http://ww3.sinaimg.cn/large/9b61f9b0jw1dtoj5cm0ghj.jpg";
     //    NSString *yourText = article.content;
@@ -226,7 +226,7 @@
     }
     [self saveCollectNewsToLocal];
     [self setRightBarWithBtn:nil imageName:@"topicon_collection_b" action:@selector(collectButtonClick)];
-    [[AppDelegate sysDirector] showToastinCenter:@"取消成功"];
+    [[AppDelegate sysDirector] showToastinCenter:@"收藏取消"];
 }
 
 - (void)saveCollectNewsToLocal {

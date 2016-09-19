@@ -214,7 +214,7 @@
     
     IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:currentPage.integerValue];
     //统计
-    [BNAPI sys_pushTrackEventWithType:@"click_industry_websit_tab" name:@"行业站点所有行业tab点击" value:nil rmtInId:[NSNumber numberWithInteger:cmd.industryCode.integerValue] websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
+    [BNAPI sys_pushTrackEventWithType:@"click_industry_websit_tab" name:@"行业站点所有行业tab点击" value:nil rmtInId:cmd.industryCode websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
         //do nothing
     }];
 }

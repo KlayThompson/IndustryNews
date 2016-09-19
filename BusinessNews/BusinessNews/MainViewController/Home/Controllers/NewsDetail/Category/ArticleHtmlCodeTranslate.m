@@ -69,8 +69,14 @@
     if ([arrayWebSiteName containsObject:[aFrom TRIM]]) {
         return [[self class] getHtmlByStringENContact:_str title:aTitle time:aTime from:aFrom];
     }
-    NSDictionary *dicDate=[StringTools formatDateAndWeek:aTime byFormat:@"yyyyMMdd" toFormat:@"yyyy/MM/dd"];
-    NSString *time=[dicDate objectForKey:@"date"];
+//    NSDictionary *dicDate=[StringTools formatDateAndWeek:aTime byFormat:@"yyyyMMdd" toFormat:@"yyyy/MM/dd"];
+//    NSString *time=[dicDate objectForKey:@"date"];
+    
+    NSTimeInterval interval=[aTime doubleValue] / 1000.0;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
+    NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
+    [objDateformat setDateFormat:@"MM-dd HH:mm"];
+    NSString *time = [objDateformat stringFromDate:date];
     
     NSMutableString *strReturn=[NSMutableString stringWithCapacity:1];
     [strReturn appendString:@"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"];

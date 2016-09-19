@@ -226,7 +226,7 @@
 + (void)sys_pushTrackEventWithType:(NSString *)type
                               name:(NSString *)name
                              value:(NSNumber *)value
-                           rmtInId:(NSNumber *)rmtInId
+                           rmtInId:(NSString *)rmtInId
                           websitid:(NSNumber *)websitid
                               imei:(NSNumber *)imei
                           bannerId:(NSNumber *)bannerId
@@ -237,13 +237,19 @@
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                 type,@"type",
                                 name,@"name",
-                                value,@"value",
                                 rmtInId,@"rmtInId",
                                 websitid,@"websitid",
-                                imei,@"imei",
                                 bannerId,@"bannerId",
+                                imei,@"imei",
+                                value,@"value",
                                 nil];
     
+//    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                pn,@"pn",
+//                                ps,@"ps",
+//                                inid,@"inid",
+//                                webSitId,@"webSitId",
+//                                nil];
     [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"sys/pushTrackEvent"
                                                       withParams:parameters
                                                   withMethodType:Post

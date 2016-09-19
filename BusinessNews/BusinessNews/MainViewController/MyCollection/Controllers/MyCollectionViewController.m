@@ -152,7 +152,7 @@
     [BNAPI news_loadNewsContentWithNewsId:unit.newsId industryID:unit.industryId websitId:unit.websitId Block:^(BaseCmd *model, NSError *error) {
         
         if (error) {
-            [weakSelf makeToastInBottom:error.domain];
+            [weakSelf makeToastInBottom:TIP_NETWORK_ERROR];
             
         } else {
             

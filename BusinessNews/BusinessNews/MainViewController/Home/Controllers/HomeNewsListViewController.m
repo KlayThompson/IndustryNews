@@ -216,7 +216,7 @@
     [BNAPI news_loadNewsContentWithNewsId:unit.newsId industryID:unit.industryId websitId:unit.websitId Block:^(BaseCmd *model, NSError *error) {
         
         if (error) {
-            [weakSelf makeToastInBottom:error.domain];
+            [weakSelf makeToastInBottom:TIP_NETWORK_ERROR];
             
         } else {
             
@@ -379,7 +379,7 @@
     }
     
     //统计
-    [BNAPI sys_pushTrackEventWithType:@"click_banner" name:nil value:nil rmtInId:adItemClicked.rmtInid websitid:adItemClicked.webSitId imei:nil bannerId:adItemClicked.bannerId Block:^(BaseCmd *model, NSError *error) {
+    [BNAPI sys_pushTrackEventWithType:@"click_banner" name:@"banner点击" value:nil rmtInId:[NSString stringWithFormat:@"%@",adItemClicked.rmtInid] websitid:adItemClicked.webSitId imei:nil bannerId:adItemClicked.bannerId Block:^(BaseCmd *model, NSError *error) {
         //do nothing
     }];
 }
