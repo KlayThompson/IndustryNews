@@ -60,7 +60,7 @@
     //首页行业需要插入一个@"推荐"
     currentIndstryArray = [AppDelegate sysDirector].currentIndstryTree;
     IndustryCmd *commend = [[IndustryCmd alloc] init];
-    commend.industryCode = @"0000";
+    commend.industryCode = CommendIndustryCode;
     commend.industryName = @"推荐";
     if (!ARRAY_IS_NIL(currentIndstryArray)) {
         [currentIndstryArray insertObject:commend atIndex:0];

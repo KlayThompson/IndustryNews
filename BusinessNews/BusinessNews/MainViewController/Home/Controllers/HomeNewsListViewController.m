@@ -148,24 +148,33 @@
                                                           }
                                                       }
                                                       
-                                                      //控制上拉更多
-                                                      if (unit.newsList && unit.newsList.count < PageSize && unit.newsList.count >0 ) {
-                                                          
-                                                          weakSelf.uTableView.mj_footer = nil;
-                                                          
-                                                      } else if(unit.newsList.count == PageSize) {
-                                                          
+                                                      /**
+                                                       如果是推荐的话，无论多少条数据上拉刷新一直在
+                                                       */
+                                                      if ([weakSelf.currentIndustryId isEqualToString:CommendIndustryCode]) {
                                                           weakSelf.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataFormServer)];
                                                           weakSelf.uTableView.mj_footer.hidden = NO;
-                                                      } else if (unit.newsList.count == 0){
-                                                          
-                                                          weakSelf.uTableView.mj_footer = nil;
-                                                          
                                                       } else {
-                                                          
-                                                          NSAssert(0, @"程序错误，检查代码！");
-                                                          
+                                                          //需要控制上拉更多
+                                                          if (unit.newsList && unit.newsList.count < PageSize && unit.newsList.count >0 ) {
+                                                              
+                                                              weakSelf.uTableView.mj_footer = nil;
+                                                              
+                                                          } else if(unit.newsList.count == PageSize) {
+                                                              
+                                                              weakSelf.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataFormServer)];
+                                                              weakSelf.uTableView.mj_footer.hidden = NO;
+                                                          } else if (unit.newsList.count == 0){
+                                                              
+                                                              weakSelf.uTableView.mj_footer = nil;
+                                                              
+                                                          } else {
+                                                              
+                                                              NSAssert(0, @"程序错误，检查代码！");
+                                                              
+                                                          }
                                                       }
+                                                      
                                                       [weakSelf reloadTableView];
                                                       
                                                   }else{

@@ -467,3 +467,6 @@ _Pragma("clang diagnostic pop")
 
 #define QQAppId          @"101007698"
 
+/**首页写在本地推荐的行业code*/
+#define CommendIndustryCode @"0000"
+
