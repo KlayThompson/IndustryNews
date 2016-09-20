@@ -20,7 +20,7 @@
 ////////////////////////////E////////////////////////////////////
 //修改 CFBundleDisplayName="人脉通En";
 //--1：调试模式--
-#define DEBUG_VERSION           YES
+#define DEBUG_VERSION           NO
 
 /**
  开启APNS测试模式，当模式开启时，可以在APP内自行模拟收到一条APNS消息时的处理
