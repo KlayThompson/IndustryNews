@@ -109,9 +109,10 @@
     __weak typeof (self) weakSelf = self;
     
     [BNAPI news_loadNewsBySqtIndustryWithPn:@(targetPageIndex) ps:@(PageSize) inid:self.currentIndustryId webSitId:self.currentWebsiteId Block:^(BaseCmd *model, NSError *error) {
-        
+        [weakSelf.uTableView.mj_header endRefreshing];
+        [weakSelf.uTableView.mj_footer endRefreshing];
         if (error) {
-            [[AppDelegate sysDirector] showToastInBottom:error.domain];
+            [[AppDelegate sysDirector] showToastInBottom:TIP_NETWORK_ERROR];
         } else {
             [model errorCheckSuccess:^{
                 
@@ -167,8 +168,6 @@
 }
 
 - (void)reloadTableView {
-    [self.uTableView.mj_header endRefreshing];
-    [self.uTableView.mj_footer endRefreshing];
     [self.uTableView reloadData];
 }
 

@@ -119,9 +119,10 @@
                                          ps:@(PageSize)
                                     rmtInId:self.currentIndustryId
                                       Block:^(BaseCmd *model, NSError *error) {
-                                          
+                                          [weakSelf.uTableView.mj_footer endRefreshing];
                                           if (error) {
-                                              [[AppDelegate sysDirector] showToastInBottom:error.domain];
+                                              [[AppDelegate sysDirector] showToastInBottom:TIP_NETWORK_ERROR];
+                                              
                                           } else {
                                               [model errorCheckSuccess:^{
                                                   
@@ -190,8 +191,6 @@
 
 - (void)reloadTableView {
     [self.uTableView reloadData];
-    
-    [self.uTableView.mj_footer endRefreshing];
     
 }
 
