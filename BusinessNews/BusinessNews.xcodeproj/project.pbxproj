@@ -323,7 +323,6 @@
 		0380A9091D76CEA700196C1E /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		0380A90A1D76CEA700196C1E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0380A90B1D76CEA700196C1E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		0380A90C1D76CEA700196C1E /* PageActionSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageActionSource.h; sourceTree = "<group>"; };
 		0380A9101D76CFD100196C1E /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		0380A9111D76CFD100196C1E /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		0380A91D1D76DA4E00196C1E /* SysDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysDirector.h; sourceTree = "<group>"; };
@@ -811,7 +810,6 @@
 				0380A9091D76CEA700196C1E /* BaseNavigationController.m */,
 				0380A90A1D76CEA700196C1E /* BaseViewController.h */,
 				0380A90B1D76CEA700196C1E /* BaseViewController.m */,
-				0380A90C1D76CEA700196C1E /* PageActionSource.h */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";

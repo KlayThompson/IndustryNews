@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PageActionSource.h"
 #import "Toast+UIView.h"
 
 typedef NS_ENUM(NSUInteger, NavigationBarItemType) {
@@ -27,8 +26,6 @@ static NSString * const BaseViewControllerAnimationKey = @"BaseViewControllerAni
 @property (nonatomic, strong) UIImageView *backGroundView;
 
 @property (nonatomic, copy) void (^BaseActionFinish)(void);  // 公用的回调
-/* 1.600 版本之后添加的 闫超杰*/
-@property (nonatomic, assign) PageActionSource  mActionSource;
 
 #pragma mark - navigationbar
 //添加左边按钮

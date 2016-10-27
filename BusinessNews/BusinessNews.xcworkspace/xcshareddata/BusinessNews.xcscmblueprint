@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F2980D9CC857AAED0ED0957E214A5A94304FAF72",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F2980D9CC857AAED0ED0957E214A5A94304FAF72" : 9223372036854775807,
+    "2B1964C3F5DEFD5E5AD937B410765AA658BE6B89" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3C84ED04-1DFF-4B26-A4A4-AB749B0FAD3E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F2980D9CC857AAED0ED0957E214A5A94304FAF72" : "IndustryNews\/",
+    "2B1964C3F5DEFD5E5AD937B410765AA658BE6B89" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BusinessNews",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BusinessNews\/BusinessNews.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/gitcafe.enterprise\/9Tong-ColumnV\/RMT-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B1964C3F5DEFD5E5AD937B410765AA658BE6B89"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KlayThompson\/IndustryNews.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F2980D9CC857AAED0ED0957E214A5A94304FAF72"
+    }
+  ]
+}
