@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "CRNavigationController.h"
 #import "HomeViewController.h"
 #import "MyCollectionViewController.h"
 #import "IndustrySitesViewController.h"
@@ -89,9 +88,9 @@
     // 头条
     HomeViewController *home = [[HomeViewController alloc] init];
     
-    CRNavigationController *homeViewController = [[CRNavigationController alloc] initWithRootViewController:home];
+    UINavigationController *homeViewController = [[UINavigationController alloc] initWithRootViewController:home];
     [homeViewController setDelegate:self];
-    
+    homeViewController.navigationBar.barTintColor = [UIColor redColor];
     UITabBarItem *homeTabbar = [[UITabBarItem alloc] initWithTitle:@"头条"
                                                              image:nil
                                                      selectedImage:nil];
@@ -103,7 +102,7 @@
     // 行业站点
     IndustrySitesViewController *industry = [[IndustrySitesViewController alloc] init];
     
-    CRNavigationController *industryViewController = [[CRNavigationController alloc] initWithRootViewController:industry];
+    UINavigationController *industryViewController = [[UINavigationController alloc] initWithRootViewController:industry];
     [industryViewController setDelegate:self];
     
     UITabBarItem *industryTabbar = [[UITabBarItem alloc] initWithTitle:@"行业站点"
@@ -118,7 +117,7 @@
     // 我的收藏
     MyCollectionViewController *collection = [[MyCollectionViewController alloc] init];
     
-    CRNavigationController *collectionViewController = [[CRNavigationController alloc] initWithRootViewController:collection];
+    UINavigationController *collectionViewController = [[UINavigationController alloc] initWithRootViewController:collection];
     [collectionViewController setDelegate:self];
     
     UITabBarItem *collectionTabbar = [[UITabBarItem alloc] initWithTitle:@"我的收藏"

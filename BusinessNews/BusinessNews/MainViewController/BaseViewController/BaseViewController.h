@@ -77,10 +77,6 @@ static NSString * const BaseViewControllerAnimationKey = @"BaseViewControllerAni
 /**找到navigationbar下隐藏线*/
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view;
 
-/**设置navigationbar是否透明*/
-- (void)translucentNavigationBar:(BOOL)translucent;
-
-
 /**
  *  带badge的可点击view
  *
