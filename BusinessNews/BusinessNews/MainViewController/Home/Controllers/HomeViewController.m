@@ -57,7 +57,8 @@
     titleArray = [NSMutableArray new];
     NSMutableArray *vcsArray = [NSMutableArray new];
     
-    //首页行业需要插入一个@"推荐"
+    //首页行业需要插入一个@"推荐" 2016.10.28取消推荐
+    /**
     currentIndstryArray = [AppDelegate sysDirector].currentIndstryTree;
     IndustryCmd *commend = [[IndustryCmd alloc] init];
     commend.industryCode = CommendIndustryCode;
@@ -65,7 +66,7 @@
     if (!ARRAY_IS_NIL(currentIndstryArray)) {
         [currentIndstryArray insertObject:commend atIndex:0];
     }
-    
+    */
     for (int index = 0; index < currentIndstryArray.count; index++) {
         IndustryCmd *cmd = [currentIndstryArray objectAtIndex:index];
         [titleArray addObject:StringObj(cmd.industryName)];
@@ -102,6 +103,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showTagViewButtonClick)];
     [imageView addGestureRecognizer:tap];
     
+    /**
     for (int index = 0; index < [AppDelegate sysDirector].currentIndstryTree.count; index++) {
         IndustryCmd *cmd = [AppDelegate sysDirector].currentIndstryTree[index];
         if ([cmd.industryName isEqualToString:@"推荐"]) {
@@ -109,6 +111,7 @@
         } else {
         }
     }
+     */
 }
 
 - (void)setupTagView {

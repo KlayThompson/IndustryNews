@@ -119,10 +119,12 @@
                                          ps:@(PageSize)
                                     rmtInId:self.currentIndustryId
                                       Block:^(BaseCmd *model, NSError *error) {
+                                          
                                           [weakSelf.uTableView.mj_footer endRefreshing];
+                                          [weakSelf.uTableView.mj_header endRefreshing];
+                                          
                                           if (error) {
                                               [[AppDelegate sysDirector] showToastInBottom:TIP_NETWORK_ERROR];
-                                              
                                           } else {
                                               [model errorCheckSuccess:^{
                                                   
@@ -135,9 +137,6 @@
                                                           [weakSelf.newsListArray removeAllObjects];
                                                           weakSelf.newsListArray = [unit.newsList mutableCopy];
                                                           currentPageIndex = 1;
-                                                          if (!ARRAY_IS_NIL(weakSelf.newsListArray)) {
-                                                              [weakSelf.uTableView.mj_header endRefreshing];
-                                                          }
                                                       }else{
                                                           if(unit.newsList){
                                                               

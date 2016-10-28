@@ -70,6 +70,7 @@
     [self.uTableView.mj_header beginRefreshing];
     
     self.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
+    self.uTableView.mj_footer.hidden = YES;
 }
 
 #pragma mark - 初始化
