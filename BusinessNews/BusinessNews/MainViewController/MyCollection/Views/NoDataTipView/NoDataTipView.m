@@ -11,7 +11,7 @@
 @implementation NoDataTipView
 
 - (void) awakeFromNib {
-
+    [super awakeFromNib];
     self.tipDetailLabel.font = Font14;
     self.publishButton.titleLabel.font = Font14;
     self.publishButton.layer.cornerRadius = 5;
