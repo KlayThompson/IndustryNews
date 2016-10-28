@@ -86,7 +86,14 @@ static SysDirector *instance;
 - (void)setUpAPPData {
 
     self.collectNewsArray = [NSMutableArray new];
+    //取出本地缓存使用
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:SaveIndustryCode];
+    self.currentIndstryTree = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    [self sortIndstryTree:self.currentIndstryTree];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UpdateIndustryCode object:nil];
     
+    NSData *dataCollect = [[NSUserDefaults standardUserDefaults] objectForKey:CollectNewsList];
+    self.collectNewsArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataCollect];
     [self loadIndustryCodeFromServer];
 }
 
@@ -96,21 +103,15 @@ static SysDirector *instance;
     __weak typeof (self) weakSelf = self;
     [BNAPI news_rmtInidListBlock:^(BaseCmd *model, NSError *error) {
         if (error) {
-            [weakSelf showToastInBottom:TIP_NETWORK_ERROR];
-            //取出本地缓存使用
-            NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:SaveIndustryCode];
-            weakSelf.currentIndstryTree = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UpdateIndustryCode object:nil];
+//            [weakSelf showToastInBottom:TIP_NETWORK_ERROR];
             
-            NSData *dataCollect = [[NSUserDefaults standardUserDefaults] objectForKey:CollectNewsList];
-            weakSelf.collectNewsArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataCollect];
         } else {
             [model errorCheckSuccess:^{
                 
                 if ([model isKindOfClass:[IndustryTreeCmd class]]) {
                     
                     IndustryTreeCmd *cmd = (IndustryTreeCmd *)model;
-                    [weakSelf compareIndustryCodeAndPostToUpdateIndustryCode:cmd.industryTree];
+                    [weakSelf updateIndustryCode:cmd.industryTree];
                 }
                 
             } failed:^(NSInteger errCode) {
@@ -121,74 +122,70 @@ static SysDirector *instance;
 }
 
 //需求地址https://tower.im/projects/dbe017efd44044619c565f3e38a48ba5/todos/42861e64c88b4c7ea258ca29de7d490b/
-- (void)compareIndustryCodeAndPostToUpdateIndustryCode:(NSMutableArray<IndustryCmd*>*)industryTree {
+- (void)updateIndustryCode:(NSMutableArray<IndustryCmd*>*)industryTree {
 
-    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:SaveIndustryCode];
-    self.oldIndstryTree = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    
-    //判断本地是否有行业数据，没有则存贮，有则比对
-    if (self.oldIndstryTree && self.oldIndstryTree.count > 0) {
-        
-        //1.取出old的所有含有selectCount的行业数据
-        //2.判断这些数据在最新的服务端有没有返回，返回则给服务端返回来的赋值selectCount，没返回说明已经删除则不处理
-        //3.结束后其他的行业数据的selectCount都是为0，直接按照服务端的顺序显示即可
-        
-        
-        for (int i = 0; i < self.oldIndstryTree.count; i++) {
-            IndustryCmd *unit = [self.oldIndstryTree objectAtIndex:i];
-            if (unit.selectCount > 0) {
-                
-                NSInteger industryCode = unit.industryCode.integerValue;
-                
-                for (int i = 0; i < industryTree.count; i++) {
-                    IndustryCmd *cmd = [industryTree objectAtIndex:i];
-                    if (cmd.industryCode.integerValue == industryCode) {
-                        cmd.selectCount = unit.selectCount;
-                    }
-                }
-                
-            } else {
-                //do nothing
-            }
-        }
-        
-        //根据用户点击次数排序
-        [industryTree sortUsingComparator:^NSComparisonResult(id object1, id object2) {
-            IndustryCmd *unit1 = (IndustryCmd *)object1;
-            IndustryCmd *unit2 = (IndustryCmd *)object2;
-            
-            NSInteger position1 = unit1.selectCount;
-            NSInteger position2 = unit2.selectCount;
-            
-            if (position1 > position2) {
-                return NSOrderedAscending;
-            }
-            else if (position1 < position2){
-                
-                return NSOrderedDescending;
-            } else {
-                return NSOrderedSame;
-            }
-        }];
-        
-    } else {
-        //存储到本地
-        NSData *tempSubmitOrderCmd = [NSKeyedArchiver archivedDataWithRootObject:industryTree];
-        [[NSUserDefaults standardUserDefaults] setObject:tempSubmitOrderCmd forKey:SaveIndustryCode];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    if (ARRAY_IS_NIL(industryTree)) {
-        self.currentIndstryTree = self.oldIndstryTree;
-    } else {
+//    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:SaveIndustryCode];
+//    self.oldIndstryTree = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+//    
+//    //判断本地是否有行业数据，没有则存贮，有则比对
+//    if (self.oldIndstryTree && self.oldIndstryTree.count > 0) {
+//        
+//        //1.取出old的所有含有selectCount的行业数据
+//        //2.判断这些数据在最新的服务端有没有返回，返回则给服务端返回来的赋值selectCount，没返回说明已经删除则不处理
+//        //3.结束后其他的行业数据的selectCount都是为0，直接按照服务端的顺序显示即可
+//        
+//        
+//        for (int i = 0; i < self.oldIndstryTree.count; i++) {
+//            IndustryCmd *unit = [self.oldIndstryTree objectAtIndex:i];
+//            if (unit.selectCount > 0) {
+//                
+//                NSInteger industryCode = unit.industryCode.integerValue;
+//                
+//                for (int i = 0; i < industryTree.count; i++) {
+//                    IndustryCmd *cmd = [industryTree objectAtIndex:i];
+//                    if (cmd.industryCode.integerValue == industryCode) {
+//                        cmd.selectCount = unit.selectCount;
+//                    }
+//                }
+//                
+//            } else {
+//                //do nothing
+//            }
+//        }
+//        [self sortIndstryTree:industryTree];
+//        
+//        
+//    }
+    //存储到本地
+    NSData *tempSubmitOrderCmd = [NSKeyedArchiver archivedDataWithRootObject:industryTree];
+    [[NSUserDefaults standardUserDefaults] setObject:tempSubmitOrderCmd forKey:SaveIndustryCode];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (ARRAY_IS_NIL(self.currentIndstryTree)) {
         self.currentIndstryTree = industryTree;
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UpdateIndustryCode object:nil];
     }
+}
 
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UpdateIndustryCode object:nil];
+- (void)sortIndstryTree:(NSMutableArray<IndustryCmd*> *) industryTree {
 
-    NSData *dataCollect = [[NSUserDefaults standardUserDefaults] objectForKey:CollectNewsList];
-    self.collectNewsArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataCollect];
-    SLOG(@"");
+    //根据用户点击次数排序
+    [industryTree sortUsingComparator:^NSComparisonResult(id object1, id object2) {
+        IndustryCmd *unit1 = (IndustryCmd *)object1;
+        IndustryCmd *unit2 = (IndustryCmd *)object2;
+        
+        NSInteger position1 = unit1.selectCount;
+        NSInteger position2 = unit2.selectCount;
+        
+        if (position1 > position2) {
+            return NSOrderedAscending;
+        }
+        else if (position1 < position2){
+            
+            return NSOrderedDescending;
+        } else {
+            return NSOrderedSame;
+        }
+    }];
 }
 
 @end

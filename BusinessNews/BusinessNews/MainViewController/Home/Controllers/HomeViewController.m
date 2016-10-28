@@ -58,8 +58,8 @@
     NSMutableArray *vcsArray = [NSMutableArray new];
     
     //首页行业需要插入一个@"推荐" 2016.10.28取消推荐
-    /**
     currentIndstryArray = [AppDelegate sysDirector].currentIndstryTree;
+    /**
     IndustryCmd *commend = [[IndustryCmd alloc] init];
     commend.industryCode = CommendIndustryCode;
     commend.industryName = @"推荐";
@@ -203,9 +203,9 @@
     [self.slideView selectPageIndex:index];
     [self showTagViewButtonClick];
     
-    if (index != 0) {
-        index = index - 1;
-    }
+//    if (index != 0) {
+//        index = index - 1;
+//    }
     IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:index];
     cmd.selectCount++;
     //每次点击都要更新本地的行业分类数据
@@ -227,9 +227,9 @@
         [self setupTagView];
     }
     NSInteger index = currentPage.integerValue;
-    if (index != 0) {
-        index = index - 1;
-    }
+//    if (index != 0) {
+//        index = index - 1;
+//    }
     IndustryCmd *cmd = [[AppDelegate sysDirector].currentIndstryTree objectAtIndex:index];
     //统计
     [BNAPI sys_pushTrackEventWithType:@"click_index_industry_tab" name:@"首页所有行业tab点击" value:nil rmtInId:cmd.industryCode websitid:nil imei:nil bannerId:nil Block:^(BaseCmd *model, NSError *error) {
