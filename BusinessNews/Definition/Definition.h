@@ -399,7 +399,7 @@ static const int ddLogLevel = LOG_LEVEL_OFF;
 #define TIP_USERINFO_NOT_COMPLETE_WHEN_EXCHANGE_CARD NSLocalizedString(@"人脉通是一个实名制商务社交网络，当你如实填写你的姓名、公司名称、职位、联络方式的时候，你可能会收到更多人脉拓展和信息交换的机会。建议你填写你的更多信息。", @"")
 #define TIP_USERINFO_NOT_COMPLETE_WHEN_ADD2COMERCIAL NSLocalizedString(@"请完善你的公司名称和职位信息，否则将无法添加商业人脉", @"")
 #define TIP_ADDCOMMERCIAL_SUCCESS NSLocalizedString(@"联系人已成功添加至商业人脉", @"")
-#define TIP_NETWORK_ERROR @"网络状态不佳"
+#define TIP_NETWORK_ERROR @"网络出错，请检查网络连接是否正确"
 #define TIP_NODATA  @"没有找到合适的数据"
 
 

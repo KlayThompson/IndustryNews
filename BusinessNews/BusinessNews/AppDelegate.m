@@ -19,6 +19,8 @@
 #import "UMSocialSinaSSOHandler.h"
 //------
 
+#import "UMMobClick/MobClick.h"
+
 
 @interface AppDelegate ()<UINavigationControllerDelegate,UITabBarControllerDelegate>
 
@@ -32,6 +34,7 @@
     [DDLog addLogger:[DDTTYLogger sharedInstance]];// 初始化DDLog日志输出，在这里，我们仅仅希望在xCode控制台输出
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     [self setUp];
+    [self registerUMMobClickForAPP];
     [self registerSNSForAPP];
     return YES;
 }
@@ -155,6 +158,14 @@
     
     AppDelegate *app=(AppDelegate*)[UIApplication sharedApplication].delegate;
     return app.sysDirector;
+}
+
+#pragma mark - 统计
+- (void)registerUMMobClickForAPP {
+
+    UMConfigInstance.appKey = UmengAppkey;
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
 }
 
 #pragma mark - SNS
