@@ -58,8 +58,8 @@
     NSMutableArray *vcsArray = [NSMutableArray new];
     
     //首页行业需要插入一个@"推荐" 2016.10.28取消推荐
-    /**
     currentIndstryArray = [AppDelegate sysDirector].currentIndstryTree;
+    /**
     IndustryCmd *commend = [[IndustryCmd alloc] init];
     commend.industryCode = CommendIndustryCode;
     commend.industryName = @"推荐";
